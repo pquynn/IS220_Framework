@@ -1,11 +1,9 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Trang chủ</title>
 
     <!-- css file -->
     <link rel="stylesheet" href="../../../css/style-components/base.css" />
@@ -29,47 +27,50 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
       rel="stylesheet" />
+
+
   </head>
   <body>
-    <!-- HEADER: START -->
     <ul class="header">
-      <!-- logo -->
+      <!-- LOGO: start -->
       <li class="nav-logo">
         <a href="#"><img src="../../../img/logo.png" /></a>
       </li>
+      <!-- LOGO: End -->
 
-      <!-- link (home, shop, category,....) -->
+      <!-- LINK (HOME, SHOP, CATEGORY,....): Start -->
       <ul class="nav-link">
-        <li class="nav-link--item hover-underline"><a href="#">HOME</a></li>
-        <li class="nav-link--item hover-underline"><a href="#">SHOP</a></li>
+        <li class="nav-link--item hover-underline"><a href="#">TRANG CHỦ</a></li>
+        <li class="nav-link--item hover-underline"><a href="#">MUA SẮM</a></li>
 
         <!-- category sub navigation -->
         <li class="nav-link--item primary-nav hover-underline a">
-          <a href="#">CATEGORY</a>
+          <a href="#">LOẠI SP</a>
           <ul class="sub-nav">
             <li class="sub-nav--item hover-underline">
-              <a href="#">SUB-CATEGORY</a>
+              <a href="#">LOẠI 1</a>
             </li>
             <li class="sub-nav--item hover-underline">
-              <a href="#">SUB-CATEGORY</a>
+              <a href="#">LOẠI 2</a>
             </li>
             <li class="sub-nav--item hover-underline">
-              <a href="#">SUB-CATEGORY</a>
+              <a href="#">LOẠI 3</a>
             </li>
             <li class="sub-nav--item hover-underline">
-              <a href="#">SUB-CATEGORY</a>
+              <a href="#">LOẠI 4</a>
             </li>
             <li class="sub-nav--item hover-underline">
-              <a href="#">SUB-CATEGORY</a>
+              <a href="#">LOẠI 5</a>
             </li>
           </ul>
         </li>
 
-        <li class="nav-link--item hover-underline"><a href="#">PAGES</a></li>
-        <li class="nav-link--item hover-underline"><a href="#">BLOGS</a></li>
+        <li class="nav-link--item hover-underline"><a href="#">TRANG</a></li>
+        <li class="nav-link--item hover-underline"><a href="../blog-info/blog.php">BLOGS</a></li>
       </ul>
+      <!-- LINK (HOME, SHOP, CATEGORY,....): End -->
 
-      <!-- icon (accoutn, cart) -->
+      <!-- ICON (ACCOUNT, CART): Start -->
       <ul class="nav-icon">
         <!-- search -->
         <li class="nav-icon--item">
@@ -85,10 +86,10 @@
           </a>
           <ul class="sub-nav">
             <li class="sub-nav--item hover-underline">
-              <a href="#">TÀI KHOẢN</a>
+              <a href="../account-management/account-profile.php">TÀI KHOẢN</a>
             </li>
             <li class="sub-nav--item hover-underline">
-              <a href="#">QUẢN LÝ</a>
+              <a href="../../admin/Dashboard.php">QUẢN LÝ</a>
             </li>
             <li class="sub-nav--item hover-underline">
               <a href="#">LOG OUT</a>
@@ -98,11 +99,12 @@
 
         <!-- cart -->
         <li class="nav-icon--item">
-          <a>
+          <a href="../cart-checkout/cart.php">
             <span class="material-symbols-outlined"> shopping_bag </span>
           </a>
         </li>
       </ul>
+      <!-- ICON (ACCOUNT, CART): End -->
     </ul>
     <!-- HEADER: END -->
 
@@ -480,67 +482,44 @@
     </div>
     <!-- MAIN SLIDER: END -->
 
-    <!-- FOOTER: START -->
-    <div class="FooterBox">
+    <!--FOOTER START-->
+  <div class="FooterBox">
+      <hr>
       <div class="FooterBox__one">
-        <div class="FooterBox__one__left">
-          <h3>Our Team</h3>
-          <p>Home</p>
-          <p>Shop</p>
-          <p>About</p>
-          <p>Contact</p>
-        </div>
-        <div class="FooterBox__one__center">
-          <h3>Explore</h3>
-          <p>FAQ</p>
-          <p>Shipping & Return</p>
-          <p>Store Policy</p>
-          <p>Payment methods</p>
-        </div>
-        <div class="FooterBox__one__right">
-          <h3>Follow us</h3>
-          <p class="span-container">
-            Facebook<span><i class="fa-brands fa-square-facebook"></i></span>
-          </p>
-          <p class="span-container">
-            Instagram<span><i class="fa-brands fa-instagram"></i></span>
-          </p>
-        </div>
+          <div class="FooterBox__one__left">
+              <h3>Về chúng tôi</h3>
+              <p><a href="#">Trang chủ</a></p>
+              <p><a href="#">Cửa hàng</a></p>
+              <p><a href="#">Thông tin</a></p>
+              <p><a href="help-page.php">Liên hệ</a></p>
+          </div>
+          <div class="FooterBox__one__center">
+              <h3>Khám phá</h3>
+              <p><a href="question-page.php">Câu hỏi thường gặp</a></p>
+              <p><a href="#">Vận chuyển & Hoàn trản</a></p>
+              <p><a href="#">Điều khoản</a></p>
+              <p><a href="#">Phương thức thanh toán</a></p>
+          </div>
+          <div class="FooterBox__one__right">
+              <h3>Theo dõi</h3>
+              <p><a href="#">Facebook <i class="fa-brands fa-square-facebook"></i></a></p>
+              <p><a href="#">Instagram <i class="fa-brands fa-instagram"></i></a></p>
+          </div>
       </div>
       <div class="FooterBox__two">
-        <hr />
-        <div class="FooterBox__two__rightpayment">
-          <p>2022 ALL RIGHT RESERVE</p>
-          <div>
-            <img
-              src="../../../img/footer_image/visa.png"
-              alt=""
-              width="49.375px"
-              height="33.125px" />
-            <img
-              src="../../../img/footer_image/paypal.png"
-              alt=""
-              width="49.375px"
-              height="33.125px" />
-            <img
-              src="../../../img/footer_image/mastercard.png"
-              alt=""
-              width="49.375px"
-              height="33.125px" />
-            <img
-              src="../../../img/footer_image/momo.png"
-              alt=""
-              width="33.125px"
-              height="33.125px" />
-            <img
-              src="../../../img/footer_image/napas.png"
-              alt=""
-              width="33.125px"
-              height="33.125px" />
+          <hr>
+          <div class="FooterBox__two__rightpayment">
+              <p>2022 ALL RIGHT RESERVE</p>
+              <div>
+                  <img src="../../../img/footer_image/visa.png" alt="">
+                  <img src="../../../img/footer_image/paypal.png" alt="">
+                  <img src="../../../img/footer_image/mastercard.png" alt="">
+                  <img src="../../../img/footer_image/momo.png" alt="">
+                  <img src="../../../img/footer_image/napas.png" alt="">
+              </div>
           </div>
-        </div>
       </div>
-    </div>
-    <!-- FOOTER: END -->
-  </body>
+  </div>
+<!--FOOTER END-->
+</body>
 </html>

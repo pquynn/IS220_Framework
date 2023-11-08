@@ -32,5 +32,3 @@
 </div>
 
 
-<?php include("Forgetpass2.php"); ?>
-
