@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../css/admin/ModalAddNewProduct.css">
     <link rel="stylesheet" href="../../css/admin/ModalAlert.css">
     <link rel="stylesheet" href="../../css/admin/admin-orders.css"/>
-    <title>Danh sách đơn hàng</title>
+    <title>Quản lý đơn hàng</title>
 
 </head>
 <body>
@@ -53,60 +53,65 @@
     
 <!--MAIN SECTION----START-->
 <div class="admin-orders">
-    <h2 class="section_heading">Danh sách đơn hàng</h2>
+    <h2 class="section_heading">Đơn hàng</h2>
 
     <ol class="breadcrumb">
         <li class= "breadcrumb-item active" aria-current="page">Danh sách đơn hàng</li>
     </ol>
-    <!--Orders' date-->
-    <div class="date-orders">
-        <i class="fa-solid fa-calendar"></i>
-        <span>dd/mm/yyyy - dd/mm/yyyy</span>
-    </div>
+                    
+   
+    <!-- search and filter row: start -->
+    <div class="section_top-content">
 
-    <!--Dropdown choose status for orders-->
-    <div class="choose-status">
-            <span>Trạng thái đơn hàng</span>                
-            <i class="fa-solid fa-angle-down"></i>
-
-            <ul class="list-status">
-                <li>Đang xử lý</li>
-                <li>Giao hàng thành công</li>
-                <li>Đã hủy</li>  
-            </ul>                      
-    </div>
-    
-    <!--Search bar-->
-    <div class="admin-search-container">
-        <div class="search-bar-box">
-            <input type="text" id="search" placeholder="Tìm kiếm..." class="form-control ">
-            <a href="#" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <div class="top-content left">
+            <div class="admin-search-container">
+                <div class="search-bar-box">
+                    <input type="text" id="search" placeholder="Tìm kiếm..." class="form-control ">
+                    <a href="#" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+            </div>
         </div>
-    </div>
+        
+        <div class="top-content right">
+            <div class="dropdown">
+                <button class="btn-admin btn-calendar dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 180px;">
+                    Trạng thái đơn hàng
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Đang xử lý</a></li>
+                    <li><a class="dropdown-item" href="#">Đang giao</a></li>
+                    <li><a class="dropdown-item" href="#">Giao hàng thành công</a></li>
+                    <li><a class="dropdown-item" href="#">Đã hủy</a></li>
+                </ul>
+            </div>   
+        </div>
+        </div>
+    
+    <!-- search and filter row: end -->
 
     <!--Table list orders-->
     <div class="admin-table">
         <table class="list-orders">
             <tr>
-                <th><input type="checkbox"></th>   
                 <th>Mã đơn hàng</th>
-                <th>Ngày hóa đơn</th>   
+                <th>Mã KH</th>
+                <th>Tên KH</th>  
                 <th>SĐT</th>   
-                <th>Tên khách hàng</th>                  
+                <th>Ngày mua</th>                  
                 <th>Địa chỉ</th>
                 <th>PTTT</th>   
                 <th>Trạng thái</th>   
-                <th>Tổng sản phẩm</th>   
+                <th>Tổng sách</th>   
                 <th>Tổng tiền</th>   
                 <th>Thao tác</th>
             </tr>
 
             <tr>
-                <td><input type="checkbox"></td>
                 <td>A123</td>
-                <td>dd/mm/yyy</td>   
-                <td>0912345678</td>   
-                <td>ABC DEF GHIJK</td>                  
+                <td>A123</td>
+                <td>Nguyen van a</td>  
+                <td>0912345678</td>  
+                <td>dd/mm/yyy</td>                  
                 <td>123 ABCD</td>
                 <td>Momo</td>   
                 <td>Giao hàng thành công</td>   

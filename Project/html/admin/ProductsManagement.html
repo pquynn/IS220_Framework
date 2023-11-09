@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../css/admin/ProductsManagement.css">
     <link rel="stylesheet" href="../../css/admin/ModalAddNewProduct.css">
     <link rel="stylesheet" href="../../css/admin/ModalAlert.css">
-    <title>Quản lý sản phẩm</title>
+    <title>Quản lý Sách</title>
 
 </head>
 <body>
@@ -52,7 +52,7 @@
 
     <!-- start: main section -->
     <div class="section">
-        <h2 class="section_heading">Sản phẩm</h2>
+        <h2 class="section_heading">Sách</h2>
         
         <!-- start: search bar, button section -->
         <div class="section_top-content">
@@ -89,7 +89,9 @@
                     <tr>
                         <th>#</th>
                         <th>Ảnh</th>
-                        <th>Tên sản phẩm</th>
+                        <th>Tên sách</th>
+                        <th>Phân loại</th>
+                        <th>NXB</th>
                         <th>Giá</th>
                         <th>...</th>
                         <th>Thao tác</th>
@@ -97,7 +99,9 @@
                     <tr>
                         <td>1</td>
                         <td><div class="table-img"></div></td>
-                        <td> Giày ... </td>
+                        <td> Truyện tô màu thiếu nhi </td>
+                        <td>Truyện thiếu nhie</td>
+                        <td>Kim Đồng</td>
                         <td>10000đ</td>
                         <td>...</td>
                         <td class="action">
@@ -134,7 +138,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="add-product">Thêm mới sản phẩm</h1>
+                    <h1 class="modal-title fs-5" id="add-product">Thêm mới sách</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
@@ -143,7 +147,7 @@
                         <div class="row g-2">
                             <!-- start of 1st column -->
                             <div class="col">
-                                <label for="product-name" class="form-label">Tên giày</label>
+                                <label for="product-name" class="form-label">Tên sách</label>
                                 <input type="text" id="product-name" class="form-control">
 
 
@@ -181,9 +185,9 @@
                                 <label for="product-category" class="form-label">Phân loại</label>
                                 <select id="product-category" class="form-select">
                                     <option value="" disabled selected hidden></option>
-                                    <option value="giày thể thao">Giày thể thao</option>
-                                    <option value="giày nữ">Giày nữ</option>
-                                    <option value="giày nam">Giày nam</option>
+                                    <option value="giày thể thao">Sách thiếu nhi</option>
+                                    <option value="giày nữ">Sách kỹ năng sống</option>
+                                    <option value="giày nam">Sách văn học nước ngoài/option>
                                 </select>
 
                                 <label for="product-description" class="form-label">Mô tả</label>

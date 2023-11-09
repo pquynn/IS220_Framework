@@ -1,6 +1,6 @@
 body{
     display: flex;
-    background-color: #F1F1F1;
+    background-color: var(--admin-bkground);
     margin: 0;
 }
 

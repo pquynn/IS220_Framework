@@ -61,31 +61,33 @@
     </ol>
 
     <div class="customer-infomation">
-        <h3>Mã đơn hàng: 
-            <span class="order-status">Giao hàng thành công</span>
-        </h3>
-        <!--date order-->
-        <div class="date-order">
-            <i class="fa-solid fa-calendar"></i>
-            <span>dd/mm/yyyy</span>
-        </div>
+        <!-- Heading and button: start -->
+        <div class="section_top-content">
 
-        <!--Change status, button print, button save-->
-        <div class="box-change_status-print-save">
-            <div class="change-status">
-                <span>Trạng thái đơn hàng</span>                
-                <i class="fa-solid fa-angle-down"></i>
-
-                <ul class="option-status">
-                    <li>Đang xử lý</li>
-                    <li>Giao hàng thành công</li>
-                    <li>Đã hủy</li>  
-                </ul>                      
+            <div class="top-content left">
+                <h3>Mã đơn hàng: 
+                    <span class="order-status">Giao hàng thành công</span>
+                </h3>
             </div>
+            
+            <div class="top-content right">
+                <!--Change status, button print-->
+                <div class="dropdown">
+                    <button class="btn-admin btn-calendar dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 180px;">
+                        Trạng thái đơn hàng
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Đang xử lý</a></li>
+                        <li><a class="dropdown-item" href="#">Đang giao</a></li>
+                        <li><a class="dropdown-item" href="#">Giao hàng thành công</a></li>
+                        <li><a class="dropdown-item" href="#">Đã hủy</a></li>
+                    </ul>
+                </div>   
 
-            <i class="fa-solid fa-print icon"></i>
-            <i class="fa-solid fa-floppy-disk icon"></i>            
+                <button class="btn-admin btn-calendar print"><i class="fa-solid fa-print"></i>   </button>     
+            </div>
         </div>
+        <!-- Heading and button: end -->
 
         <!--3 boxes information of customer-->
         <ul class="info-customer">
@@ -126,9 +128,8 @@
         <table>
             <td colspan="8">Sản phẩm</td>
             <tr>
-                <td colspan="2">Mã đơn hàng</td>
-                <td>Mã sản phẩm</td>
-                <td>Kích thước</td>
+                <td>Mã đơn hàng</td>
+                <td>Mã SP</td>
                 <td>Tên sản phẩm</td>
                 <td>Hình ảnh</td>
                 <td>Số lượng</td>
@@ -136,30 +137,24 @@
             </tr>
 
             <tr>
-                <td class="col-checkbox"><input type="checkbox"></td>
                 <td>#A123</td>
                 <td>SS001</td>
-                <td>38</td>
                 <td>Product name</td>
                 <td>xem hình ảnh</td>
                 <td>1</td>
                 <td>$9999</td>
             </tr>
             <tr>
-                <td class="col-checkbox"><input type="checkbox"></td>
                 <td>#A123</td>
                 <td>SS001</td>
-                <td>38</td>
                 <td>Product name</td>
                 <td>xem hình ảnh</td>
                 <td>1</td>
                 <td>$9999</td>
             </tr>
             <tr>
-                <td class="col-checkbox"><input type="checkbox"></td>
                 <td>#A123</td>
                 <td>SS001</td>
-                <td>38</td>
                 <td>Product name</td>
                 <td>xem hình ảnh</td>
                 <td>1</td>
