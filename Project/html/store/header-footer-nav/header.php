@@ -37,7 +37,7 @@
 
       <!-- LINK (HOME, SHOP, CATEGORY,....): Start -->
       <ul class="nav-link">
-        <li class="nav-link--item hover-underline"><a href="#">TRANG CHỦ</a></li>
+        <li class="nav-link--item hover-underline"><a href="../homepage-shopping/homepage.html">TRANG CHỦ</a></li>
         <li class="nav-link--item hover-underline"><a href="#">MUA SẮM</a></li>
 
         <!-- category sub navigation -->
