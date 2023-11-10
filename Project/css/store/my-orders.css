@@ -5,6 +5,7 @@
   --breadscrumb-text-color: #8f8f8fa4;
   --breadscumb-text-active: #e96d00;
 }
+
 /*Style left-navigation --start*/
 .navigation-account {
   display: flex;
@@ -52,6 +53,7 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .breadcrumb-my-order li a {
   color: var(--breadscrumb-text-color);
 }
@@ -60,6 +62,11 @@
 }
 .breadcrumb-current-page {
   color: var(--breadscumb-text-active);
+}
+
+.breadcrumb-my-order+h2{
+  margin-top: 20px;
+  margin-top: 20px;
 }
 
 .list-orders {
@@ -81,3 +88,20 @@
   margin: 0 auto;
 }
 /*Style main section --end*/
+
+
+.list-orders{
+  width: 82%;
+}
+
+.navigation-account ul{
+  padding-left: 0;
+}
+
+hr{
+  margin: 0 !important;
+}
+
+ul{
+  margin-bottom: 0 !important;
+}
