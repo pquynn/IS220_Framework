@@ -1,7 +1,3 @@
-:root {
-    --border-box-info: 1px solid #cfc7c7;
-    --icon-bgcolor: #4A69E2;
-}
 /*general main section*/
 .admin-order-detail{
     flex-grow: 2;
@@ -10,112 +6,111 @@
     background-color: var(--admin-bkground);
 }
 
-.customer-infomation,
-.order-infomation {
-    border-radius: 10px;
-    background-color: #fff;
-    padding: 10px;
-    margin: 10px auto;
-    width: 100%;
-    border: 1px solid var(--table-border);
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+
+/* Order status tracking: start */
+#progressbar {
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    overflow: hidden;
+    color: var(--admin-primary);
+    padding-left: 0px;
 }
 
-/*customer infomation*/
-/***header*/
-.order-status {
-    background-color: #37cd70;
-    color: #ffff;
-    font-size: 15px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 20px;
-}
-
-
-/* button print */
-.btn-calendar.print{
-    text-align: center;
-    width: 40px;
-    margin-left: 5px;
-}
-
-/* heading-button */
-.top-content.right .dropdown{
-    width: 78%;
-}
-
-.section_top_content{
-    width: 90%;
-}
-
-
-/***3 boxes customer info*/
-.info-customer {
-    display: flex;
-    flex-direction: row;
+#progressbar li {
+    list-style-type: none;
+    float:left;
+    width: 25%;
     position: relative;
-    margin-left: 50px;
+    font-weight: 400;
+    color: var(--admin-primary);
 }
 
-.box-info {
-    position: relative;
-    display: flex;
-    border: var(--border-box-info);
-    border-radius: 4px;
-    width: 350px;
-    flex-direction: row;
-    margin-right: 24px;
-    margin-top: 10px;
+#progressbar #step1:before {
+    content: "";
+    color: var(--admin-primary);
+    width: 20px;
+    height: 20px;
+    margin-left: 0px !important;
 }
 
-.icon-info{
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    border-radius: 4px;
-    padding: 15px;
-    background-color: var(--icon-bgcolor);
-    color: #fff;
-    margin: 5px 15px 0 5px;
-    display: flex !important;
-    justify-content: center;
+#progressbar #step2:before {
+    content: "";
+    color: var(--admin-primary);
+    width: 20px;
+    height: 20px;
+    margin-left: 32%;
 }
 
-.info {
-    align-items: flex-start;
-    display: inline-flex;
-    flex-direction: column;
-    margin: 5px;
+#progressbar #step3:before {
+    content: "";
+    color: var(--admin-primary);
+    width: 20px;
+    height: 20px;
+    margin-right: 32% ; 
 }
 
-.header-info {
-    font-weight:bolder;
-    font-size:120%;
+#progressbar #step4:before {
+    content: "";
+    color: var(--admin-secondary);
+    width: 20px;
+    height: 20px;
+    margin-right: 0px !important;
 }
 
-/*order cost*/
-.order-cost{
-    min-width: 50px !important;
-    margin-top: 20px;
-    width: 300px;
-    margin-left: 880px;
-}
-.order-cost td, tr{
-    border: none;
-    color: #000 !important;
-}
-
-.order-cost td.cost {
-    text-align: right;
-    font-weight: bolder;
+#progressbar li:before {
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: var(--admin-secondary);
+    border-radius: 50%;
+    margin: auto;
+    z-index: -1;
+    margin-bottom: 1vh;
 }
 
-.order-cost tr.total-cost {
-    font-size: 22px;
-    font-weight: bolder;
+#progressbar li:after {
+    content: '';
+    height: 3px;
+    background: var(--admin-secondary);
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    margin-bottom: 2vh;
+    top: 8px;
+    z-index: 1;
+}
+.progress-track{
+    padding: 0 8%;
+}
+#progressbar li:nth-child(2):after {
+    margin-right: auto;
 }
 
-.total-cost td.total {
-    color:#FF0000 !important;
+#progressbar li:nth-child(1):after {
+    margin: auto;
 }
+
+#progressbar li:nth-child(3):after {
+    float: left;
+    width: 68%;
+}
+#progressbar li:nth-child(4):after {
+    margin-left: auto;
+    width: 132%;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: var(--admin-primary);
+}
+
+/* Order status tracking: end */
+
+/* Update order status: start */
+
+.update-order-status button{
+    float: right;
+    width: 180px;
+    margin-right: 10px;
+}
+/* Update order status: start */

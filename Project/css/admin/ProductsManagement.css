@@ -6,7 +6,7 @@ body{
 
 .nav-container{
     min-width: 240px;
-    
+    z-index: 2;
 }
 
 ul{
@@ -33,6 +33,7 @@ ul{
     height: 35px;
     margin: 5px 0;
     margin-right: 10px;
+    z-index: 1;
 }
 
 .search-bar-box .form-control{
@@ -73,4 +74,3 @@ ul{
 th, td{
     padding: 7px !important;
 }
-
