@@ -36,7 +36,7 @@ a:hover {
 }
 
 .blog {
-    width: 70%;
+    width: 50%;
     justify-content: center;
     border: 1px solid #000;
     margin-bottom: 30px;
@@ -50,11 +50,12 @@ a:hover {
 }
 
 .blog-information img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 .blog-information p {
+    font-size: 17px;
     margin-left: 10px;
 }
 

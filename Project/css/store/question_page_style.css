@@ -42,6 +42,11 @@ hr {
     margin: 20px 0px 20px 0px;
 }
 
+a:hover {
+    color: #E96D00;
+    transition: 0.2s linear;
+}
+
 @media (max-width: 800px) {
     .contentBox {
         flex-direction: column;
