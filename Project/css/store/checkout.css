@@ -167,6 +167,7 @@ select {
   border-spacing: 10px;
   background-color: var(--gray);
   padding: 10px 20px;
+  border-collapse: unset;
 }
 
 .col-name {
@@ -186,6 +187,7 @@ select {
 
 .product-img {
   width: 70px;
+  height: 80px;
 }
 
 .product-descr {
