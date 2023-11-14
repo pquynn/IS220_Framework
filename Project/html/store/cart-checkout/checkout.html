@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán</title>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="../../../css/style-components/base.css" />
+    <link rel="stylesheet" href="../../../css/style-components/header.css" />
+    <link rel="stylesheet" href="../../../css/style-components/footer.css"/> 
+    <link rel="stylesheet" href="../../../css/style-components/pagination.css"/>
+    <link rel="stylesheet" href="../../../css/store/checkout.css" />
+
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
+    <script src="https://kit.fontawesome.com/f7fcb1a9ac.js"crossorigin="anonymous"></script>
+
+    <!-- font-family -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+    </style>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <!-- HEADER: START -->
+    <ul class="header">
+      <!-- LOGO: start -->
+      <li class="nav-logo">
+        <a href="#"><img src="../../../img/logo.png" /></a>
+      </li>
+      <!-- LOGO: End -->
+
+      <!-- LINK (HOME, SHOP, CATEGORY,....): Start -->
+      <ul class="nav-link">
+        <li class="nav-link--item hover-underline"><a href="../homepage-shopping/homepage.html">TRANG CHỦ</a></li>
+        <li class="nav-link--item hover-underline"><a href="#">MUA SẮM</a></li>
+
+        <!-- category sub navigation -->
+        <li class="nav-link--item primary-nav hover-underline a">
+          <a href="#">LOẠI SÁCH</a>
+          <ul class="sub-nav">
+            <li class="sub-nav--item hover-underline">
+              <a href="#">Sách thiếu nhi</a>
+            </li>
+            <li class="sub-nav--item hover-underline">
+              <a href="#">Sách tiếng anh</a>
+            </li>
+            <li class="sub-nav--item hover-underline">
+              <a href="#">Sách kỹ năng</a>
+            </li>
+            <li class="sub-nav--item hover-underline">
+              <a href="#">LOẠI 4</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-link--item hover-underline"><a href="../blog-shopinfo/about-us.html">ABOUT US</a></li>
+        <li class="nav-link--item hover-underline"><a href="../blog-shopinfo/blog.html">BLOGS</a></li>
+      </ul>
+      <!-- LINK (HOME, SHOP, CATEGORY,....): End -->
+
+      <!-- ICON (ACCOUNT, CART): Start -->
+      <ul class="nav-icon">
+        <!-- search -->
+        <li class="nav-icon--item">
+          <a>
+            <span class="material-symbols-outlined"> search </span>
+          </a>
+        </li>
+
+        <!-- account -->
+        <ul class="nav-icon--item primary-nav">
+          <a>
+            <span class="material-symbols-outlined"> account_circle </span>
+          </a>
+          <ul class="sub-nav">
+            <li class="sub-nav--item hover-underline">
+              <a href="../account-management/account-profile.html">TÀI KHOẢN</a>
+            </li>
+            <li class="sub-nav--item hover-underline">
+              <a href="../../admin/dashboard.html">QUẢN LÝ</a>
+            </li>
+            <li class="sub-nav--item hover-underline">
+              <a href="#">ĐĂNG XUẤT</a>
+            </li>
+          </ul>
+        </ul>
+
+        <!-- cart -->
+        <li class="nav-icon--item">
+          <a href="../cart-checkout/cart.php">
+            <span class="material-symbols-outlined"> shopping_bag </span>
+          </a>
+        </li>
+      </ul>
+      <!-- ICON (ACCOUNT, CART): End -->
+    </ul>
+    <!-- HEADER: END -->
+
+    <!-- CHECKOUT'S MAIN CONTENT: Start -->
+    <div class="checkout">
+      <!-- CHECKOUT HEADER: Start -->
+      <div class="checkout-header">
+        <h2>Thanh toán</h2>
+        <a href="#">
+          <span class="material-symbols-outlined"> keyboard_backspace </span
+          >Tiếp tục mua sắm
+        </a>
+      </div>
+      <!-- CHECKOUT's HEADER: End -->
+
+      <!-- CHECKOUT BODY: Start -->
+      <form>
+        <div class="checkout-body flex">
+          <!-- INFOR FORM: Start -->
+          <div class="left-col">
+            <div class="infor-form flex flex-col">
+              <!-- GENDER: Start -->
+              <div class="gender flex">
+                <div>
+                  <input
+                    class="square-radio"
+                    type="radio"
+                    name="gender"
+                    id="nam" />
+                  <label for="nam">Nam</label>
+                </div>
+
+                <div>
+                  <input
+                    class="square-radio"
+                    type="radio"
+                    name="gender"
+                    id="nu" />
+                  <label for="nu">Nữ</label>
+                </div>
+              </div>
+              <!-- GENDER: End -->
+
+              <!-- NAME: Start -->
+              <input
+                type="text"
+                placeholder="Họ tên*"
+                required
+                class="input-char" />
+              <!-- NAME: End -->
+
+              <!-- PHONE NUMBER: Start -->
+              <input
+                type="number"
+                placeholder="SĐT*"
+                required
+                class="input-char" />
+              
+              <!-- PHONE NUMBER: End -->
+
+              <!-- ADDRESS: Start -->
+              <div class="address width-50-30">
+                <input
+                  type="text"
+                  placeholder="Tỉnh/Thành phố*"
+                  required
+                  class="input-char" />
+                <input
+                  type="text"
+                  placeholder="Huyện/Phường*"
+                  required
+                  class="input-char" />
+              </div>
+
+              <div class="address width-50-50">
+                <input
+                  type="text"
+                  placeholder="Tổ/Ấp*"
+                  required
+                  class="input-char" />
+                <input
+                  type="text"
+                  placeholder="Hẻm, số nhà,...*"
+                  required
+                  class="input-char" />
+              </div>             
+              <!-- ADDRESS: End -->
+
+              <!-- Required field: start -->
+              <small class="gray-text">*Required field</small>
+              <!-- Required field: End -->
+            </div>
+            <!-- OTHER ADDRESS: End -->
+
+            <!-- PAYMENT: Start -->
+            <div class="payment-section flex flex-col">
+              <!-- paypal -->
+              <div class="payment">
+                <div class="payment-header flex vertical-center">
+                  <div class="flex vertical-center">
+                    <img src="../../../img/footer_image/paypal.png" />Pay Pal
+                  </div>
+                  <input
+                    type="radio"
+                    value="paypal"
+                    class="square-radio"
+                    name="payment" />
+                </div>
+              </div>
+
+              <!-- master card -->
+
+              <div class="payment">
+                <div class="payment-header flex vertical-center">
+                  <div class="flex vertical-center">
+                    <img src="../../../img/footer_image/mastercard.png" />Master Card
+                  </div>
+                  <input
+                    type="radio"
+                    value="paypal"
+                    class="square-radio"
+                    name="payment" />
+                </div>
+              </div>
+
+              <!-- Napas -->
+              <div class="payment">
+                <!-- header -->
+                <div class="payment-header flex vertical-center">
+                  <div class="flex vertical-center">
+                    <img src="../../../img/footer_image/napas.png" />Napas
+                  </div>
+                  <input
+                    type="radio"
+                    value="paypal"
+                    class="square-radio"
+                    name="payment" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- PAYMENT: Start -->
+
+          <!-- BUY COLUMN: Start -->
+          <div class="right-col">
+            <!-- PRODUCT LIST: Start -->
+            <table class="product-list--checkout">
+              <!-- table col's name -->
+              <tr class="col-name">
+                <td>Sản phẩm</td>
+                <td>Tổng</td>
+              </tr>
+
+              <!-- product -->
+              <tr class="product-checkout">
+                <td class="product-infor">
+                  <img
+                    class="product-img"
+                    src="https://bisuth-store-demo.myshopify.com/cdn/shop/products/14.4.png?v=1657703781" />
+                  <div class="product-descr">
+                    <a href="#">Tên sản phẩm</a>
+                    <small class="gray-text">Màu, size</small>
+                    <small>X1</small>
+                  </div>
+                </td>
+
+                <td>300.000</td>
+              </tr>
+              <!-- product -->
+              <tr class="product-checkout">
+                <td class="product-infor">
+                  <img
+                    class="product-img"
+                    src="https://bisuth-store-demo.myshopify.com/cdn/shop/products/14.4.png?v=1657703781" />
+                  <div class="product-descr">
+                    <a href="#">Tên sản phẩm</a>
+                    <small class="gray-text">Màu, size</small>
+                    <small>X1</small>
+                  </div>
+                </td>
+
+                <td>300.000</td>
+              </tr>
+              <!-- product -->
+              <tr class="product-chekout">
+                <td class="product-infor">
+                  <img
+                    class="product-img"
+                    src="https://bisuth-store-demo.myshopify.com/cdn/shop/products/14.4.png?v=1657703781" />
+                  <div class="product-descr">
+                    <a href="#">Tên sản phẩm</a>
+                    <small class="gray-text">Màu, size</small>
+                    <small>X1</small>
+                  </div>
+                </td>
+
+                <td>300.000</td>
+              </tr>
+            </table>
+            <!-- PRODUCT LIST: End -->
+
+            <!-- BUY SECTION: Start -->
+            <div class="buy-section">
+              <!-- sub total -->
+              <div class="sub-total flex">
+                <p>Tạm tính (3 sản phẩm)</p>
+                <p>183.000 đ</p>
+              </div>
+
+              <!-- total -->
+              <div class="total flex">
+                <p>Tổng <small>(bao gồm VAT)</small></p>
+                <p>143.910 đ</p>
+              </div>
+
+              <!-- buy -->
+              <input class="buy-btn btn" type="submit" value="Mua" />
+              <!-- accept rule -->
+              <input type="checkbox" id="accept-rule" />
+              <label for="accept-rule" class="gray-text"
+                ><small>
+                  Tôi đồng ý chính sách bảo mật của cửa hàng.</small
+                ></label
+              >
+              <!-- avaliable pament method -->
+            </div>
+            <!-- BUY SECTION: Start -->
+
+            <!-- AVAILABLE PAYMENT: Start -->
+            <ul class="payment-list flex">
+              <li>
+                <img
+                  class="payment-method img"
+                  src="../../../img/footer_image/visa.png" />
+              </li>
+              <li>
+                <img
+                  class="payment-method img"
+                  src="../../../img/footer_image/paypal.png" />
+              </li>
+              <li>
+                <img
+                  class="payment-method"
+                  src="../../../img/footer_image/mastercard.png" />
+              </li>
+              <li>
+                <img
+                  class="payment-method img"
+                  src="../../../img/footer_image/momo.png" />
+              </li>
+              <li>
+                <img
+                  class="payment-method img"
+                  src="../../../img/footer_image/napas.png" />
+              </li>
+            </ul>
+            <!-- AVAILABLE PAYMENT: Start -->
+          </div>
+        </div>
+      </form>
+      <!-- CHECKOUT BODY: End -->
+    </div>
+    <!-- CHECKOUT'S MAIN CONTENT: End -->
+
+    <!--FOOTER START-->
+  <link rel="stylesheet" href="../../../css/style-components/footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <div class="FooterBox">
+      <hr>
+      <div class="FooterBox__one">
+          <div class="FooterBox__one__left">
+              <h3>Về chúng tôi</h3>
+              <p><a href="#">Trang chủ</a></p>
+              <p><a href="#">Cửa hàng</a></p>
+              <p><a href="#">Thông tin</a></p>
+              <p><a href="help-page.php">Liên hệ</a></p>
+          </div>
+          <div class="FooterBox__one__center">
+              <h3>Khám phá</h3>
+              <p><a href="question-page.php">Câu hỏi thường gặp</a></p>
+              <p><a href="#">Vận chuyển & Hoàn trản</a></p>
+              <p><a href="#">Điều khoản</a></p>
+              <p><a href="#">Phương thức thanh toán</a></p>
+          </div>
+          <div class="FooterBox__one__right">
+              <h3>Theo dõi</h3>
+              <p><a href="#">Facebook <i class="fa-brands fa-square-facebook"></i></a></p>
+              <p><a href="#">Instagram <i class="fa-brands fa-instagram"></i></a></p>
+          </div>
+      </div>
+      <div class="FooterBox__two">
+          <hr>
+          <div class="FooterBox__two__rightpayment">
+              <p>2022 ALL RIGHT RESERVE</p>
+              <div>
+                  <img src="../../../img/footer_image/visa.png" alt="">
+                  <img src="../../../img/footer_image/paypal.png" alt="">
+                  <img src="../../../img/footer_image/mastercard.png" alt="">
+                  <img src="../../../img/footer_image/momo.png" alt="">
+                  <img src="../../../img/footer_image/napas.png" alt="">
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--FOOTER END-->
+  </body>
+
+</html>
