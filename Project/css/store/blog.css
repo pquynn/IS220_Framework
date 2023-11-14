@@ -12,6 +12,7 @@
 }
 .blog-content{
     max-width: 440px;
+    margin: 0 auto;
 }
 
 .blog-img--container{
@@ -44,6 +45,10 @@
     .blog{
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .blog-content{
+        margin: 0 auto;
     }
 }
 
