@@ -54,11 +54,13 @@ p {
   text-align: left;
   padding: 0 10px;
   padding-bottom: 10px;
+  border-bottom: 1.5px solid #000;
 }
 
 /* product */
 .product {
-  background-color: #d9d9d9;
+  /* background-color: #d9d9d9; */
+  border: 1px solid var(--table-border);
 }
 
 .product td {
@@ -73,6 +75,7 @@ p {
 
 .product-img {
   width: 70px;
+  height: 80px;
 }
 
 .product-descr {
@@ -86,7 +89,7 @@ p {
   min-width: 30px;
   max-width: 50px;
   border: none;
-  background-color: #d9d9d9;
+  /* background-color: #d9d9d9; */
   text-align: center;
 }
 
@@ -96,15 +99,15 @@ p {
 }
 
 .amount-btn {
-  background-color: #d9d9d9;
-  border: solid 1px;
+  background-color: #fff;
+  border: solid 1px var(--table-border);
   padding: 2px 7px;
   /* cursor: pointer; */
 }
 
 /* remove */
 .remove-btn {
-  background-color: #d9d9d9;
+  background-color: #fff;
   border: none;
   /* cursor: pointer; */
   transition: all 0.2s;
