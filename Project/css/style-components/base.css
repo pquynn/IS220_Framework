@@ -54,6 +54,7 @@ a {
 
 ul{
     list-style: none;
+    margin-bottom: 0 !important;
 }
 
 /* reused form elements: button, search-bar, input, select,... */
