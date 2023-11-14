@@ -57,6 +57,10 @@ ul{
     margin-bottom: 0 !important;
 }
 
+hr{
+    margin: 0;
+}
+
 /* reused form elements: button, search-bar, input, select,... */
 /* refactoring code. modified 10/14/2023 by Quyen */
 /* ---------------start: button */
