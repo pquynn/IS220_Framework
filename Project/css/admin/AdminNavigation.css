@@ -1,5 +1,4 @@
 /* Refactoring code. Modified 10/13/2023 by Quyen */
-
 .nav-admin {
     display: flex;
     flex-direction: column;
@@ -12,10 +11,12 @@
     background-color: var(--nav-admin-bg); 
 
     font-size: 16px;
+    border-right: 1px solid var(--table-border);
 }
 
 .nav-admin a{
-  color: #fff;
+  color: var(--light-text);
+  font-weight: bold;
 }
 
 .nav-admin-logo {
@@ -23,6 +24,10 @@
     margin: 10px;
     display: flex;
     align-items: center;
+}
+
+.nav-admin-logo h1{
+  color: #000;
 }
 
 .nav-admin-logo img {
@@ -51,11 +56,12 @@
   /* Change background-color when hover on navigation. Modified 10/18/2023 by Quyen */
   .nav-admin-menu li a:hover:not(a.active),
   .nav-admin-account #logout:hover{
-    background-color: rgba(84, 160, 232, 0.2); 
+    background-color: var(--admin-secondary); 
   }
 
   .nav-admin-menu li a.active {
     background-color: var(--admin-primary);
+    color: #fff;
   }
   
   .nav-admin-account {

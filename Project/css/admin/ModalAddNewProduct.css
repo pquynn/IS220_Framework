@@ -1,6 +1,5 @@
 /* style modal add new. modified 10/22/2023 by Quyen */
 
-
 .add-new-container .modal-header,
 .add-new-container .modal-body,
 .add-new-container .modal-footer{
@@ -35,7 +34,12 @@
 .image-box{
     border: 1px solid var(--table-border);
     height: 90px;
-    width: 80px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
+}
+
+.upload-warning{
+    color: var(--light-text);
+    font-size: 13px;
 }

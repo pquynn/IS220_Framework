@@ -1,8 +1,6 @@
 /*Style main section*/
 .my-order-feedback {
-    padding-left: 80px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px 80px;
 }
 
 /*star feedback*/
@@ -12,39 +10,6 @@
     margin-left: 150px;
 }
 
-/*text area feedback*/
-.input-feedback {
-    width: 80%;
-    height: 150px;
-    border-radius: 6px;
-    border-color: #e2e2e2;
-    margin: 20px;
-    resize: none;
-    padding: 10px;
-    font-family: Roboto, San-Serif;
-    font-size: 20px;
+textarea{
+    height: 200px;
 }
-
-.input-feedback::placeholder {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 20px;
-    font-family: Roboto, San-Serif;
-}
-
-/*button submit feedback*/
-.submit-feedback {
-    width: 150px;
-    padding: 10px 15px;
-    margin-top: 50px;
-    margin-left: 750px;
-    text-align: center;
-    border: none;
-    background-color: #FFC416;
-    color: #fff;
-    border-radius: 8px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
