@@ -18,8 +18,8 @@ body {
 /* Set root variables */
 :root {
     /* store */
-    --orange: #E96D00;
-
+    /* --orange: #E96D00; */
+    --orange: #0084FF; 
     /* admin */
     --admin-primary:#5C59E8;
     --admin-secondary: #DEDEFA;

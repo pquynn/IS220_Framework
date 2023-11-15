@@ -6,7 +6,7 @@
 .contentBox h2 {
     text-align: center;
     text-decoration: underline;
-    text-decoration-color: #E96D00;
+    text-decoration-color: var(--orange);
 }
 
 .questionBox {
@@ -18,7 +18,7 @@ p {
 }
 
 p:hover {
-    color: #E96D00;
+    color: var(--orange);
     transition: 0.2s ease-in;
 }
 

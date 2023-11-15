@@ -1,4 +1,7 @@
 /* Refactoring code. Modified 10/13/2023 by Quyen */
+.FooterBox{
+    background-color: #fff;
+}
 .FooterBox__one {
     display: flex;
     flex-direction: row;
@@ -17,7 +20,7 @@
 }
 
 .FooterBox__one a:hover {
-    color: #E96D00;
+    color: var(--orange);
     transition: 0.3s linear;
 }
 
@@ -36,7 +39,7 @@
     justify-content: space-around;
     align-items: self-end;
 
-    margin: 15px;
+    padding: 15px;
 }
 
 .FooterBox__two__rightpayment img {

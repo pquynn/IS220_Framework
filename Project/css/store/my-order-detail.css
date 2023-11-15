@@ -1,5 +1,5 @@
 :root{
-    --admin-primary: #E96D00;
+    --admin-primary: var(--orange);
 }
 
 .admin-order-detail{
@@ -10,3 +10,6 @@ h2.section_heading{
     margin-left: 20px;
 }
 
+.btn{
+    border-radius: 0;
+}

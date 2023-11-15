@@ -2,8 +2,8 @@
 
 :root {
   --line-border-color: 1px solid #b1b1b1;
-  --breadscrumb-text-color: #8f8f8fa4;
-  --breadscumb-text-active: #e96d00;
+  --breadscrumb-text-color: var(--light-text);
+  --breadscumb-text-active: var(--orange);
 }
 
 /*Style left-navigation --start*/
