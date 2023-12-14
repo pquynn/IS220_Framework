@@ -5,12 +5,192 @@
       "PackagePath": "staticwebassets\\uitbooks.bundle.scp.css"
     },
     {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\AdminNavigation.css",
+      "PackagePath": "staticwebassets\\css\\admin\\AdminNavigation.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\Dashboard.css",
+      "PackagePath": "staticwebassets\\css\\admin\\Dashboard.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\ModalAddNewProduct.css",
+      "PackagePath": "staticwebassets\\css\\admin\\ModalAddNewProduct.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\ModalAlert.css",
+      "PackagePath": "staticwebassets\\css\\admin\\ModalAlert.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\ProductsManagement.css",
+      "PackagePath": "staticwebassets\\css\\admin\\ProductsManagement.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\admin-blog-style.css",
+      "PackagePath": "staticwebassets\\css\\admin\\admin-blog-style.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\admin-order-detail.css",
+      "PackagePath": "staticwebassets\\css\\admin\\admin-order-detail.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\admin\\admin-orders.css",
+      "PackagePath": "staticwebassets\\css\\admin\\admin-orders.css"
+    },
+    {
       "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\blog.css",
+      "PackagePath": "staticwebassets\\css\\store\\blog.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\cart.css",
+      "PackagePath": "staticwebassets\\css\\store\\cart.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\checkout.css",
+      "PackagePath": "staticwebassets\\css\\store\\checkout.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\help_page_sytle.css",
+      "PackagePath": "staticwebassets\\css\\store\\help_page_sytle.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\login.css",
+      "PackagePath": "staticwebassets\\css\\store\\login.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\my-order-detail.css",
+      "PackagePath": "staticwebassets\\css\\store\\my-order-detail.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\my-order-feedback.css",
+      "PackagePath": "staticwebassets\\css\\store\\my-order-feedback.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\my-orders.css",
+      "PackagePath": "staticwebassets\\css\\store\\my-orders.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\product_detail.css",
+      "PackagePath": "staticwebassets\\css\\store\\product_detail.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\product_list.css",
+      "PackagePath": "staticwebassets\\css\\store\\product_list.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\store\\question_page_style.css",
+      "PackagePath": "staticwebassets\\css\\store\\question_page_style.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\style-components\\base.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\base.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\style-components\\footer.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\footer.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\style-components\\header.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\header.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\style-components\\homepage.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\homepage.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\style-components\\pagination.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\pagination.css"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\css\\style-components\\table.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\table.css"
+    },
+    {
       "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\books.jpg",
+      "PackagePath": "staticwebassets\\img\\books.jpg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\bookstore_1.jpg",
+      "PackagePath": "staticwebassets\\img\\bookstore_1.jpg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\bookstore_2.jpg",
+      "PackagePath": "staticwebassets\\img\\bookstore_2.jpg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\chat.png",
+      "PackagePath": "staticwebassets\\img\\chat.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\checkout\\square-radio.svg",
+      "PackagePath": "staticwebassets\\img\\checkout\\square-radio.svg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\footer_image\\mastercard.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\mastercard.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\footer_image\\momo.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\momo.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\footer_image\\napas.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\napas.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\footer_image\\paypal.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\paypal.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\footer_image\\visa.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\visa.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\location.png",
+      "PackagePath": "staticwebassets\\img\\location.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\logo-white.png",
+      "PackagePath": "staticwebassets\\img\\logo-white.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\mat_biec.jpg",
+      "PackagePath": "staticwebassets\\img\\mat_biec.jpg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\message.jpg",
+      "PackagePath": "staticwebassets\\img\\message.jpg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\slider_img\\slider1.webp",
+      "PackagePath": "staticwebassets\\img\\slider_img\\slider1.webp"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\slider_img\\slider2.webp",
+      "PackagePath": "staticwebassets\\img\\slider_img\\slider2.webp"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\slider_img\\slider3.jpg",
+      "PackagePath": "staticwebassets\\img\\slider_img\\slider3.jpg"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\telephone.png",
+      "PackagePath": "staticwebassets\\img\\telephone.png"
+    },
+    {
+      "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\img\\user.png",
+      "PackagePath": "staticwebassets\\img\\user.png"
     },
     {
       "Id": "E:\\wamp\\www\\IS220_Framework\\uitbooks\\wwwroot\\js\\site.js",

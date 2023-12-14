@@ -1,0 +1,40 @@
+.contentBox {
+    background-color: #FFFFFF;
+    padding: 20px 100px 100px 100px;
+}
+
+.contentBox h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--orange);
+}
+
+.questionBox {
+    margin-bottom: 50px;
+}
+
+p {
+    cursor: pointer;
+}
+
+p:hover {
+    color: var(--orange);
+    transition: 0.2s ease-in;
+}
+
+.questionBox, .contactBox {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.centerBox {
+    text-align: center;
+    width: 200px;
+}
+
+.contactBox img {
+    width: 100px;
+    height: 100px;
+}

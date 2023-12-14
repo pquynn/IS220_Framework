@@ -20,7 +20,6 @@ E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\staticwebassets\msbuild.bu
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\staticwebassets.pack.json
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\staticwebassets.build.json
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\staticwebassets.development.json
-E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\scopedcss\bundle\uitbooks.styles.css
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\scopedcss\projectbundle\uitbooks.bundle.scp.css
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\uitbooks.dll
@@ -28,3 +27,4 @@ E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\refint\uitbooks.dll
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\uitbooks.pdb
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\uitbooks.genruntimeconfig.cache
 E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\ref\uitbooks.dll
+E:\wamp\www\IS220_Framework\uitbooks\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout_Store.cshtml.rz.scp.css
