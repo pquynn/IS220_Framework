@@ -1,0 +1,116 @@
+/*general main section*/
+.admin-order-detail{
+    flex-grow: 2;
+    min-width: 400px;
+    padding: 30px;
+    background-color: var(--admin-bkground);
+}
+
+
+/* Order status tracking: start */
+#progressbar {
+    margin-bottom: 3vh;
+    margin-top: 3vh;
+    overflow: hidden;
+    color: var(--admin-primary);
+    padding-left: 0px;
+}
+
+#progressbar li {
+    list-style-type: none;
+    float:left;
+    width: 25%;
+    position: relative;
+    font-weight: 400;
+    color: var(--admin-primary);
+}
+
+#progressbar #step1:before {
+    content: "";
+    color: var(--admin-primary);
+    width: 20px;
+    height: 20px;
+    margin-left: 0px !important;
+}
+
+#progressbar #step2:before {
+    content: "";
+    color: var(--admin-primary);
+    width: 20px;
+    height: 20px;
+    margin-left: 32%;
+}
+
+#progressbar #step3:before {
+    content: "";
+    color: var(--admin-primary);
+    width: 20px;
+    height: 20px;
+    margin-right: 32% ; 
+}
+
+#progressbar #step4:before {
+    content: "";
+    color: var(--admin-secondary);
+    width: 20px;
+    height: 20px;
+    margin-right: 0px !important;
+}
+
+#progressbar li:before {
+    line-height: 29px;
+    display: block;
+    font-size: 12px;
+    background: var(--admin-secondary);
+    border-radius: 50%;
+    margin: auto;
+    z-index: -1;
+    margin-bottom: 1vh;
+}
+
+#progressbar li:after {
+    content: '';
+    height: 3px;
+    background: var(--admin-secondary);
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    margin-bottom: 2vh;
+    top: 8px;
+    z-index: 1;
+}
+.progress-track{
+    padding: 0 8%;
+}
+#progressbar li:nth-child(2):after {
+    margin-right: auto;
+}
+
+#progressbar li:nth-child(1):after {
+    margin: auto;
+}
+
+#progressbar li:nth-child(3):after {
+    float: left;
+    width: 68%;
+}
+#progressbar li:nth-child(4):after {
+    margin-left: auto;
+    width: 132%;
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: var(--admin-primary);
+}
+
+/* Order status tracking: end */
+
+/* Update order status: start */
+
+.update-order-status button{
+    float: right;
+    width: 180px;
+    margin-right: 10px;
+}
+/* Update order status: start */

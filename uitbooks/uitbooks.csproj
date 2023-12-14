@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\img\books.jpg" />
+    <None Include="wwwroot\img\bookstore_1.jpg" />
+    <None Include="wwwroot\img\bookstore_2.jpg" />
+    <None Include="wwwroot\img\chat.png" />
+    <None Include="wwwroot\img\checkout\square-radio.svg" />
+    <None Include="wwwroot\img\footer_image\mastercard.png" />
+    <None Include="wwwroot\img\footer_image\momo.png" />
+    <None Include="wwwroot\img\footer_image\napas.png" />
+    <None Include="wwwroot\img\footer_image\paypal.png" />
+    <None Include="wwwroot\img\footer_image\visa.png" />
+    <None Include="wwwroot\img\location.png" />
+    <None Include="wwwroot\img\logo-white.png" />
+    <None Include="wwwroot\img\logo.png" />
+    <None Include="wwwroot\img\mat_biec.jpg" />
+    <None Include="wwwroot\img\message.jpg" />
+    <None Include="wwwroot\img\slider_img\slider1.webp" />
+    <None Include="wwwroot\img\slider_img\slider2.webp" />
+    <None Include="wwwroot\img\slider_img\slider3.jpg" />
+    <None Include="wwwroot\img\telephone.png" />
+    <None Include="wwwroot\img\user.png" />
+  </ItemGroup>
+
+</Project>
