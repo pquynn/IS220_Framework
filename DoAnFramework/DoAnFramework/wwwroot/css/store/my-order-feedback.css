@@ -1,0 +1,15 @@
+/*Style main section*/
+.my-order-feedback {
+    padding: 30px 80px;
+}
+
+/*star feedback*/
+.star {
+    font-size: 20px;
+    margin: 15px;
+    margin-left: 150px;
+}
+
+textarea{
+    height: 200px;
+}

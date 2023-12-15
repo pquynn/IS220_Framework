@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Giỏ hàng";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/store/cart.css" />
+
+<div class="cart">
+    <div class="cart-header">
+        <h2>Giỏ hàng</h2>
+        <a asp-controller="Home" asp-action="Index">
+            <span class="material-symbols-outlined"> keyboard_backspace </span>Tiếp tục mua sắm
+        </a>
+    </div>
+    <!-- CART-HEADER: End -->
+    <!-- CART-BODY: Start -->
+    <div class="cart-body">
+        <!-- PRODUCT-LIST: Start -->
+        <table class="product-list--cart">
+            <!-- header -->
+            <tr class="product-list--header">
+                <th><p>Tên sản phẩm</p></th>
+                <th><p>Giá</p></th>
+                <th><p>SL</p></th>
+                <th><p>Tổng tiền</p></th>
+                <th></th>
+            </tr>
+
+            <!-- product line: start -->
+            <tr class="product">
+                <!-- infor -->
+                <td class="product-infor">
+                    <img class="product-img"
+                         src="https://newshop.vn/public/uploads/products/49312/sach-pham-chat-nha-lanh-dao-nhi-thiet-ke-uoc-mo-toi-la-phi-cong-nho.jpg" />
+                    <div class="product-descr">
+                        <a href="#">Tên sản phẩm</a>
+                        <small class="gray-text">Phân loại</small>
+                    </div>
+                </td>
+
+                <!-- price -->
+                <td>199.000</td>
+
+                <!-- amount -->
+                <td>
+                    <div class="flex">
+                        <button class="amount-btn pointer">-</button>
+                        <input type="number" min="1" value="1" />
+                        <button class="amount-btn pointer">+</button>
+                    </div>
+                </td>
+
+                <!-- total -->
+                <td>199.00</td>
+
+                <!-- remove from cart -->
+                <td>
+                    <button class="remove-btn pointer">
+                        <span class="material-symbols-outlined"> delete </span>
+                    </button>
+                </td>
+            </tr>
+            <!-- product line: end -->
+            <!-- product line: start -->
+            <tr class="product">
+                <!-- infor -->
+                <td class="product-infor">
+                    <img class="product-img"
+                         src="https://newshop.vn/public/uploads/products/49312/sach-pham-chat-nha-lanh-dao-nhi-thiet-ke-uoc-mo-toi-la-phi-cong-nho.jpg" />
+                    <div class="product-descr">
+                        <a href="#">Tên sản phẩm</a>
+                        <small class="gray-text">Phân loại</small>
+                    </div>
+                </td>
+
+                <!-- price -->
+                <td>199.000</td>
+
+                <!-- amount -->
+                <td>
+                    <div class="flex">
+                        <button class="amount-btn pointer">-</button>
+                        <input type="number" min="1" value="1" />
+                        <button class="amount-btn pointer">+</button>
+                    </div>
+                </td>
+
+                <!-- total -->
+                <td>199.00</td>
+
+                <!-- remove from cart -->
+                <td>
+                    <button class="remove-btn pointer">
+                        <span class="material-symbols-outlined"> delete </span>
+                    </button>
+                </td>
+            </tr>
+            <!-- product line: end -->
+            <!-- product line: start -->
+            <tr class="product">
+                <!-- infor -->
+                <td class="product-infor">
+                    <img class="product-img"
+                         src="https://newshop.vn/public/uploads/products/49312/sach-pham-chat-nha-lanh-dao-nhi-thiet-ke-uoc-mo-toi-la-phi-cong-nho.jpg" />
+                    <div class="product-descr">
+                        <a href="#">Tên sản phẩm</a>
+                        <small class="gray-text">Phân loại</small>
+                    </div>
+                </td>
+
+                <!-- price -->
+                <td>199.000</td>
+
+                <!-- amount -->
+                <td>
+                    <div class="flex">
+                        <button class="amount-btn pointer">-</button>
+                        <input type="number" min="1" value="1" />
+                        <button class="amount-btn pointer">+</button>
+                    </div>
+                </td>
+
+                <!-- total -->
+                <td>199.00</td>
+
+                <!-- remove from cart -->
+                <td>
+                    <button class="remove-btn pointer">
+                        <span class="material-symbols-outlined"> delete </span>
+                    </button>
+                </td>
+            </tr>
+            <!-- product line: end -->
+
+        </table>
+        <!-- PRODUCT-LIST: End -->
+        <!-- SUBMIT-SECTION: Start -->
+        <div class="submit-section flex">
+            <!-- sub total: Start -->
+            <div class="sub-total flex">
+                <p>Tạm tính</p>
+                <p>183.000 đ</p>
+            </div>
+            <!-- sub total: End -->
+            <!-- total: Start -->
+            <div class="total flex">
+                <p>Tổng tiền</p>
+                <p>143.910 đ</p>
+            </div>
+            <!-- total: End -->
+            <!-- checkout btn: Start -->
+            <a class="btn checkout-bnt pointer" asp-controller="Checkout" asp-action="Index">Tiến hành thanh toán</a>
+            <!-- checkout btn: End -->
+        </div>
+        <!-- SUBMIT-SECTION: End -->
+    </div>
+    <!-- CART-BODY: End -->
+</div>

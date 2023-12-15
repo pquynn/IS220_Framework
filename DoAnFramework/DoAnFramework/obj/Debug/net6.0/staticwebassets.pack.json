@@ -1,247 +1,427 @@
 {
   "Files": [
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DoAnFramework.bundle.scp.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\DoAnFramework.bundle.scp.css",
       "PackagePath": "staticwebassets\\DoAnFramework.bundle.scp.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\site.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\AdminNavigation.css",
+      "PackagePath": "staticwebassets\\css\\admin\\AdminNavigation.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\Dashboard.css",
+      "PackagePath": "staticwebassets\\css\\admin\\Dashboard.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\ModalAddNewProduct.css",
+      "PackagePath": "staticwebassets\\css\\admin\\ModalAddNewProduct.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\ModalAlert.css",
+      "PackagePath": "staticwebassets\\css\\admin\\ModalAlert.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\ProductsManagement.css",
+      "PackagePath": "staticwebassets\\css\\admin\\ProductsManagement.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\admin-blog-style.css",
+      "PackagePath": "staticwebassets\\css\\admin\\admin-blog-style.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\admin-order-detail.css",
+      "PackagePath": "staticwebassets\\css\\admin\\admin-order-detail.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\admin\\admin-orders.css",
+      "PackagePath": "staticwebassets\\css\\admin\\admin-orders.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\favicon.ico",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog.css",
+      "PackagePath": "staticwebassets\\css\\store\\blog.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\cart.css",
+      "PackagePath": "staticwebassets\\css\\store\\cart.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\checkout.css",
+      "PackagePath": "staticwebassets\\css\\store\\checkout.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\help_page_sytle.css",
+      "PackagePath": "staticwebassets\\css\\store\\help_page_sytle.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\login.css",
+      "PackagePath": "staticwebassets\\css\\store\\login.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\my-order-detail.css",
+      "PackagePath": "staticwebassets\\css\\store\\my-order-detail.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\my-order-feedback.css",
+      "PackagePath": "staticwebassets\\css\\store\\my-order-feedback.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\my-orders.css",
+      "PackagePath": "staticwebassets\\css\\store\\my-orders.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\product_detail.css",
+      "PackagePath": "staticwebassets\\css\\store\\product_detail.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\product_list.css",
+      "PackagePath": "staticwebassets\\css\\store\\product_list.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\question_page_style.css",
+      "PackagePath": "staticwebassets\\css\\store\\question_page_style.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\style-components\\base.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\base.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\style-components\\footer.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\footer.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\style-components\\header.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\header.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\style-components\\homepage.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\homepage.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\style-components\\pagination.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\pagination.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\style-components\\table.css",
+      "PackagePath": "staticwebassets\\css\\style-components\\table.css"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\books.jpg",
+      "PackagePath": "staticwebassets\\img\\books.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\bookstore_1.jpg",
+      "PackagePath": "staticwebassets\\img\\bookstore_1.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\bookstore_2.jpg",
+      "PackagePath": "staticwebassets\\img\\bookstore_2.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\chat.png",
+      "PackagePath": "staticwebassets\\img\\chat.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\checkout\\square-radio.svg",
+      "PackagePath": "staticwebassets\\img\\checkout\\square-radio.svg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\footer_image\\mastercard.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\mastercard.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\footer_image\\momo.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\momo.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\footer_image\\napas.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\napas.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\footer_image\\paypal.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\paypal.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\footer_image\\visa.png",
+      "PackagePath": "staticwebassets\\img\\footer_image\\visa.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\location.png",
+      "PackagePath": "staticwebassets\\img\\location.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\logo-white.png",
+      "PackagePath": "staticwebassets\\img\\logo-white.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\mat_biec.jpg",
+      "PackagePath": "staticwebassets\\img\\mat_biec.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\message.jpg",
+      "PackagePath": "staticwebassets\\img\\message.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider_img\\slider1.webp",
+      "PackagePath": "staticwebassets\\img\\slider_img\\slider1.webp"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider_img\\slider2.webp",
+      "PackagePath": "staticwebassets\\img\\slider_img\\slider2.webp"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider_img\\slider3.jpg",
+      "PackagePath": "staticwebassets\\img\\slider_img\\slider3.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\telephone.png",
+      "PackagePath": "staticwebassets\\img\\telephone.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\user.png",
+      "PackagePath": "staticwebassets\\img\\user.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

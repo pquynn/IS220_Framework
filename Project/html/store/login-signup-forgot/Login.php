@@ -9,8 +9,8 @@
 
             <div class="row g-3">
                 <div class="col-12 form-floating">
-                    <input class="form-control" type="text" id="phonenumber" placeholder=" Số điện thoại" >
-                    <label for="name" class="form-label"> Số điện thoại</label>
+                    <input class="form-control" type="text" id="name" placeholder=" Tên đăng nhập" >
+                    <label for="name" class="form-label"> Tên đăng nhập</label>
                 </div>
 
                 <div class="col-12 form-floating" >

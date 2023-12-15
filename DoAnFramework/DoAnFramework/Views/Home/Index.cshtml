@@ -1,8 +1,317 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Trang chủ";
+    Layout = "../Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- MAIN SLIDER: START -->
+<div class="main-slider">
+    <!-- SLIDER COTAINER: STAR -->
+    <div class="slider-container">
+        <!-- img -->
+        <img id="slider-1" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        <img id="slider-1" src="" alt="" />
+        <img id="slider-1" src="" alt="" />
+
+        <!-- slider btn -->
+        <div class="slider-bnt">
+            <button class="btn-back">
+                <span class="material-symbols-outlined"> keyboard_arrow_left </span>
+            </button>
+            <button class="btn-next">
+                <span class="material-symbols-outlined"> chevron_right </span>
+            </button>
+        </div>
+    </div>
+    <!-- SLIDER COTAINER: END -->
+    <!-- BLOG: START -->
+    <div class="blog">
+        <div class="blog-content zoom-when--hover">
+            <a class="blog-link" href="#">
+                <div class="blog-img--container zoom-img--container">
+                    <img class="blog-img zoom-img"
+                         src="~/img/books.jpg"
+                         alt="" />
+                </div>
+                <p class="blog-title">Tên blog</p>
+                <p class="preview-content">
+                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
+                    ngôi làn tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
+                </p>
+            </a>
+        </div>
+
+        <div class="blog-content zoom-when--hover">
+            <a class="blog-link" href="#">
+                <div class="blog-img--container zoom-img--container">
+                    <img class="blog-img zoom-img"
+                         src="https://images.unsplash.com/photo-1440778303588-435521a205bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                         alt="" />
+                </div>
+                <p class="blog-title">Tên blog</p>
+                <p class="preview-content">
+                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
+                    ngôi làn tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
+                </p>
+            </a>
+        </div>
+
+        <div class="blog-content zoom-when--hover">
+            <a class="blog-link" href="#">
+                <div class="blog-img--container zoom-img--container">
+                    <img class="blog-img zoom-img"
+                         src="~/img/bookstore_1.jpg"
+                         alt="" />
+                </div>
+                <p class="blog-title">Tên blog</p>
+                <p class="preview-content">
+                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
+                    ngôi làn tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
+                </p>
+            </a>
+        </div>
+    </div>
+    <!-- BLOG: END -->
+    <!-- BEST SELLER: START -->
+    <div class="gallery">
+        <h4>SẢN PHẨM BÁN CHẠY</h4>
+
+        <div class="product-list">
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- BEST SELLER: END -->
+    <!-- PRODUCT categories: start -->
+    <div class="collection">
+        <div class="collection-item zoom-when--hover">
+            <!-- img -->
+            <div class="zoom-img--container">
+                <img class="collection-img zoom-img"
+                     src="https://images.unsplash.com/photo-1610558495616-9ce40f904dde?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <!-- text -->
+            <div class="collection-text">
+                <p class="">Sách thiếu nhi</p>
+                <a class="" href="#">
+                    Xem thêm
+                    <span class="material-symbols-outlined"> double_arrow </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="collection-item zoom-when--hover">
+            <!-- img -->
+            <div class="zoom-img--container">
+                <img class="collection-img zoom-img"
+                     src="https://images.unsplash.com/photo-1593340010859-83edd3d6d13f?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <!-- tetx -->
+            <div class="collection-text">
+                <p class="">Sách kỹ năng</p>
+                <a class="" href="#">
+                    Xem thêm
+                    <span class="material-symbols-outlined"> double_arrow </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- PRODUCT categories: end -->
+    <!-- NEW ARRIVALS: START -->
+    <div class="gallery">
+        <h4>SẢN PHẨM MỚI</h4>
+
+        <div class="product-list">
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product zoom-when--hover">
+                <div class="product-img--container zoom-img--container">
+                    <img class="product-img zoom-img"
+                         id="slider1"
+                         src="~/img/mat_biec.jpg"
+                         alt="" />
+                </div>
+                <div class="product-infor">
+                    <p class="product-name">Ten SP</p>
+                    <p class="product-price">300.000d</p>
+                    <div class="product-star">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- NEW ARRIVALS: END -->
 </div>
+<!-- MAIN SLIDER: END -->

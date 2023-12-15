@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Đánh giá sách";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<div class="section">
+    @await Html.PartialAsync("../Shared/_AccountNavPartialView.cshtml")
+
+
+    <!--MY_ORDER-FEEDBACK START-->
+    <div class="my-order-feedback w-100 ">
+        <ul class="breadcrumb-my-order">
+            <li><a asp-controller="Order" asp-action="Index">Danh sách đơn hàng</a> / </li>
+            <li> <a asp-controller="Order" asp-action="OrderDetail">Chi tiết đơn hàng</a> / </li>
+            <li class="breadcrumb-current-page">Đánh giá đơn hàng</li>
+        </ul>
+
+        <h2>Đánh giá đơn hàng</h2>
+
+        <p class="star product">
+            Đánh giá sản phẩm
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </p>
+
+        <p class="star service">
+            Đánh giá dịch vụ người bán
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+        </p>
+
+        <textarea placeholder="Nhận xét đơn hàng" class="form-control w-100"></textarea>
+
+        <button class="btn btn-confirm m-3 float-end">Đánh giá</button>
+
+    </div>
+</div>

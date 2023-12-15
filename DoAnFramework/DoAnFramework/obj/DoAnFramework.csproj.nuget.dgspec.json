@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {}
+    "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {}
   },
   "projects": {
-    "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {
+    "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
+        "projectUniqueName": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
         "projectName": "DoAnFramework",
-        "projectPath": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
-        "packagesPath": "C:\\Users\\trung\\.nuget\\packages\\",
-        "outputPath": "D:\\UIT HK1 2023\\Framework\\DoAnFramework\\DoAnFramework\\obj\\",
+        "projectPath": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\trung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,26 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AspNetCoreHero.ToastNotification": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Razor": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Razor.Runtime": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.2, )"
@@ -63,6 +83,18 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.25, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "PagedList.Core.Mvc": {
+              "target": "Package",
+              "version": "[3.0.0, )"
             }
           },
           "imports": [
@@ -84,7 +116,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
