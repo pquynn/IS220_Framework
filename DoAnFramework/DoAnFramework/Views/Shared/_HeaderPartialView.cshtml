@@ -1,0 +1,74 @@
+﻿<ul class="header">
+    <!-- LOGO: start -->
+    <li class="nav-logo">
+        <a asp-controller="Home" asp-action="Index">
+            <img src="~/img/logo.png" />
+            <span style="padding:0px 5px; font-size: 18px;">UITBOOKS</span>
+        </a>
+        
+    </li>
+    <!-- LOGO: End -->
+    <!-- LINK (HOME, SHOP, CATEGORY,....): Start -->
+    <ul class="nav-link">
+        <li class="nav-link--item hover-underline"><a asp-controller="Home" asp-action="Index">TRANG CHỦ</a></li>
+
+        <!-- category sub navigation -->
+        <li class="nav-link--item primary-nav hover-underline a">
+            <a href="#">LOẠI SÁCH</a>
+            <ul class="sub-nav">
+                <li class="sub-nav--item hover-underline">
+                    <a asp-controller="Book" asp-action="Index">Sách thiếu nhi</a>
+                </li>
+                <li class="sub-nav--item hover-underline">
+                    <a asp-controller="Book" asp-action="Index">Sách tiếng anh</a>
+                </li>
+                <li class="sub-nav--item hover-underline">
+                    <a asp-controller="Book" asp-action="Index">Sách kỹ năng</a>
+                </li>
+                <li class="sub-nav--item hover-underline">
+                    <a asp-controller="Book" asp-action="Index">LOẠI 4</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="nav-link--item hover-underline"><a asp-controller="Blog" asp-action="Index">BLOGS</a></li>
+        <li class="nav-link--item hover-underline"><a asp-controller="Home" asp-action="AboutUs">ABOUT US</a></li>
+        <li class="nav-link--item hover-underline"><a asp-controller="Home" asp-action="Help">HỖ TRỢ</a></li>
+    </ul>
+    <!-- LINK (HOME, SHOP, CATEGORY,....): End -->
+    <!-- ICON (ACCOUNT, CART): Start -->
+    <ul class="nav-icon">
+        <!-- search -->
+        <li class="nav-icon--item">
+            <a>
+                <span class="material-symbols-outlined"> search </span>
+            </a>
+        </li>
+
+        <!-- account -->
+        <ul class="nav-icon--item primary-nav">
+            <a>
+                <span class="material-symbols-outlined"> account_circle </span>
+            </a>
+            <ul class="sub-nav">
+                <li class="sub-nav--item hover-underline">
+                    <a asp-controller="Account" asp-action="Index">TÀI KHOẢN</a>
+                </li>
+                @* <li class="sub-nav--item hover-underline">
+                    <a href="../../admin/dashboard.html">QUẢN LÝ</a>
+                </li> *@
+                <li class="sub-nav--item hover-underline">
+                    <a asp-controller="Account" asp-action="LogOut">ĐĂNG XUẤT</a>
+                </li>
+            </ul>
+        </ul>
+
+        <!-- cart -->
+        <li class="nav-icon--item">
+            <a asp-controller="Order" asp-action="Cart">
+                <span class="material-symbols-outlined"> shopping_bag </span>
+            </a>
+        </li>
+    </ul>
+    <!-- ICON (ACCOUNT, CART): End -->
+</ul>

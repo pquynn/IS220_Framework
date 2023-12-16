@@ -1,0 +1,118 @@
+﻿@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/admin/admin-order-detail.css">
+<link rel="stylesheet" href="~/css/store/my-order-detail.css" />
+
+
+<div class="section">
+    @await Html.PartialAsync("../Shared/_AccountNavPartialView.cshtml")
+
+    <div class="admin-order-detail">
+        <!--breadcrumb-->
+        <ul class="breadcrumb-my-order">
+            <li><a asp-controller="Order" asp-action="Index">Danh sách đơn hàng</a> / </li>
+            <li class="breadcrumb-current-page">Chi tiết đơn hàng</li>
+        </ul>
+
+        <h2 class="section_heading">Mã đơn hàng<span style="color: var(--admin-primary);">#A123</span></h2>
+
+
+        <!-- start of tracking order status -->
+        <div class="progress-track">
+            <ul id="progressbar">
+                <li class="step0 active " id="step1">Đã đặt hàng</li>
+                <li class="step0 active text-center" id="step2"><span>Đang xử lý</span></li>
+                <li class="step0 active text-center" id="step3"><span>Đang giao</span></li>
+                <li class="step0 text-end" id="step4"><span>Giao thành công</span></li>
+            </ul>
+        </div>
+        <!-- end of tracking order status -->
+        <!-- start of Order information -->
+        <div class="card m-3">
+            <div class="card-body">
+                <div class="card-title">
+                    <h3>Thông tin khách hàng</h3>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Mã khách hàng:</p>
+                        <p>Tên khách hàng: </p>
+                        <p>Điện thoại: </p>
+                        <p>Địa chỉ: </p>
+                    </div>
+                    <div class="col">
+                        <p>Ngày mua: </p>
+                        <p>Phương thức thanh toán: </p>
+                        <p>Trạng thái đơn hàng: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of Order information -->
+        <!--Information of products in order-->
+        <div class="card m-3">
+            <div class="store-table w-auto">
+                <table>
+                    <tr>
+                        <th>Mã SP</th>
+                        <th>Tên SP</th>
+                        <th>Hình ảnh</th>
+                        <th>SL</th>
+                        <th>Thành tiền</th>
+                    </tr>
+
+                    <tr>
+                        <td>SS001</td>
+                        <td>Product name</td>
+                        <td>xem hình ảnh</td>
+                        <td>1</td>
+                        <td>$9999</td>
+                    </tr>
+                    <tr>
+                        <td>SS001</td>
+                        <td>Product name</td>
+                        <td>xem hình ảnh</td>
+                        <td>1</td>
+                        <td>$9999</td>
+                    </tr>
+                    <tr>
+                        <td>SS001</td>
+                        <td>Product name</td>
+                        <td>xem hình ảnh</td>
+                        <td>1</td>
+                        <td>$9999</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="total-money-container m-3">
+                <div class="row p-2 total-book">
+                    <div class="col-6"></div>
+                    <div class="col-3 text-end">Tổng số sách</div>
+                    <div class="col-3 text-end">3</div>
+                </div>
+                <div class="row p-2 public-price">
+                    <div class="col-6"></div>
+                    <div class="col-3 text-end">Tạm tính</div>
+                    <div class="col-3 text-end">9999 đ</div>
+                </div>
+                <div class="row p-2 total-money">
+                    <div class="col-6"></div>
+                    <div class="col-3 text-end fw-bold">Tổng tiền</div>
+                    <div class="col-3 text-end fw-bold">9999 đ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- start of update-order-status container -->
+        <div class="container update-order-status">
+            <button class="btn btn-cancel cancel-order">Hủy đơn hàng</button>
+            <button class="btn btn-confirm review-order">Đánh giá</button>
+        </div>
+        <!-- end of update-order-status container -->
+
+    </div>
+</div>
