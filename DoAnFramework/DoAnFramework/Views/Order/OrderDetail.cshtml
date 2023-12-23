@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<DoAnFramework.Models.OrderDetail>
+@{
     ViewData["Title"] = "Chi tiết đơn hàng";
     Layout = "../Shared/_Layout.cshtml";
 }
@@ -38,7 +39,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p>Mã khách hàng:</p>
+                        <p>Mã khách hàng: <span></span></p>
                         <p>Tên khách hàng: </p>
                         <p>Điện thoại: </p>
                         <p>Địa chỉ: </p>
@@ -56,35 +57,29 @@
         <div class="card m-3">
             <div class="store-table w-auto">
                 <table>
-                    <tr>
+                    <thead>
                         <th>Mã SP</th>
                         <th>Tên SP</th>
                         <th>Hình ảnh</th>
                         <th>SL</th>
                         <th>Thành tiền</th>
-                    </tr>
+                    </thead>
 
-                    <tr>
-                        <td>SS001</td>
-                        <td>Product name</td>
-                        <td>xem hình ảnh</td>
-                        <td>1</td>
-                        <td>$9999</td>
-                    </tr>
-                    <tr>
-                        <td>SS001</td>
-                        <td>Product name</td>
-                        <td>xem hình ảnh</td>
-                        <td>1</td>
-                        <td>$9999</td>
-                    </tr>
-                    <tr>
-                        <td>SS001</td>
-                        <td>Product name</td>
-                        <td>xem hình ảnh</td>
-                        <td>1</td>
-                        <td>$9999</td>
-                    </tr>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.OrderDetailId</td>
+                                    <td>@item.BookName</td>
+                                    <td>@item.BookImage</td>
+                                    <td>@item.Quantity</td>
+                                    <td>@item.Price</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
                 </table>
             </div>
 

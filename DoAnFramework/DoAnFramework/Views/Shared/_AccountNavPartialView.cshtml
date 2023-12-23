@@ -11,7 +11,36 @@
         <ul>
             <li id="title-TaiKhoan">Tài khoản</li>
             <li><a asp-controller="Account" asp-action="Index">Quản lý tài khoản</a></li>
-            <li><a asp-controller="Order" asp-action="Index" class="active">Đơn hàng của tôi</a></li>
+            <li><a asp-controller="Order" asp-action="Index" class="">Đơn hàng của tôi</a></li>
         </ul>
     </div>
     <!--NAVIGATION END-->
+
+
+
+    @{
+        var currentLocation = Context.Request.Path;
+    }
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var currentLocation = '@currentLocation';
+            var menuItem = document.querySelectorAll('.navigation-account a');
+
+            menuItem.forEach(function (item) {
+                var href = item.getAttribute('href');
+
+                if (href === currentLocation) {
+                    item.classList.add('active');
+                }
+
+                if (currentLocation.includes("my-order-detail") && href.includes("Order") && href.includes("Index")) {
+                    item.classList.add('active');
+                }
+
+                if (currentLocation.includes("my-order-feedback") && href.includes("Order") && href.includes("Index")) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>

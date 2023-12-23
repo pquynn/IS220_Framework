@@ -1,8 +1,9 @@
-﻿@{
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<DoAnFramework.Models.Order>
+@{
     ViewData["Title"] = "Đơn hàng của tôi";
     Layout = "../Shared/_Layout.cshtml";
 }
-
 
 <link rel="stylesheet" href="~/css/style-components/table.css" />
 <link rel="stylesheet" href="~/css/store/my-orders.css" />
@@ -29,67 +30,79 @@
         <!--Table list orders--start-->
         <div class="store-table">
             <table>
-                <tr>
-                    <th>Mã đơn hàng</th>
-                    <th>Ngày hóa đơn</th>
-                    <th>SĐT</th>
-                    <th>Tên khách hàng</th>
-                    <th>Địa chỉ</th>
-                    <th>PTTT</th>
-                    <th>Trạng thái</th>
-                    <th>Tổng sản phẩm</th>
-                    <th>Tổng tiền</th>
-                </tr>
-
-                <tr>
-                    <td>A123</td>
-                    <td>dd/mm/yyyy</td>
-                    <td>0912345678</td>
-                    <td>ABC DEF GHIJK</td>
-                    <td>123 ABCD</td>
-                    <td>Momo</td>
-                    <td>Giao hàng thành công</td>
-                    <td>3</td>
-                    <td>$9999</td>
-                </tr>
-                <tr>
-                    <td>A123</td>
-                    <td>dd/mm/yyyy</td>
-                    <td>0912345678</td>
-                    <td>ABC DEF GHIJK</td>
-                    <td>123 ABCD</td>
-                    <td>Momo</td>
-                    <td>Giao hàng thành công</td>
-                    <td>3</td>
-                    <td>$9999</td>
-                </tr>
-                <tr>
-                    <td>A123</td>
-                    <td>dd/mm/yyyy</td>
-                    <td>0912345678</td>
-                    <td>ABC DEF GHIJK</td>
-                    <td>123 ABCD</td>
-                    <td>Momo</td>
-                    <td>Giao hàng thành công</td>
-                    <td>3</td>
-                    <td>$9999</td>
-                </tr>
-
+                <thead>
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Ngày hóa đơn</th>
+                        <th>SĐT</th>
+                        <th>Tên khách hàng</th>
+                        <th>Địa chỉ</th>
+                        <th>PTTT</th>
+                        <th>Trạng thái</th>
+                        <th>Tổng sản phẩm</th>
+                        <th>Tổng tiền</th>
+                        <th></th>
+                    </tr>
+                </thead>
+               
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach(var item in Model)
+                        {
+                            <tr>
+                                <td>@item.OrderId</td>
+                                <td>@item.OrderDate</td>
+                                <td>@item.UserTelephone</td>
+                                <td>@item.UserName</td>
+                                <td>@item.Address</td>
+                                <td>@item.Pay</td>
+                                <td>@item.Status</td>
+                                <td>@item.TotalBooks</td>
+                                <td>@item.TotalPrice</td>
+                                <td>
+                                    <a class="link-to-detail" asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a></td>
+                            </tr>
+                        }
+                    }
+                </tbody>
             </table>
         </div>
         <!--Table list orders--end-->
         <!--pagination--start-->
+
+           @*  <div class="pagination" id="pagination-my-orders">
+                <a href="#">&laquo;</a>
+                <a class="active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <span class="ellipsis">...</span>
+                <a href="#">10</a>
+                <a href="#">&raquo;</a> 
+            </div> *@
+
         <div class="pagination" id="pagination-my-orders">
-            <a href="#">&laquo;</a>
-            <a class="active" href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <span class="ellipsis">...</span>
-            <a href="#">10</a>
-            <a href="#">&raquo;</a>
+            @if (Model.HasPreviousPage)
+            {
+                <a href="@Url.Action("Index", new { user_id = "KH009", page = Model.PageNumber - 1 })">&laquo;</a>
+            }
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                <a class="@(i == Model.PageNumber ? "active" : "")" href="@Url.Action("Index", new { user_id = "KH009", page = i })">@i</a>
+            }
+            @if (Model.HasNextPage)
+            {
+                <a href="@Url.Action("Index", new { user_id = "KH009", page = Model.PageNumber + 1 })">&raquo;</a>
+            }
         </div>
+        
+        
         <!--pagiantion--end-->
     </div>
     <!--LIST-ORDERS END-->
 </div>
+
+

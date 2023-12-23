@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DoAnFramework.Models.Category>
+@{
+    ViewData["Title"] = "Index";
+    ViewData["name-page"] = "Danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@await Html.PartialAsync("../Shared/_ButtonSectionPartialView.cshtml")
+
+<!-- start: section_botton-content -->
+<div class="section_bottom-content">
+    <!-- start: admin table -->
+    <div class="admin-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tên danh mục</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CategoryId</td>
+                            <td>@item.NameCategory</td>
+                            <td class="action">
+                                <a data-bs-toggle="modal" data-bs-target="#add-new" asp-area="Admin" asp-controller="Categories" asp-action="" asp-asp-route="@item.CategoryId">
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+                                <a href="#" data-bs-toggle="modal">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- end: admin table -->
+    <!-- start: pagination in admin -->
+    <div class="pagination admin">
+        <a href="#">&laquo;</a>
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+    <!-- end: pagination in admin -->
+</div>
+<!-- end: section_botton-content -->
+    </div>
+<!-- end: main section -->
+<!-- start of Modal of Add new elements-->
+<!-- Modified 10/23/2023 by Quyen -->
+<div class="modal fade modal-md add-new-container" id="add-new" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#add-category" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="add-category">Thêm mới danh mục</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="" class="add-new-category">
+                    <label for="product-name" class="form-label">Tên danh mục</label>
+                    <input type="text" id="product-name" class="form-control">
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancel admin" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-confirm admin">Thêm mới</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end of Modal of Add new elements-->
+<!-- start of warning message when click del-btn -->
+<div class="modal fade modal-sm alert-container" id="alert" tabindex="-1" aria-labelledby="#delete-alert" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="delete-alert">
+                    Xác nhận xóa danh mục
+                </h1>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-outline-secondary border border-secondary">Hủy</button>
+                <button type="button" class="btn btn-danger">
+                    Xóa
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end of warning message when click del-btn -->
+
+

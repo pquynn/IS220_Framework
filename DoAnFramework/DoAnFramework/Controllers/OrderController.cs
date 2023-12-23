@@ -1,24 +1,79 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using DoAnFramework.Models;
+using Microsoft.EntityFrameworkCore;
+using PagedList.Core;
 
 namespace DoAnFramework.Controllers
 {
     public class OrderController : Controller
     {
-        public IActionResult Index() //my order
+
+        private readonly book_shop_dbContext _context;
+
+        public OrderController(book_shop_dbContext context)
         {
-            return View();
+            _context = context;
         }
 
-        public IActionResult OrderDetail()
+        //GET: Order/order list/"KH009"
+        public async Task<IActionResult> Index(int? page = 1, string user_id = "KH009") //my order
         {
-            return View();
+            //pagination
+            var pageNumber = page == null || page < 0 ? 1 : page.Value;
+            //var pageSize = Utilities.PAGE_SIZE;
+            var pageSize = 20;
+            var lsOrders = _context.Orders
+             .AsNoTracking()
+            .Where(ud => ud.UserId == user_id)
+            .OrderByDescending(x => x.OrderId);
+            //.ToListAsync();
+
+            PagedList<Order> models = new  PagedList<Order>(lsOrders, pageNumber, pageSize);
+            ViewBag.CurrentPage = pageNumber;
+
+
+
+            //var orders = await _context.Orders.Where(ud => ud.UserId == user_id).ToListAsync();
+            return View(models);
+
+            // var pageSize = 10; // Adjust as needed
+
+            // var ordersQuery = _context.Orders
+            //     .Where(ud => ud.UserId == user_id)
+            //     .OrderByDescending(x => x.OrderId);
+
+            //// var orders = await PagedList<Order>.CreateAsync(ordersQuery, page, pageSize);
+
+            // return View(orders);
         }
 
+        //GET: Order/order detail/3
+        public async Task<IActionResult> OrderDetail(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            //var booK_shop_dbContext = _context.Orders.Include(x => x.OrderDetails);
+            //var booK_shop_dbContext = _context.OrderDetails.Include(x => x.Order);
+            var orderDetails = await _context.OrderDetails
+               .Include(x => x.Order)
+               .Where(od => od.OrderId == id)
+               .ToListAsync();
+            return View(orderDetails);
+        }
+
+        //GET: Order/order feedback/3
         public IActionResult OrderFeedback()
         {
             return View();
         }
 
+        //GET: Order/cart/"KH009"
         public IActionResult Cart()
         {
             return View();
