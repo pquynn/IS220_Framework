@@ -29,16 +29,20 @@ namespace DoAnFramework.Controllers
              .AsNoTracking()
             .Where(ud => ud.UserId == user_id)
             .OrderByDescending(x => x.OrderId);
-
             PagedList<Order> models = new  PagedList<Order>(lsOrders, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
+
+            //var order = await _context.Orders
+            //.Where(ud => ud.UserId == user_id)
+            //.ToListAsync();
+            //return View(order);
 
             return View(models);
 
         }
 
         //GET: Order/OrderDetail/3
-        public async Task<IActionResult> OrderDetail(int? id)
+        public IActionResult OrderDetail(int? id)
         {
             if (id == null)
             {
@@ -46,12 +50,27 @@ namespace DoAnFramework.Controllers
             }
             //var booK_shop_dbContext = _context.Orders.Include(x => x.OrderDetails);
             //var booK_shop_dbContext = _context.OrderDetails.Include(x => x.Order);
-            var orderDetails = await _context.OrderDetails
+            var orderDetails = _context.OrderDetails
                .Include(x => x.Order)
                .Where(od => od.OrderId == id)
-               .ToListAsync();
+               .ToList();
             return View(orderDetails);
         }
+
+        //public async Task<IActionResult> OrderDetail(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    //var booK_shop_dbContext = _context.Orders.Include(x => x.OrderDetails);
+        //    //var booK_shop_dbContext = _context.OrderDetails.Include(x => x.Order);
+        //    var orderDetails = await _context.OrderDetails
+        //       .Include(x => x.Order)
+        //       .Where(od => od.OrderId == id)
+        //       .ToListAsync();
+        //    return View(orderDetails);
+        //}
 
         //GET: Order/OrderFeedback/3
         public IActionResult OrderFeedback()
