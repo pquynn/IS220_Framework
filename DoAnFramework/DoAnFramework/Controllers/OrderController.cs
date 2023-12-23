@@ -22,7 +22,6 @@ namespace DoAnFramework.Controllers
         //GET: Order/order list/"KH009"
         public async Task<IActionResult> Index(int? page = 1, string user_id = "KH009") //my order
         {
-            //pagination
             var pageNumber = page == null || page < 0 ? 1 : page.Value;
             //var pageSize = Utilities.PAGE_SIZE;
             var pageSize = 20;
@@ -30,28 +29,15 @@ namespace DoAnFramework.Controllers
              .AsNoTracking()
             .Where(ud => ud.UserId == user_id)
             .OrderByDescending(x => x.OrderId);
-            //.ToListAsync();
 
             PagedList<Order> models = new  PagedList<Order>(lsOrders, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
 
-
-
-            //var orders = await _context.Orders.Where(ud => ud.UserId == user_id).ToListAsync();
             return View(models);
 
-            // var pageSize = 10; // Adjust as needed
-
-            // var ordersQuery = _context.Orders
-            //     .Where(ud => ud.UserId == user_id)
-            //     .OrderByDescending(x => x.OrderId);
-
-            //// var orders = await PagedList<Order>.CreateAsync(ordersQuery, page, pageSize);
-
-            // return View(orders);
         }
 
-        //GET: Order/order detail/3
+        //GET: Order/OrderDetail/3
         public async Task<IActionResult> OrderDetail(int? id)
         {
             if (id == null)
@@ -67,18 +53,36 @@ namespace DoAnFramework.Controllers
             return View(orderDetails);
         }
 
-        //GET: Order/order feedback/3
+        //GET: Order/OrderFeedback/3
         public IActionResult OrderFeedback()
         {
             return View();
         }
 
-        //GET: Order/cart/"KH009"
-        public IActionResult Cart()
+        //GET: Order/Cart/"KH009"
+        public async Task<IActionResult> Cart(string user_id = "KH009") //my order
         {
-            return View();
-        }
+            //var pageNumber = page == null || page < 0 ? 1 : page.Value;
+            //var pageSize = Utilities.PAGE_SIZE;
+            //var pageSize = 20;
+            //var lsOrders = _context.Orders
+            // .AsNoTracking()
+            //.Where(ud => ud.UserId == user_id)
+            //.OrderByDescending(x => x.OrderId);
 
+            //PagedList<Order> models = new PagedList<Order>(lsOrders, pageNumber, pageSize);
+            //ViewBag.CurrentPage = pageNumber;
+            if (user_id == null)
+            {
+                return NotFound(); //xu ly sau
+            }
+
+            var cart = await _context.Orders
+                .Where(ud => ud.UserId == user_id && ud.Status == "Đang mua hàng")
+                .ToListAsync();
+            return View(cart);
+
+        }
 
     }
 }

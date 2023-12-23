@@ -32,14 +32,14 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Mã đơn hàng</th>
-                        <th>Ngày hóa đơn</th>
+                        <th>#</th>
+                        <th>Ngày mua</th>
                         <th>SĐT</th>
-                        <th>Tên khách hàng</th>
+                        <th>Tên KH</th>
                         <th>Địa chỉ</th>
                         <th>PTTT</th>
                         <th>Trạng thái</th>
-                        <th>Tổng sản phẩm</th>
+                        <th>Tổng sách</th>
                         <th>Tổng tiền</th>
                         <th></th>
                     </tr>
@@ -59,7 +59,7 @@
                                 <td>@item.Pay</td>
                                 <td>@item.Status</td>
                                 <td>@item.TotalBooks</td>
-                                <td>@item.TotalPrice</td>
+                                <td>@item.TotalPrice.Value.ToString("#,##0") đ</td>
                                 <td>
                                     <a class="link-to-detail" asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId">
                                         <i class="fa-solid fa-eye"></i>
