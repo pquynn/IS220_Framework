@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DoAnFramework.Models.OrderDetail>
+﻿
+@model DoAnFramework.Models.Order
 @{
     ViewData["Title"] = "Chi tiết đơn hàng";
     Layout = "../Shared/_Layout.cshtml";
@@ -18,14 +19,14 @@
             <li class="breadcrumb-current-page">Chi tiết đơn hàng</li>
         </ul>
 
-        <h2 class="section_heading">Mã đơn hàng<span style="color: var(--admin-primary);">#A123</span></h2>
+        <h2 class="section_heading">Mã đơn hàng<span style="color: var(--admin-primary);">#@Model.OrderId</span></h2>
 
 
         <!-- start of tracking order status -->
         <div class="progress-track">
             <ul id="progressbar">
                 <li class="step0 active " id="step1">Đã đặt hàng</li>
-                <li class="step0 active text-center" id="step2"><span>Đang xử lý</span></li>
+                <li class="step0 active text-center" id="step2"><span>Đang chuẩn bị</span></li>
                 <li class="step0 active text-center" id="step3"><span>Đang giao</span></li>
                 <li class="step0 text-end" id="step4"><span>Giao thành công</span></li>
             </ul>
@@ -39,15 +40,15 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p>Mã khách hàng: <span></span></p>
-                        <p>Tên khách hàng: </p>
-                        <p>Điện thoại: </p>
-                        <p>Địa chỉ: </p>
+                        <p>Mã khách hàng: <span class="user-info">@Model.UserId</span></p>
+                        <p>Tên khách hàng: <span class="user-info">@Model.UserName</span></p>
+                        <p>Điện thoại:  <span class="user-info">@Model.UserTelephone</span></p>
+                        <p>Địa chỉ:  <span class="user-info">@Model.Address</span></p>
                     </div>
                     <div class="col">
-                        <p>Ngày mua: </p>
-                        <p>Phương thức thanh toán: </p>
-                        <p>Trạng thái đơn hàng: </p>
+                        <p>Ngày mua:  <span class="user-info">@Model.OrderDate</span></p>
+                        <p>Phương thức thanh toán:  <span class="user-info">@Model.Pay</span></p>
+                        <p>Trạng thái đơn hàng: <span class="user-info status">@Model.Status</span> </p>
                     </div>
                 </div>
             </div>
@@ -59,26 +60,34 @@
                 <table>
                     <thead>
                         <th>Mã SP</th>
-                        <th>Tên SP</th>
                         <th>Hình ảnh</th>
+                        <th>Tên SP</th>
                         <th>SL</th>
                         <th>Thành tiền</th>
                     </thead>
 
                     <tbody>
-                        @if (Model != null)
+                        @if (Model.OrderDetails != null)
                         {
-                            foreach (var item in Model)
+                            foreach (var item in Model.OrderDetails)
                             {
                                 <tr>
                                     <td>@item.OrderDetailId</td>
+                                    <td>
+                                        @if (item.BookImage != null)
+                                        {
+                                            var base64 = Convert.ToBase64String(item.BookImage);
+                                            var imgUrl = String.Format("data:image/png;base64,{0}", base64);
+
+                                            <div class="table-img" style="background-image: url('@imgUrl');"></div>
+                                        }
+                                    </td>
                                     <td>@item.BookName</td>
-                                    <td>@item.BookImage</td>
                                     <td>@item.Quantity</td>
                                     <td>@item.Price.Value.ToString("#,##0") đ</td>
                                 </tr>
                             }
-                        }
+                        } 
                     </tbody>
                 </table>
             </div>
@@ -87,17 +96,17 @@
                 <div class="row p-2 total-book">
                     <div class="col-6"></div>
                     <div class="col-3 text-end">Tổng số sách</div>
-                    <div class="col-3 text-end">3</div>
+                    <div class="col-3 text-end">@Model.TotalBooks</div>
                 </div>
                 <div class="row p-2 public-price">
                     <div class="col-6"></div>
                     <div class="col-3 text-end">Tạm tính</div>
-                    <div class="col-3 text-end">9999 đ</div>
+                    <div class="col-3 text-end">@Model.TotalPrice.Value.ToString("#,##0") đ</div>
                 </div>
                 <div class="row p-2 total-money">
                     <div class="col-6"></div>
                     <div class="col-3 text-end fw-bold">Tổng tiền</div>
-                    <div class="col-3 text-end fw-bold">9999 đ</div>
+                    <div class="col-3 text-end fw-bold">@Model.TotalPrice.Value.ToString("#,##0") đ</div>
                 </div>
             </div>
         </div>
@@ -111,3 +120,29 @@
 
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var status = $('.user-info.status').text(); // Assuming @Model.Status contains the status string
+        console.log(status);
+        console.log(status == 'Đang chuẩn bị');
+        // Reset all elements to their initial state
+        $("#progressbar li").removeClass("active");
+
+        // Add 'active' class based on the status
+        if (status === 'Đang chuẩn bị') {
+            $("#step1").addClass("active");
+            $("#step2").addClass("active");
+        } else if (status === 'Đang giao') {
+            $("#step1").addClass("active");
+            $("#step2").addClass("active");
+            $("#step3").addClass("active");
+        } else if (status === 'Hoàn thành') {
+            $("#step1").addClass("active");
+            $("#step2").addClass("active");
+            $("#step3").addClass("active");
+            $("#step4").addClass("active");
+        }
+    });
+</script>

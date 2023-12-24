@@ -20,16 +20,16 @@ namespace DoAnFramework.Controllers
         }
 
         //GET: Order/order list/"KH009"
-        public async Task<IActionResult> Index(int? page = 1, string user_id = "KH009") //my order
+        public IActionResult Index(int? page = 1, string user_id = "KH009") //my order
         {
             var pageNumber = page == null || page < 0 ? 1 : page.Value;
             //var pageSize = Utilities.PAGE_SIZE;
             var pageSize = 20;
             var lsOrders = _context.Orders
-             .AsNoTracking()
+            .AsNoTracking()
             .Where(ud => ud.UserId == user_id)
             .OrderByDescending(x => x.OrderId);
-            PagedList<Order> models = new  PagedList<Order>(lsOrders, pageNumber, pageSize);
+            PagedList<Order> models = new (lsOrders, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
 
             //var order = await _context.Orders
@@ -50,27 +50,25 @@ namespace DoAnFramework.Controllers
             }
             //var booK_shop_dbContext = _context.Orders.Include(x => x.OrderDetails);
             //var booK_shop_dbContext = _context.OrderDetails.Include(x => x.Order);
-            var orderDetails = _context.OrderDetails
-               .Include(x => x.Order)
-               .Where(od => od.OrderId == id)
-               .ToList();
-            return View(orderDetails);
-        }
+            //var orderDetails = _context.OrderDetails
+            //   .Include(x => x.Order)
+            //   .Where(od => od.OrderId == id)
+            //   .ToList();
+            // return View(orderDetails);
 
-        //public async Task<IActionResult> OrderDetail(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    //var booK_shop_dbContext = _context.Orders.Include(x => x.OrderDetails);
-        //    //var booK_shop_dbContext = _context.OrderDetails.Include(x => x.Order);
-        //    var orderDetails = await _context.OrderDetails
-        //       .Include(x => x.Order)
-        //       .Where(od => od.OrderId == id)
-        //       .ToListAsync();
-        //    return View(orderDetails);
-        //}
+            //var order = _context.Orders
+            //    .AsNoTracking()
+            //    .Where(od => od.OrderId == id)
+            //    .Include(x => x.OrderDetails)
+            //    .FirstOrDefault();
+            var order = _context.Orders
+                .AsNoTracking()
+                .Where(od => od.OrderId == id)
+                .Include(x => x.OrderDetails)
+                   // .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
+                .FirstOrDefault();
+            return View(order);
+        }
 
         //GET: Order/OrderFeedback/3
         public IActionResult OrderFeedback()
