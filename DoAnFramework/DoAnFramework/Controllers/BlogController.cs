@@ -31,8 +31,8 @@ namespace DoAnFramework.Controllers
 				return NotFound();
 			}
 
-			var blogDetail = _context.OrderDetails
-			   .Where(blog => blog.OrderId == id);
+			var blogDetail = _context.Blogs
+			   .Where(blog => blog.BlogId == id);
 			return View(blogDetail);
         }
     }

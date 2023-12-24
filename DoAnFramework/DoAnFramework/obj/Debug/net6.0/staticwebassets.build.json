@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ciupijT8s6kyhuWyx6ultMOg701WshmCuIWBjRYVO64=",
+  "Hash": "LomiioZ+MKDzsueHFbhKLr+S7pd8Yz5jKsLmQ0Lu5vk=",
   "Source": "DoAnFramework",
   "BasePath": "_content/DoAnFramework",
   "Mode": "Default",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\store\\blog.css"
+    },
+    {
+      "Identity": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog-detail.css",
+      "SourceId": "DoAnFramework",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\",
+      "BasePath": "_content/DoAnFramework",
+      "RelativePath": "css/store/blog-detail.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\store\\blog-detail.css"
     },
     {
       "Identity": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\cart.css",

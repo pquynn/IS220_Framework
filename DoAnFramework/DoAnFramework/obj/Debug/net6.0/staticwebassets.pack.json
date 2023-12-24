@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog-detail.css",
+      "PackagePath": "staticwebassets\\css\\store\\blog-detail.css"
+    },
+    {
       "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog.css",
       "PackagePath": "staticwebassets\\css\\store\\blog.css"
     },
