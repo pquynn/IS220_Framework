@@ -27,15 +27,11 @@ namespace DoAnFramework.Controllers
             var pageSize = 20;
             var lsOrders = _context.Orders
             .AsNoTracking()
-            .Where(ud => ud.UserId == user_id)
+            .Where(ud => ud.UserId == user_id && ud.Status != "Đang mua hàng")
             .OrderByDescending(x => x.OrderId);
             PagedList<Order> models = new (lsOrders, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
 
-            //var order = await _context.Orders
-            //.Where(ud => ud.UserId == user_id)
-            //.ToListAsync();
-            //return View(order);
 
             return View(models);
 
@@ -53,7 +49,7 @@ namespace DoAnFramework.Controllers
                 .Where(od => od.OrderId == id)
                 .Include(x => x.OrderDetails)
                     .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
-                    .ThenInclude(od => od.BookImage)
+                        .ThenInclude(od => od.BookImage)
                 .FirstOrDefault();
             return View(order);
         }
@@ -65,26 +61,20 @@ namespace DoAnFramework.Controllers
         }
 
         //GET: Order/Cart/"KH009"
-        public async Task<IActionResult> Cart(string user_id = "KH009") //my order
+        public IActionResult Cart(string user_id = "KH009") //my order
         {
-            //var pageNumber = page == null || page < 0 ? 1 : page.Value;
-            //var pageSize = Utilities.PAGE_SIZE;
-            //var pageSize = 20;
-            //var lsOrders = _context.Orders
-            // .AsNoTracking()
-            //.Where(ud => ud.UserId == user_id)
-            //.OrderByDescending(x => x.OrderId);
-
-            //PagedList<Order> models = new PagedList<Order>(lsOrders, pageNumber, pageSize);
-            //ViewBag.CurrentPage = pageNumber;
             if (user_id == null)
             {
                 return NotFound(); //xu ly sau
             }
 
-            var cart = await _context.Orders
+            var cart = _context.Orders
+                .AsNoTracking()
                 .Where(ud => ud.UserId == user_id && ud.Status == "Đang mua hàng")
-                .ToListAsync();
+                .Include(x => x.OrderDetails)
+                    .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
+                        .ThenInclude(od => od.BookImage)
+                .FirstOrDefault();
             return View(cart);
 
         }

@@ -59,10 +59,10 @@
             <div class="store-table w-auto">
                 <table>
                     <thead>
-                        <th>Mã SP</th>
+                        <th>Mã sách</th>
                         <th>Hình ảnh</th>
-                        <th>Tên SP</th>
-                        <th>SL</th>
+                        <th>Tên sách</th>
+                        <th>Số lượng</th>
                         <th>Thành tiền</th>
                     </thead>
 
@@ -74,7 +74,7 @@
                                 <tr>
                                     <td>@item.OrderDetailId</td>
                                     <td>
-                                        @if (item.BookImage != null)
+                                        @if (item.Book.BookImage.FrontCover != null)
                                         {
                                             var base64 = Convert.ToBase64String(item.Book.BookImage.FrontCover);
                                             var imgUrl = String.Format("data:image/png;base64,{0}", base64);
@@ -146,8 +146,8 @@
         } else if (status === 'Đã hủy') {
             $("#step1").addClass("active");
             $("#step2").addClass("active");
-            $("#step3").addClass("active");
             $("#step4").addClass("active");
+            $("#step3").css("display", "none");
             $("#step4 span").text("Đã hủy");
         }
     });
