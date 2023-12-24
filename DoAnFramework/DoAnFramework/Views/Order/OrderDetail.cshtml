@@ -76,7 +76,7 @@
                                     <td>
                                         @if (item.BookImage != null)
                                         {
-                                            var base64 = Convert.ToBase64String(item.BookImage);
+                                            var base64 = Convert.ToBase64String(item.Book.BookImage.FrontCover);
                                             var imgUrl = String.Format("data:image/png;base64,{0}", base64);
 
                                             <div class="table-img" style="background-image: url('@imgUrl');"></div>
@@ -143,6 +143,12 @@
             $("#step2").addClass("active");
             $("#step3").addClass("active");
             $("#step4").addClass("active");
+        } else if (status === 'Đã hủy') {
+            $("#step1").addClass("active");
+            $("#step2").addClass("active");
+            $("#step3").addClass("active");
+            $("#step4").addClass("active");
+            $("#step4 span").text("Đã hủy");
         }
     });
 </script>

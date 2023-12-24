@@ -48,24 +48,12 @@ namespace DoAnFramework.Controllers
             {
                 return NotFound();
             }
-            //var booK_shop_dbContext = _context.Orders.Include(x => x.OrderDetails);
-            //var booK_shop_dbContext = _context.OrderDetails.Include(x => x.Order);
-            //var orderDetails = _context.OrderDetails
-            //   .Include(x => x.Order)
-            //   .Where(od => od.OrderId == id)
-            //   .ToList();
-            // return View(orderDetails);
-
-            //var order = _context.Orders
-            //    .AsNoTracking()
-            //    .Where(od => od.OrderId == id)
-            //    .Include(x => x.OrderDetails)
-            //    .FirstOrDefault();
             var order = _context.Orders
                 .AsNoTracking()
                 .Where(od => od.OrderId == id)
                 .Include(x => x.OrderDetails)
-                   // .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
+                    .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
+                    .ThenInclude(od => od.BookImage)
                 .FirstOrDefault();
             return View(order);
         }
