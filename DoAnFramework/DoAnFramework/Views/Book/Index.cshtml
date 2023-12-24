@@ -169,13 +169,12 @@
                 {
                     foreach(var item in Model) 
                     {
-@*                         <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">
- *@                                <div class="product-detail">
+                               <div class="product-detail">
                                     <div class="product-img--container">
                                         <img src="~/img/mat_biec.jpg" />
                                     </div>
                                     <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
-                                    <p>@item.Price VND</p>
+                                            <p>@item.Price.Value.ToString("#0,##0") VND</p>
                                     <div class="product-star">
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <ion-icon name="star-sharp"></ion-icon>
@@ -184,104 +183,8 @@
                                         <ion-icon name="star-sharp"></ion-icon>
                                     </div>
                                 </div>    
-@*                         </a>                
- *@                    }
+                    }
                 }
-@*                 <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div>
-
-                <div class="product-detail">
-                    <div class="product-img--container">
-                        <img src="~/img/mat_biec.jpg" />
-                    </div>
-                    <a href="#">Sách Mắt biếc</a>
-                    <p>500000 VND</p>
-                    <div class="product-star">
-                        <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
-                    </div>
-                </div> *@
             </div>
             <!-- product-list: end -->
 

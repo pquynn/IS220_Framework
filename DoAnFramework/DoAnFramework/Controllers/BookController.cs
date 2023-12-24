@@ -28,9 +28,10 @@ namespace DoAnFramework.Controllers
             var product = _context.Books
                 .Where(item => item.BookId == id)
                 .Include(item => item.Comments)
+                .Include(item => item.BookImage)
                 .FirstOrDefault();
 
             return View(product);
         }
-    }
+	}
 }
