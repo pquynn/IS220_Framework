@@ -2,6 +2,7 @@
     ViewData["Title"] = "Danh sách sản phẩm";
     Layout = "../Shared/_Layout.cshtml";
 }
+@model IEnumerable<DoAnFramework.Models.Book>
 
 <link rel="stylesheet" href="~/css/store/product_list.css">
 
@@ -164,7 +165,29 @@
             <!-- sort-option: end -->
             <!-- product-list: start -->
             <div class="product-list">
-                <div class="product-detail">
+                @if (@Model != null)
+                {
+                    foreach(var item in Model) 
+                    {
+@*                         <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">
+ *@                                <div class="product-detail">
+                                    <div class="product-img--container">
+                                        <img src="~/img/mat_biec.jpg" />
+                                    </div>
+                                    <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
+                                    <p>@item.Price VND</p>
+                                    <div class="product-star">
+                                        <ion-icon name="star-sharp"></ion-icon>
+                                        <ion-icon name="star-sharp"></ion-icon>
+                                        <ion-icon name="star-sharp"></ion-icon>
+                                        <ion-icon name="star-sharp"></ion-icon>
+                                        <ion-icon name="star-sharp"></ion-icon>
+                                    </div>
+                                </div>    
+@*                         </a>                
+ *@                    }
+                }
+@*                 <div class="product-detail">
                     <div class="product-img--container">
                         <img src="~/img/mat_biec.jpg" />
                     </div>
@@ -258,7 +281,7 @@
                     <div class="product-star">
                         <ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon><ion-icon name="star-sharp"></ion-icon>
                     </div>
-                </div>
+                </div> *@
             </div>
             <!-- product-list: end -->
 

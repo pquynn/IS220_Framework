@@ -2,9 +2,8 @@
     ViewData["Title"] = "Chi tiết sách";
     Layout = "../Shared/_Layout.cshtml";
 }
-
+@model DoAnFramework.Models.Book
 <link rel="stylesheet" href="~/css/store/product_detail.css">
-
 
 <div class="product-detail--body">
     <div class="product-nav">
@@ -13,62 +12,71 @@
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
                 <li><a class="breadcrumb-item" asp-controller="Book" asp-action="Index">Sách thiếu nhi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Mắt biếc...</li>
+                <li class="breadcrumb-item active classBookDetail" aria-current="page"></li>
             </ul>
         </nav>
     </div>
     <div class="main-info">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <script>
+                    $('li classBookDetail').text(@item.Name);
+                </script>
         <!--Khung giới thiệu ảnh sản phẩm-->
-        <div class="product-image">
-            <div class="product-main-img">
-                <img src="~/img/mat_biec.jpg" />
-            </div>
-            <div class="button-container">
-                <button class="btn-read-sample" data-bs-toggle="modal" data-bs-target="#read-sample-modal">Đọc thử</button>
-            </div>
-        </div>
-
-        <!--Khung giới thiệu thông tin sản phẩm-->
-        <div class="product-info">
-            <div class="product-name"><h2>Mắt biếc</h2></div>
-            <div class="product-price"><h3>500000 VND</h3></div>
-            <div class="product-rating">
-                <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
-            </div>
-
-            <div class="product-property category">
-                <h4>Thể loại: <span>Sách thiếu nhi </span> </h4>
-            </div>
-
-            <div class="product-property day-publish">
-                <h4>Tác giả: <span>Nguyễn Nhật Ánh</span> </h4>
-            </div>
-
-            <div class="product-property publisher">
-                <h4>Nhà xuất bản: <span>Nhà xuất bản trẻ </span> </h4>
-            </div>
-
-            <div class="product-property cover">
-                <h4>Loại bìa sách: <span>Bìa giấy </span> </h4>
-            </div>
-
-            <div class="product-property pages">
-                <h4>Số trang: <span>200 </span> </h4>
-            </div>
-
-            <div class="product-property product-quantity">
-                <h4>Số lượng:</h4>
-                <div class="quantity">
-                    <span class="minus change-amount-btn">-</span>
-                    <span class="number">1</span>
-                    <span class="plus change-amount-btn">+</span>
+                <div class="product-image">
+                    <div class="product-main-img">
+                        <img src="~/img/mat_biec.jpg" />
+                    </div>
+                    <div class="button-container">
+                        <button class="btn-read-sample" data-bs-toggle="modal" data-bs-target="#read-sample-modal">Đọc thử</button>
+                    </div>
                 </div>
-            </div>
-            <div class="shopping-btn">
-                <button class="btn btn-cancel">Thêm vào giỏ hàng</button>
-                <button class="btn btn-confirm">Mua ngay</button>
-            </div>
-        </div>
+
+                <!--Khung giới thiệu thông tin sản phẩm-->
+                <div class="product-info">
+                    <div class="product-name"><h2>@item.Name</h2></div>
+                    <div class="product-price"><h3>@item.Price VND</h3></div>
+                    <div class="product-rating">
+                        <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="product-property category">
+                        <h4>Thể loại: <span>@item.Category</span> </h4>
+                    </div>
+
+                    <div class="product-property day-publish">
+                        <h4>Tác giả: <span>@item.Author</span> </h4>
+                    </div>
+
+                    <div class="product-property publisher">
+                        <h4>Nhà xuất bản: <span>@item.Publisher</span> </h4>
+                    </div>
+
+                    <div class="product-property cover">
+                        <h4>Loại bìa sách: <span>@item.BookCover</span> </h4>
+                    </div>
+
+                    <div class="product-property pages">
+                        <h4>Số trang: <span>@item.Pages</span> </h4>
+                    </div>
+
+                    <div class="product-property product-quantity">
+                        <h4>Số lượng:</h4>
+                        <div class="quantity">
+                            <span class="minus change-amount-btn">-</span>
+                            <span class="number">1</span>
+                            <span class="plus change-amount-btn">+</span>
+                        </div>
+                    </div>
+                    <div class="shopping-btn">
+                        <button class="btn btn-cancel">Thêm vào giỏ hàng</button>
+                        <button class="btn btn-confirm">Mua ngay</button>
+                    </div>
+                </div>                
+            }    
+        }
     </div>
     <!--Khung mô tả và đánh giá-->
     <!-- TAG BTN: start -->
@@ -114,12 +122,13 @@
              id="nav-home"
              role="tabpanel"
              aria-labelledby="nav-home-tab">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-                autem quibusdam dolorum dolorem pariatur dolores, non ipsum ad nulla
-                magnam veniam dignissimos vero nam alias minima repellat optio,
-                nihil accusantium?
-            </p>
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <p>@item.Description</p>
+                }    
+            }
         </div>
         <!-- description's content: end -->
         <!-- detail's content:start -->
@@ -150,28 +159,58 @@
              aria-labelledby="nav-contact-tab">
             <!-- header: start -->
             <div class="rating-header">
+                @if (Model.Comments != null)
+                {
+                    <script>
+                        let countComment = 0;
+                        let avgScore = 0;
+                        alert(countComment + avgScore);
+                    </script>
+                    foreach (var item in Model.Comments)
+                    {
+                        <script>
+                            countComment++;
+                            avgScore += Number(@item.Comments.Score);
+                        </script>
+                    }
+                }
                 <h4>Đánh giá</h4>
-
                 <!-- star: start -->
                 <div class="rating">
                     <!-- rating scrore -->
                     <div class="rating-score">
-                        <h5>5</h5>
+                        <h5>
+                            <script>
+                                avgScore = Math.round(avgScore / countComment);
+                                $(".rating-score h5").text(avgScore);
+                            </script>
+                        </h5>
                         <div class="rating-icon">
-                            <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                            <script>
+                                $.each(Array(avgScore), function (index) {
+                                  $(".rating-icon").append(`
+                                    <ion-icon name="star"></ion-icon>
+                                  `);
+                                });
+                            </script>
                         </div>
                     </div>
                     <!-- amount of review -->
                     <div class="people-rate-num">
-                        <small> 40 lượt đánh giá</small>
+                        <small>
+                            <script>
+                                $(".people-rate-num").text(countComment + " lượt đánh giá");
+                            </script>
+                        </small>
                     </div>
                 </div>
                 <!-- star: start -->
             </div>
             <!-- header: end -->
+
             <!-- PERSONAL RATING: Star -->
             <div class="review-list">
-                <div class="person-review">
+                @* <div class="person-review">
                     <!-- star: start -->
                     <div class="review-star">
                         <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
@@ -296,7 +335,7 @@
                         </div>
                     </div>
                     <!-- img: end -->
-                </div>
+                </div> *@
             </div>
             <!-- PERSONAL RATING: End -->
         </div>

@@ -6,26 +6,31 @@ namespace DoAnFramework.Controllers
 {
     public class BookController : Controller
     {
-        //private readonly book_shop_dbContext _context;
+        private readonly book_shop_dbContext _context;
 
-        //public BookController(book_shop_dbContext context)
-        //{
-        //    _context = context;
-        //}
+        public BookController(book_shop_dbContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var listBook = _context.Books.ToList();
+            return View(listBook);
         }
 
-        public IActionResult BookDetail()
+        public IActionResult BookDetail(int? id)
         {
-            //var product = _context.Books.Include(x=>x.Name).FirstOrDefault(x=>x.BookId == id);
-            //if(product == null)
-            //{
-            //    return RedirectToAction("Index");
-            //}
-            return View();
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var product = _context.Books
+                .Where(item => item.BookId == id)
+                .Include(item => item.Comments)
+                .FirstOrDefault();
+
+            return View(product);
         }
     }
 }
