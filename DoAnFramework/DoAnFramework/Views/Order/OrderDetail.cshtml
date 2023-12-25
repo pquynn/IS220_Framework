@@ -1,9 +1,10 @@
 ﻿
-@model DoAnFramework.Models.Order
+
 @{
     ViewData["Title"] = "Chi tiết đơn hàng";
     Layout = "../Shared/_Layout.cshtml";
 }
+@model DoAnFramework.Models.Order
 
 <link rel="stylesheet" href="~/css/admin/admin-order-detail.css">
 <link rel="stylesheet" href="~/css/store/my-order-detail.css" />
@@ -125,25 +126,23 @@
 <script>
     $(document).ready(function () {
         var status = $('.user-info.status').text(); // Assuming @Model.Status contains the status string
-        console.log(status);
-        console.log(status == 'Đang chuẩn bị');
         // Reset all elements to their initial state
         $("#progressbar li").removeClass("active");
 
         // Add 'active' class based on the status
-        if (status === 'Đang chuẩn bị') {
+        if (status === 'pending') {
             $("#step1").addClass("active");
             $("#step2").addClass("active");
-        } else if (status === 'Đang giao') {
+        } else if (status === 'out for delivery') {
             $("#step1").addClass("active");
             $("#step2").addClass("active");
             $("#step3").addClass("active");
-        } else if (status === 'Hoàn thành') {
+        } else if (status === 'done') {
             $("#step1").addClass("active");
             $("#step2").addClass("active");
             $("#step3").addClass("active");
             $("#step4").addClass("active");
-        } else if (status === 'Đã hủy') {
+        } else if (status === 'cancelled') {
             $("#step1").addClass("active");
             $("#step2").addClass("active");
             $("#step4").addClass("active");

@@ -27,7 +27,7 @@ namespace DoAnFramework.Controllers
             var pageSize = 20;
             var lsOrders = _context.Orders
             .AsNoTracking()
-            .Where(ud => ud.UserId == user_id && ud.Status != "Đang mua hàng")
+            .Where(ud => ud.UserId == user_id && ud.Status != "cart")
             .OrderByDescending(x => x.OrderId);
             PagedList<Order> models = new (lsOrders, pageNumber, pageSize);
             ViewBag.CurrentPage = pageNumber;
@@ -63,18 +63,25 @@ namespace DoAnFramework.Controllers
         //GET: Order/Cart/"KH009"
         public IActionResult Cart(string user_id = "KH009") //my order
         {
-            if (user_id == null)
-            {
-                return NotFound(); //xu ly sau
-            }
-
+            //if (user_id == null)
+            //{
+            //    return NotFound(); //xu ly sau
+            //}
             var cart = _context.Orders
                 .AsNoTracking()
-                .Where(ud => ud.UserId == user_id && ud.Status == "Đang mua hàng")
-                .Include(x => x.OrderDetails)
-                    .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
-                        .ThenInclude(od => od.BookImage)
-                .FirstOrDefault();
+                .Include(od => od.OrderDetails)
+                    .ThenInclude(od => od.Book.BookImage) // Include the related Book and BookImage for each OrderDetail
+                .FirstOrDefault(ud => ud.UserId == user_id && ud.Status == "cart");
+
+
+            //var cart = _context.Orders
+            //    .AsNoTracking()
+            //    .Where(ud => ud.UserId == user_id && ud.Status == "cart")
+            //    .Include(x => x.OrderDetails)
+            //        .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
+            //            .ThenInclude(od => od.BookImage)
+            //    .SingleOrDefault();
+              
             return View(cart);
 
         }

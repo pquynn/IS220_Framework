@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DoAnFramework.Models.Order
+@{
     ViewData["Title"] = "Thanh toán";
     Layout = "../Shared/_Layout.cshtml";
 }
@@ -16,40 +17,30 @@
     <!-- CHECKOUT's HEADER: End -->
     <!-- CHECKOUT BODY: Start -->
     <form>
-        <div class="checkout-body flex">
+        
+            <div class="checkout-body flex">
             <!-- INFOR FORM: Start -->
             <div class="left-col">
                 <div class="infor-form flex flex-col">
-                    <!-- GENDER: Start -->
-                    <div class="gender flex">
-                        <div>
-                            <input class="square-radio"
-                                   type="radio"
-                                   name="gender"
-                                   id="nam" />
-                            <label for="nam">Nam</label>
-                        </div>
-
-                        <div>
-                            <input class="square-radio"
-                                   type="radio"
-                                   name="gender"
-                                   id="nu" />
-                            <label for="nu">Nữ</label>
-                        </div>
-                    </div>
-                    <!-- GENDER: End -->
+                        <span id="temp-address" style="display: none;"> @if(Model != null) @Model.Address</span>
+                        <span id="temp-user-id" style="display: none;">@if(Model != null) @Model.UserId</span>
                     <!-- NAME: Start -->
                     <input type="text"
                            placeholder="Họ tên*"
+                           id="name"
                            required
-                           class="input-char" />
+                           class="input-char customer-name"
+                           value="@if(Model != null) @Model.UserName"/>
                     <!-- NAME: End -->
                     <!-- PHONE NUMBER: Start -->
-                    <input type="number"
+                    <input type="tel"
                            placeholder="SĐT*"
+                           name="phone"
+                           aria-required="true"
                            required
-                           class="input-char" />
+                           class="input-char customer-phone"
+                           pattern="(\+84|0)\d{7,10}"
+                           value="@if(Model != null) @Model.UserTelephone" />
 
                     <!-- PHONE NUMBER: End -->
                     <!-- ADDRESS: Start -->
@@ -57,22 +48,31 @@
                         <input type="text"
                                placeholder="Tỉnh/Thành phố*"
                                required
-                               class="input-char" />
+                               id="city"
+                               name="city"
+                               class="input-char"
+                               value=""/> 
                         <input type="text"
-                               placeholder="Huyện/Phường*"
+                               placeholder="Quận/Huyện*"
+                               id="district"
+                               name="district"
                                required
                                class="input-char" />
                     </div>
 
                     <div class="address width-50-50">
                         <input type="text"
-                               placeholder="Tổ/Ấp*"
-                               required
-                               class="input-char" />
+                               class="input-char"
+                               id="ward"
+                               name="ward"
+                               placeholder="Xã/Phường*"
+                               required />
                         <input type="text"
-                               placeholder="Hẻm, số nhà,...*"
+                               placeholder="Ấp, Hẻm, số nhà,...*"
                                required
-                               class="input-char" />
+                               id="street"
+                               name="street"
+                               class="input-char address-text" />
                     </div>
                     <!-- ADDRESS: End -->
                     <!-- Required field: start -->
@@ -86,40 +86,46 @@
                     <div class="payment">
                         <div class="payment-header flex vertical-center">
                             <div class="flex vertical-center">
-                                <img src="~/img/footer_image/paypal.png" />Pay Pal
+                                <!-- <img src="~/img/footer_image/paypal.png" />Pay Pal -->
+                                <img src="https://cdn-icons-png.flaticon.com/512/5229/5229335.png" />COD
                             </div>
                             <input type="radio"
-                                   value="paypal"
+                                   value="cod"
                                    class="square-radio"
-                                   name="payment" />
+                                   name="payment"
+                                   id="cod"
+                                   required />
                         </div>
                     </div>
-
-                    <!-- master card -->
-
-                    <div class="payment">
-                        <div class="payment-header flex vertical-center">
-                            <div class="flex vertical-center">
-                                <img src="~/img/footer_image/mastercard.png" />Master Card
-                            </div>
-                            <input type="radio"
-                                   value="paypal"
-                                   class="square-radio"
-                                   name="payment" />
-                        </div>
-                    </div>
-
-                    <!-- Napas -->
+                    <!-- atm momo -->
                     <div class="payment">
                         <!-- header -->
                         <div class="payment-header flex vertical-center">
                             <div class="flex vertical-center">
-                                <img src="~/img/footer_image/napas.png" />Napas
+                                <img src="~/img/footer_image/momo.png" />ATM MOMO
                             </div>
                             <input type="radio"
-                                   value="paypal"
+                                   value="momo-atm"
                                    class="square-radio"
-                                   name="payment" />
+                                   name="payment"
+                                   id="momo-atm"
+                                   required />
+                        </div>
+                    </div>
+
+                    <!-- ví momo -->
+                    <div class="payment">
+                        <!-- header -->
+                        <div class="payment-header flex vertical-center">
+                            <div class="flex vertical-center">
+                                <img src="~/img/footer_image/momo.png" />VÍ MOMO
+                            </div>
+                            <input type="radio"
+                                   value="momo-wallet"
+                                   class="square-radio"
+                                   name="payment"
+                                   id="momo-wallet"
+                                   required />
                         </div>
                     </div>
                 </div>
@@ -130,55 +136,39 @@
                 <!-- PRODUCT LIST: Start -->
                 <table class="product-list--checkout">
                     <!-- table col's name -->
-                    <tr class="col-name">
-                        <td>Sản phẩm</td>
-                        <td>Tổng</td>
-                    </tr>
+                    <thead>
+                            <tr class="col-name">
+                                <td>Sản phẩm</td>
+                                <td>Tổng</td>
+                            </tr>
+                    </thead>
+                    
+                    <tbody class="product-list--body">
+                        @if (Model != null && Model.OrderDetails != null)
+                        {
+                            foreach (var item in Model.OrderDetails)
+                            {
+                                <!-- product -->
+                                <tr class="product-checkout">
+                                    <td class="product-infor">
+                                        @if (item.Book.BookImage.FrontCover != null)
+                                        {
+                                            var base64 = Convert.ToBase64String(item.Book.BookImage.FrontCover);
+                                            var imgUrl = String.Format("data:image/png;base64,{0}", base64);
+                                            <img class="product-img" src="@imgUrl" />
+                                        }
+                                        <div class="product-descr">
+                                            <a href="#">@item.BookName</a>
+                                            @* <small class="gray-text">@item.Book.Author<small> *@
+                                            <small style="font-size:12px;">X @item.Quantity</small>
+                                        </div>
+                                    </td>
 
-                    <!-- product -->
-                    <tr class="product-checkout">
-                        <td class="product-infor">
-                            <img class="product-img"
-                                 src="https://newshop.vn/public/uploads/products/49312/sach-pham-chat-nha-lanh-dao-nhi-thiet-ke-uoc-mo-toi-la-phi-cong-nho.jpg" />
-                            <div class="product-descr">
-                                <a href="#">Tên sản phẩm</a>
-                                <small class="gray-text">Phân loại</small>
-                                <small>X1</small>
-                            </div>
-                        </td>
-
-                        <td>300.000</td>
-                    </tr>
-
-                    <!-- product -->
-                    <tr class="product-checkout">
-                        <td class="product-infor">
-                            <img class="product-img"
-                                 src="https://newshop.vn/public/uploads/products/49312/sach-pham-chat-nha-lanh-dao-nhi-thiet-ke-uoc-mo-toi-la-phi-cong-nho.jpg" />
-                            <div class="product-descr">
-                                <a href="#">Tên sản phẩm</a>
-                                <small class="gray-text">Phân loại</small>
-                                <small>X1</small>
-                            </div>
-                        </td>
-
-                        <td>300.000</td>
-                    </tr>
-
-                    <!-- product -->
-                    <tr class="product-checkout">
-                        <td class="product-infor">
-                            <img class="product-img"
-                                 src="https://newshop.vn/public/uploads/products/49312/sach-pham-chat-nha-lanh-dao-nhi-thiet-ke-uoc-mo-toi-la-phi-cong-nho.jpg" />
-                            <div class="product-descr">
-                                <a href="#">Tên sản phẩm</a>
-                                <small class="gray-text">Phân loại</small>
-                                <small>X1</small>
-                            </div>
-                        </td>
-
-                        <td>300.000</td>
-                    </tr>
+                                    <td class="product-total">@item.Price</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
 
                 </table>
                 <!-- PRODUCT LIST: End -->
@@ -186,14 +176,14 @@
                 <div class="buy-section">
                     <!-- sub total -->
                     <div class="sub-total flex">
-                        <p>Tạm tính (3 sản phẩm)</p>
-                        <p>183.000 đ</p>
+                        <p>Tạm tính (@if(Model != null) @Model.TotalBooks sản phẩm)</p>
+                            <p class="sub-total--amount">@if(Model != null) @Model.TotalPrice.Value.ToString("#,##0") đ</p>
                     </div>
 
                     <!-- total -->
                     <div class="total flex">
                         <p>Tổng tiền<small>(bao gồm VAT)</small></p>
-                        <p>143.910 đ</p>
+                            <p class="total-amount">@if(Model != null) @Model.TotalPrice.Value.ToString("#,##0") đ</p>
                     </div>
 
                     <!-- buy -->
@@ -205,6 +195,140 @@
 
             </div>
         </div>
+        
     </form>
     <!-- CHECKOUT BODY: End -->
 </div>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Your JavaScript code -->
+    <script>
+        
+        $(document).ready(function () {
+            var user_id = $('#temp-user-id').text();
+            displayCheckout(user_id);
+
+            $("#buy-form").submit(function () {
+                // Ten, sdt
+                // const name = $(".customer-name").val();
+                // const phone = $(".customer-phone").val();
+
+                // // gioi tinh
+                // const gender = $(".gender-radio")[0].checked === true ? "Nam" : "Nữ";
+
+                // // Dia chi
+                // const address = {
+                //     tinhThanh: $("#city").val(),
+                //     quanHuyen: $("#district").val(),
+                //     xaPhuong: $("#ward").val(),
+                //     duongAp: $("#street").val(),
+                // };
+
+                // // thoi gian
+                // const now = new Date();
+                // const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
+                // // phuong thuc thanh toan
+                // const paymentMethod = $(`input[name="payment"]:checked`).val();
+
+                // buy(name, phone, gender, address, user_id, date, paymentMethod, localCart);
+
+                // if (paymentMethod == "cod") {
+                //     alert("Đặt hàng thành công!");
+                // }
+
+                // // xoa localstorage chua gio hàng khi ko đăng nhập
+                // localStorage.clear();
+            });
+            
+        });
+
+        function displayAddress(addressString) {
+            // address
+            // get address
+            var myString = addressString.split(",");
+            for (var i = 0; i < myString.length; i++) {
+                myString[i] = myString[i].trim();
+            }
+
+            var address = {
+                tinhThanh: "",
+                quanHuyen: "",
+                xaPhuong: "",
+                duongAp: "",
+            };
+            address.duongAp = myString[0];
+            if (myString.length == 4) {
+                address.xaPhuong = myString[1];
+                address.quanHuyen = myString[2];
+                address.tinhThanh = myString[3];
+            } else {
+                address.quanHuyen = myString[1];
+                address.tinhThanh = myString[2];
+            }
+            if (address.tinhThanh == "TP.HCM") {
+                address.tinhThanh = "Thành phố Hồ Chí Minh";
+            }
+            // display address
+            $("#city").val(address.tinhThanh);
+            $("#district").val(address.quanHuyen);
+            $("#ward").val(address.xaPhuong);
+            $("#street").val(address.duongAp);
+        }
+    
+        function displayCheckout(user_id) {
+            if (user_id !== "") {
+                var address = $('#temp-address').text();
+
+                displayAddress(address);
+            }
+
+            // var productData =
+            //     user_id !== ""
+            //         ? ( getLoginCheckout(user_id)).tableProductData
+            //         : localCart;
+
+            // displayProductData(productData);
+        }
+    
+        
+
+        function displayProductData(productData) {
+            // DISPLAY PRODUCT: START
+            var subTotal = 0;
+            const tbProduct = $(".product-list--checkout tbody");
+            productData.forEach(function (row) {
+                subTotal += row.PRICE * row.QUANTITY;
+                var imageUrl = "data:image/png;base64," + row.FIRST_PICTURE;
+                tbProduct.append(`<tr class="product-checkout">
+                             <td class="product-infor">
+                               <img
+                                 alt="${row.PRODUCT_NAME}"
+                                 class="product-img"
+                                 src="${imageUrl}" />
+                               <div class="product-descr">
+                                 <a href="#">${row.PRODUCT_NAME}</a>
+                                 <small class="gray-text">Size ${row.SIZE}</small>
+                                 <small>X${row.QUANTITY}</small>
+                               </div>
+                             </td>
+
+                                <td>${(row.PRICE * row.QUANTITY).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+                         </tr>`);
+
+
+                var totalPrice = 0;
+                // Loop through each row in the table body
+                $('.product-list--body tr').each(function () {
+                    var price = $(this).find('.product-total').text();
+                    totalPrice += price;
+                });
+
+                $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
+                $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
+            });
+            // DISPLAY PRODUCT: END
+        }
+    </script>
