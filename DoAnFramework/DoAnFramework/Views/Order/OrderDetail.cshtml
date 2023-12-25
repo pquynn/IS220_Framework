@@ -64,7 +64,7 @@
                         <th>Hình ảnh</th>
                         <th>Tên sách</th>
                         <th>Số lượng</th>
-                        <th>Thành tiền</th>
+                        <th>Giá bán</th>
                     </thead>
 
                     <tbody>
@@ -123,31 +123,4 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script>
-    $(document).ready(function () {
-        var status = $('.user-info.status').text(); // Assuming @Model.Status contains the status string
-        // Reset all elements to their initial state
-        $("#progressbar li").removeClass("active");
-
-        // Add 'active' class based on the status
-        if (status === 'pending') {
-            $("#step1").addClass("active");
-            $("#step2").addClass("active");
-        } else if (status === 'out for delivery') {
-            $("#step1").addClass("active");
-            $("#step2").addClass("active");
-            $("#step3").addClass("active");
-        } else if (status === 'done') {
-            $("#step1").addClass("active");
-            $("#step2").addClass("active");
-            $("#step3").addClass("active");
-            $("#step4").addClass("active");
-        } else if (status === 'cancelled') {
-            $("#step1").addClass("active");
-            $("#step2").addClass("active");
-            $("#step4").addClass("active");
-            $("#step3").css("display", "none");
-            $("#step4 span").text("Đã hủy");
-        }
-    });
-</script>
+<script src="~/js/my-order/my-order-detail.js"></script>

@@ -13,7 +13,7 @@ namespace DoAnFramework.Models
 
         public int BookId { get; set; }
         public string? Name { get; set; }
-        public string? BookCover { get; set; }
+        public int? BookCover { get; set; }
         public int? Pages { get; set; }
         public string? Author { get; set; }
         public DateTime? YearPublish { get; set; }

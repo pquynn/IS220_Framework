@@ -193,6 +193,18 @@
       "PackagePath": "staticwebassets\\img\\user.png"
     },
     {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\cart-checkout\\cart.js",
+      "PackagePath": "staticwebassets\\js\\cart-checkout\\cart.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\cart-checkout\\checkout.js",
+      "PackagePath": "staticwebassets\\js\\cart-checkout\\checkout.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order-detail.js",
+      "PackagePath": "staticwebassets\\js\\my-order\\my-order-detail.js"
+    },
+    {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -10,7 +10,7 @@ builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDi
 builder.Services.AddRazorPages();
 
 
-builder.Services.AddScoped<OrderService>();
+builder.Services.AddScoped<DoAnFramework.Models.Service.OrderService>();
 
 
 // them vao khi ket noi csdl, de nhan biet dbcontext

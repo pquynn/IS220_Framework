@@ -1,4 +1,6 @@
 ﻿using DoAnFramework.Models;
+using DoAnFramework.Models.Service;
+using DoAnFramework.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,23 +8,65 @@ namespace DoAnFramework.Controllers
 {
     public class CheckoutController : Controller
     {
-        private readonly book_shop_dbContext _context;
+        private readonly OrderService _orderService;
 
-        public CheckoutController(book_shop_dbContext context)
+        public CheckoutController(OrderService orderService)
         {
-            _context = context;
+            _orderService = orderService;
         }
 
-        //GET: Order/Index/"KH009"
+        //GET: Checkout/Index/"KH009"
         public IActionResult Index(string user_id = "KH009")
         {
-            var order = _context.Orders
-                .AsNoTracking()
-                .Include(od => od.OrderDetails)
-                    .ThenInclude(od => od.Book.BookImage) // Include the related Book and BookImage for each OrderDetail
-                .FirstOrDefault(ud => ud.UserId == user_id && ud.Status == "cart");
+            var cartViewModel = _orderService.GetLoginCart(user_id);
 
-            return View(order);
+            if (cartViewModel == null)
+            {
+                return View(); // Handle the case where the cart is null
+            }
+
+            return View(cartViewModel);
         }
+
+        //GET: Checkout/BuySuccess
+        public IActionResult BuySuccess()
+        {
+            return View();
+        }
+
+        //POST: Checkout/Buy/...
+        [HttpPost]
+        public IActionResult Buy(string user_id, string name, string phone,
+               string tinhThanh, string quanHuyen, string xaPhuong, string duongAp,
+              string date, string paymentMethod, List<LocalCartItem> localCart)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(user_id))
+                {
+                    // Update existing order
+                    if(_orderService.UpdateOrderLogin(user_id, name, phone, tinhThanh, quanHuyen, xaPhuong, duongAp, date, paymentMethod))
+                        return Json(new { success = true, message = "Mua thành công" });
+                    else return Json(new { success = false, message = "Mua không thành công" });
+                }
+                else
+                {
+                    // Insert new order
+                    if(_orderService.InsertOrderLocal(name, phone, tinhThanh, quanHuyen, xaPhuong, duongAp, date, paymentMethod, localCart))
+                        return Json(new { success = false, message = "Mua thành công" });
+                    else return Json(new { success = false, message = "Mua không thành công" });
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Console.WriteLine(ex.Message);
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
+
     }
 }
+
+

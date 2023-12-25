@@ -6,33 +6,26 @@ using System.Threading.Tasks;
 using DoAnFramework.Models;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
+using DoAnFramework.Models.Service;
+using AspNetCoreHero.ToastNotification.Abstractions;
 
 namespace DoAnFramework.Controllers
 {
     public class OrderController : Controller
     {
 
-        private readonly book_shop_dbContext _context;
-
-        public OrderController(book_shop_dbContext context)
+        private readonly OrderService _orderService;
+        public OrderController(OrderService orderService)
         {
-            _context = context;
+            _orderService = orderService;
         }
 
+
         //GET: Order/order list/"KH009"
-        public IActionResult Index(int? page = 1, string user_id = "KH009") //my order
+        public IActionResult Index(int page = 1, string user_id = "KH009") //my order
         {
-            var pageNumber = page == null || page < 0 ? 1 : page.Value;
-            //var pageSize = Utilities.PAGE_SIZE;
-            var pageSize = 20;
-            var lsOrders = _context.Orders
-            .AsNoTracking()
-            .Where(ud => ud.UserId == user_id && ud.Status != "cart")
-            .OrderByDescending(x => x.OrderId);
-            PagedList<Order> models = new (lsOrders, pageNumber, pageSize);
-            ViewBag.CurrentPage = pageNumber;
-
-
+            var models = _orderService.GetMyOrderList(user_id, page, 20);
+            ViewBag.CurrentPage = page;
             return View(models);
 
         }
@@ -40,17 +33,12 @@ namespace DoAnFramework.Controllers
         //GET: Order/OrderDetail/3
         public IActionResult OrderDetail(int? id)
         {
-            if (id == null)
+            var order = _orderService.GetMyOrderDetails(id);
+            if (order == null)
             {
                 return NotFound();
             }
-            var order = _context.Orders
-                .AsNoTracking()
-                .Where(od => od.OrderId == id)
-                .Include(x => x.OrderDetails)
-                    .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
-                        .ThenInclude(od => od.BookImage)
-                .FirstOrDefault();
+
             return View(order);
         }
 
@@ -63,28 +51,47 @@ namespace DoAnFramework.Controllers
         //GET: Order/Cart/"KH009"
         public IActionResult Cart(string user_id = "KH009") //my order
         {
-            if (user_id == null || user_id == "")
+            var cartViewModel = _orderService.GetLoginCart(user_id);
+
+            if (cartViewModel == null)
             {
-                return View(); //xu ly sau
+                return View(); // Handle the case where the cart is null
             }
-            var cart = _context.Orders
-                .AsNoTracking()
-                .Include(od => od.OrderDetails)
-                    .ThenInclude(od => od.Book.BookImage) // Include the related Book and BookImage for each OrderDetail
-                .FirstOrDefault(ud => ud.UserId == user_id && ud.Status == "cart");
 
-
-            //var cart = _context.Orders
-            //    .AsNoTracking()
-            //    .Where(ud => ud.UserId == user_id && ud.Status == "cart")
-            //    .Include(x => x.OrderDetails)
-            //        .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
-            //            .ThenInclude(od => od.BookImage)
-            //    .SingleOrDefault();
-              
-            return View(cart);
-
+            return View(cartViewModel);
         }
 
+
+        //POST: Order/UpdateCartProduct/id, quantity
+        [HttpPost]
+        public IActionResult UpdateCartProduct(int order_detail_id, int quantity) //my order
+        {
+            if (_orderService.UpdateOrderDetailQuantity(order_detail_id, quantity))
+                return Json(new { success = true, message = "Success." });
+            else
+                return Json(new { success = false, message = "Failed." });
+            
+        }
+
+        //POST: Order/DeleteOrderDetail/order_detail_id
+        [HttpPost]
+        public IActionResult DeleteOrderDetail(int orderDetailId)
+        {
+            if(_orderService.DeleteOrderDetail(orderDetailId))
+                return Json(new { success = true, message = "Xóa sách thành công" });
+            
+           else
+                return Json(new { success = false, message = "Xóa sách không thành công" });
+            
+        }
+
+        //POST: Order/CancelOrder/orderId
+        [HttpPost]
+        public IActionResult CancelOrder(int orderId)
+        {
+            var success = _orderService.CancelOrder(orderId);
+
+            return Json(success);
+        }
     }
 }
