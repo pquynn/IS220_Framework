@@ -63,10 +63,10 @@ namespace DoAnFramework.Controllers
         //GET: Order/Cart/"KH009"
         public IActionResult Cart(string user_id = "KH009") //my order
         {
-            //if (user_id == null)
-            //{
-            //    return NotFound(); //xu ly sau
-            //}
+            if (user_id == null || user_id == "")
+            {
+                return View(); //xu ly sau
+            }
             var cart = _context.Orders
                 .AsNoTracking()
                 .Include(od => od.OrderDetails)

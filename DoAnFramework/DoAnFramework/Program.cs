@@ -8,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
 builder.Services.AddRazorPages();
+
+
+builder.Services.AddScoped<OrderService>();
+
+
 // them vao khi ket noi csdl, de nhan biet dbcontext
 builder.Services.AddDbContext<book_shop_dbContext>(
     option => option.UseSqlServer(builder.Configuration.GetConnectionString("book_shop_db")));

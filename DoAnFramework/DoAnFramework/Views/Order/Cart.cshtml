@@ -184,7 +184,7 @@
 
             $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
             $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
-            // MOI LAN CONG TRU LA PHAI UPDATE VAO CSDL HOAC LOCALSTORAGE
+            
             // update data
             // if (user_id === null) {
             //     const cart = JSON.parse(localStorage.getItem("myCart"));
@@ -235,21 +235,21 @@
             document.querySelector(".cart-body").classList.toggle("hidden");
         }
         
-        // function changeAmountLocal(cartData, productAmount, rowId) {
-        //     cartData[rowId].QUANTITY = productAmount;
+        function changeAmountLocal(cartData, productAmount, rowId) {
+            cartData[rowId].QUANTITY = productAmount;
 
-        //     var cartArray = [];
-        //     cartData.forEach((row) => {
-        //         let rowData = {};
-        //         rowData.productName = row.PRODUCT_NAME;
-        //         rowData.productPrice = `${row.PRICE} VND`;
-        //         rowData.productSize = `${row.SIZE}`;
-        //         rowData.numberOfProduct = `${row.QUANTITY}`;
-        //         rowData.productImage = `data:FIRST_PICTURE/png;base64,${row.FIRST_PICTURE}`;
-        //         cartArray.push(rowData);
-        //     });
-        //     localStorage.setItem("myCart", JSON.stringify(cartArray));
-        // }
+            var cartArray = [];
+            cartData.forEach((row) => {
+                let rowData = {};
+                rowData.productName = row.PRODUCT_NAME;
+                rowData.productPrice = `${row.PRICE} VND`;
+                rowData.numberOfProduct = `${row.QUANTITY}`;
+                //co doi FIRST_PICTURE THANH FRONT_COVER Khong
+                rowData.productImage = `data:FIRST_PICTURE/png;base64,${row.FIRST_PICTURE}`;
+                cartArray.push(rowData);
+            });
+            localStorage.setItem("myCart", JSON.stringify(cartArray));
+        }
 
         // function changeAmountLogin(inputId, inputVal) {
         //     $.ajax({
@@ -261,18 +261,17 @@
         //         },
         //     });
         // }
-
        
         // CHANGE PRODUCT AMOUNT: END
 
 
 
         // REMOVE PRODUCT: START
-        // function removeProductLocal(id) {
-        //     const updatedCart = JSON.parse(localStorage.getItem("myCart"));
-        //     updatedCart.splice(id, 1);
-        //     localStorage.setItem("myCart", JSON.stringify(updatedCart));
-        // }
+        function removeProductLocal(id) {
+            const updatedCart = JSON.parse(localStorage.getItem("myCart"));
+            updatedCart.splice(id, 1);
+            localStorage.setItem("myCart", JSON.stringify(updatedCart));
+        }
 
         // function removeProductLogin(id) {
         //     $.ajax({
@@ -287,33 +286,6 @@
         //         },
         //     });
         // }
-
-        function removeProduct(id) {
-            const confirmResult = confirm("Xác nhận xóa sản phẩm?");
-            if (confirmResult === true) {
-                // giam tong don hang
-                const subTotal = Number($(".sub-total--amount").text());
-                const deletedProduct = Number($(`#pro-total-${id}`).text());
-                //console.log($(`#pro-total-${id}`));
-
-                $(".sub-total--amount").text(subTotal - deletedProduct);
-                $(".total-amount").text(subTotal - deletedProduct);
-
-                // giam so luong san pham trong gio tren giao dien
-                rowAmount--;
-
-                $(`#product-${id}`).addClass("hidden");
-                if (rowAmount === 0 || typeof rowAmount === "undefined") {
-                    emptyCart();
-                }
-
-                // if (user_id) {
-                //     removeProductLogin(id);
-                // } else {
-                //     removeProductLocal(id);
-                // }
-            }
-        }
         // REMOVE PRODUCT: END
 
 
@@ -454,9 +426,6 @@
             document.querySelector(".total-amount").textContent = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ";
         }
         //DISPLAY CART IF USER NOT LOGIN: END
-
-
-
 
 
 

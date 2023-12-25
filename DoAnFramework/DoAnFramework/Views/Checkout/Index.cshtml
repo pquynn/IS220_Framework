@@ -205,6 +205,8 @@
 
 <!-- Your JavaScript code -->
     <script>
+    const cart = JSON.parse(localStorage.getItem("myCart"));
+    const localCart = getLocalCart(cart);
         
         $(document).ready(function () {
             var user_id = $('#temp-user-id').text();
@@ -278,19 +280,16 @@
             $("#street").val(address.duongAp);
         }
     
+
         function displayCheckout(user_id) {
             if (user_id !== "") {
                 var address = $('#temp-address').text();
 
                 displayAddress(address);
             }
-
-            // var productData =
-            //     user_id !== ""
-            //         ? ( getLoginCheckout(user_id)).tableProductData
-            //         : localCart;
-
-            // displayProductData(productData);
+            else 
+                displayProductData(localCart);
+            
         }
     
         
@@ -331,4 +330,6 @@
             });
             // DISPLAY PRODUCT: END
         }
+
+
     </script>
