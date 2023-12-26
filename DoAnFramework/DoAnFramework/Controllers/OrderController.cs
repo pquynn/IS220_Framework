@@ -51,7 +51,7 @@ namespace DoAnFramework.Controllers
         //GET: Order/OrderFeedback/3
         public IActionResult OrderFeedback(int? id)
         {
-            var order = _orderService.GetMyOrderDetails(id);
+            var order = _commentService.GetMyOrderWithComment(id);
             if (order == null)
             {
                 return RedirectToAction("Index", "Order");

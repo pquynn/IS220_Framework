@@ -14,7 +14,7 @@
     <div class="admin-order-detail">
         <!--breadcrumb-->
         <ul class="breadcrumb-my-order">
-            <li><a asp-controller="Order" asp-action="Index">Danh sách đơn hàng</a> / </li>
+            <li><a asp-controller="Order" asp-action="Index" asp-route-id="@Model.Order.UserId">Danh sách đơn hàng</a> / </li>
             <li class="breadcrumb-current-page">Chi tiết đơn hàng</li>
         </ul>
 

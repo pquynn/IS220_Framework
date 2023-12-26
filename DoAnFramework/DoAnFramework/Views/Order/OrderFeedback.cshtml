@@ -1,4 +1,4 @@
-﻿@model DoAnFramework.Models.ViewModel.OrderViewModel
+﻿@model DoAnFramework.Models.ViewModel.OrderWithComment
 @{
     ViewData["Title"] = "Đánh giá sách";
     Layout = "../Shared/_Layout.cshtml";
@@ -11,22 +11,22 @@
     <!--MY_ORDER-FEEDBACK START-->
     <div class="my-order-feedback w-100 ">
         <ul class="breadcrumb-my-order">
-            <li><a asp-controller="Order" asp-action="Index">Danh sách đơn hàng</a> / </li>
-            <li> <a asp-controller="Order" asp-action="OrderDetail">Chi tiết đơn hàng</a> / </li>
+            <li><a asp-controller="Order" asp-action="Index" asp-route-id="@Model.Order.Order.UserId">Danh sách đơn hàng</a> / </li>
+            <li> <a asp-controller="Order" asp-action="OrderDetail" asp-route-id="@Model.Order.Order.OrderId">Chi tiết đơn hàng</a> / </li>
             <li class="breadcrumb-current-page">Đánh giá đơn hàng</li>
         </ul>
 
         <h2>Đánh giá đơn hàng</h2>
 
         <div class="form-container">
-            <span id="temp-order-id" style="display: none;">@if(Model != null) @Model.Order.OrderId</span>
-             <span id="temp-user-id" style="display: none;">@if(Model != null) @Model.Order.UserId</span>
-             <span id="temp-user-name" style="display: none;">@if(Model != null) @Model.Order.UserName</span>
+            <span id="temp-order-id" style="display: none;">@if(Model != null) @Model.Order.Order.OrderId</span>
+             <span id="temp-user-id" style="display: none;">@if(Model != null) @Model.Order.Order.UserId</span>
+             <span id="temp-user-name" style="display: none;">@if(Model != null) @Model.Order.Order.UserName</span>
             <form class="add-order-feedback">
                 
-                @if (Model.OrderDetails != null)
+                @if (Model.Order.OrderDetails != null)
                 {
-                    foreach (var item in Model.OrderDetails)
+                    foreach (var item in Model.Order.OrderDetails)
                     {
                         <div class="product-line" id="@item.OrderDetail.OrderDetailId">
                             <div class="infor-row">
@@ -67,9 +67,9 @@
                         </div>
                     }
                 }
-                    
+
                 <div class="update-order-status">
-                    <button type="button" class="btn btn-cancel">Hủy</button>
+                    <button type="button" class="btn btn-cancel">Thoát</button>
                     <button type="submit" class="btn btn-confirm" value="Xác nhận">Xác nhận</button>
                 </div>
 
@@ -77,7 +77,18 @@
             </form>
         </div>
         
-        
+        @if(Model.Comment != null){
+            <div id="temp-comments" style="display: none;">
+            @foreach(var cmt in Model.Comment)
+            {
+                <div class="cmt-info" id="@cmt.CmtId">
+                    <span class="cmt-id">@cmt.CmtId</span>
+                    <span class="cmt-content">@cmt.Content</span>
+                    <span class="cmt-score">@cmt.Score</span>
+                 </div>
+            }
+        </div>
+        }
 
     </div>
 

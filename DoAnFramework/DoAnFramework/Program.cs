@@ -11,6 +11,7 @@ builder.Services.AddRazorPages();
 
 
 builder.Services.AddScoped<DoAnFramework.Models.Service.OrderService>();
+builder.Services.AddScoped<DoAnFramework.Models.Service.CommentService>();
 
 
 // them vao khi ket noi csdl, de nhan biet dbcontext

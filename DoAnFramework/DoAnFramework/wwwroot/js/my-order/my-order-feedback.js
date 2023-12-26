@@ -1,12 +1,12 @@
 ﻿$(document).ready(function () {
+    var orderId = $('#temp-order-id').text();
+    var userId = $('#temp-user-id').text();
+    var userName = $('#temp-user-name').text();
     $(".add-order-feedback").submit(function (event) {
         event.preventDefault();
-        var orderId = $('#temp-order-id').text();
-        var userId = $('#temp-user-id').text();
-        var userName = $('#temp-user-name').text();
+        
         var comments = [];
         
-
         $(".product-line").each(function () {
             var comtId = $(this).attr("id");
             var bookId = $(this).find(".book-name").attr("id");
@@ -34,7 +34,19 @@
         if (confirm("Những thay đổi sẽ không được lưu?"))
             window.location.href = "/Order/OrderDetail/" + orderId;
     });
-});
+
+
+    if ($('#temp-comments').length > 0) {
+        $(".cmt-info").each(function () {
+            var id = $(this).find(".cmt-id").text();
+            var content = $(this).find(".cmt-content").text();
+            var score = $(this).find(".cmt-score").text();
+            
+            $("#" + id + " .input-feedback").val(content);
+            $('#' + id + ' input[name*="rating"][value="' + score + '"]').prop('checked', true);
+        });
+    }
+
 
 function addFeedback(userId, userName, comments) {
     $.ajax({
@@ -45,7 +57,7 @@ function addFeedback(userId, userName, comments) {
         success: function (result) {
             if (result) {
                 alert("Đánh giá thành công!");
-                var url = '/Order/OrderFeddback/' + orderId; // Redirect to your orders page
+                var url = "/Order/OrderFeedback/" + orderId; // Redirect to your orders page
                 window.location.href = url;
             } else {
                 alert("Đánh giá không thành công");
@@ -55,4 +67,6 @@ function addFeedback(userId, userName, comments) {
             console.error("Lỗi kết nối: Đánh giá");
         }
     });
-}
+    }
+
+});
