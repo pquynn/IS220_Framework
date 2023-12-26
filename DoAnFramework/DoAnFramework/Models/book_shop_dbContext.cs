@@ -86,7 +86,6 @@ namespace DoAnFramework.Models
                     .HasColumnName("AUTHOR");
 
                 entity.Property(e => e.BookCover)
-                    .HasMaxLength(10)
                     .HasColumnName("BOOK_COVER");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CATEGORY_ID");
@@ -105,7 +104,6 @@ namespace DoAnFramework.Models
 
                 entity.Property(e => e.Publisher)
                     .HasMaxLength(50)
-                    .IsUnicode(false)
                     .HasColumnName("PUBLISHER");
 
                 entity.Property(e => e.YearPublish)

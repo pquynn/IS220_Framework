@@ -78,6 +78,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Book/BookCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Book/BookCover.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rQ292ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Book/BookDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xCb29rRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,8 +114,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Home/Questions.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWVzdGlvbnMuY3NodG1s
+[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Home/question_page_Doi_tac_van_chuyen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxxdWVzdGlvbl9wYWdlX0RvaV90YWNfdmFuX2NodXllbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Home/question_page_Huy_don_hang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxxdWVzdGlvbl9wYWdlX0h1eV9kb25faGFuZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Home/question_page_Phi_van_chuyen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxxdWVzdGlvbl9wYWdlX1BoaV92YW5fY2h1eWVuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Home/question_page_Phuong_thuc_thanh_toan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxxdWVzdGlvbl9wYWdlX1BodW9uZ190aHVjX3RoYW5oX3RvYW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/IS220_Framework/DoAnFramework/DoAnFramework/Views/Order/Cart.cshtml]

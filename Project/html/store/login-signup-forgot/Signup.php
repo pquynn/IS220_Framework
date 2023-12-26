@@ -18,6 +18,11 @@
                     <label for="phonenumber" class="form-label"> Số điện thoại</label>
                 </div>
 
+                <div class="col-12 form-floating">
+                    <input class="form-control" type="text" id="login_name" placeholder=" Tên đăng nhập" style="font-size: 12px;">
+                    <label for="login_name" class="form-label">Tên đăng nhập</label>
+                </div>
+
                 <div class="col-12 form-floating" >
                     <input class="form-control" type="password" id="pass" placeholder=" Mật khẩu">
                     <label for="pass" class="form-label"> Mật khẩu</label>
@@ -27,22 +32,18 @@
                     <input class="form-control" type="re-password" id="pass" placeholder=" Nhập lại mật khẩu">
                     <label for="re-password" class="form-label"> Nhập lại mật khẩu</label>
                 </div>
-
-                <div class="col-12">
-                    <input type="checkbox" id="remember"> Đồng ý với "Điều kiện sử dụng" và "Chính sách bảo mật"
-                </div>
-
+            
                 <div class="col-12">
                     <button class="btn btn-confirm w-100" onclick="register()">Đăng ký</button>
                 </div>
                 
-                <div class="col-6 text-center">
+                <!-- <div class="col-6 text-center">
                     <a href="" class="text-primary float-start">Điều kiện sử dụng</a>
                 </div>
 
                 <div class="col-6 text-center">
                     <a href="" class="text-primary float-end">Chính sách bảo mật</a>
-                </div>
+                </div> -->
 
             </div>
         </form>

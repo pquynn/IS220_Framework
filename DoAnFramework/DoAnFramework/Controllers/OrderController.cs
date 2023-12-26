@@ -26,7 +26,7 @@ namespace DoAnFramework.Controllers
 
 
         //GET: Order/order list/"KH009"
-        public IActionResult Index(int page = 1, string user_id = "KH009") //my order
+        public IActionResult Index(int page = 1, string user_id = "") //my order
         {
             var models = _orderService.GetMyOrderList(user_id, page, 20);
             ViewBag.CurrentPage = page;
@@ -62,7 +62,7 @@ namespace DoAnFramework.Controllers
 
 
         //GET: Order/Cart/"KH009"
-        public IActionResult Cart(string user_id = "KH009") //my order
+        public IActionResult Cart(string user_id = "") //my order
         {
             var cartViewModel = _orderService.GetLoginCart(user_id);
 

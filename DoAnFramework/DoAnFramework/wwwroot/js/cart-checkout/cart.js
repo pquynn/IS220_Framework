@@ -1,37 +1,38 @@
 ﻿
-    //const cart = JSON.parse(localStorage.getItem("myCart"));
-    //const localCart = getLocalCart(cart);
+const cart = JSON.parse(localStorage.getItem("myCart"));
+const localCart = getLocalCart(cart);
 
     // Render cart row: start
-    $(document).ready(function () {
-        var user_id = $('#temp-user-id').text();
+$(document).ready(function () {
+     var user_id = $('#temp-user-id').text();
+        
+    if (user_id != null && user_id != "") {
 
         var rowCount = $('.product-list--body tr').length;
         if (rowCount === 0 || typeof rowCount === "undefined") {
             emptyCart();
         }
-        else
-            if (user_id != null) {
-                var totalPrice = 0;
-                $(".product").each(function () {
-                    // Get the quantity and price values
-                    var quantity = parseInt($(this).find(".amount-feld").val());
-                    var price = parseInt($(this).find("#book-price-" + $(this).attr("id").split("-")[1]).text());
-                    var total = quantity * price;
+        else {
+            var totalPrice = 0;
+            $(".product").each(function () {
+                // Get the quantity and price values
+                var quantity = parseInt($(this).find(".amount-feld").val());
+                var price = parseInt($(this).find("#book-price-" + $(this).attr("id").split("-")[1]).text());
+                var total = quantity * price;
 
-                    // Update the product-total td with the calculated total
-                    $(this).find(".product-total").text(total);
+                // Update the product-total td with the calculated total
+                $(this).find(".product-total").text(total);
 
-                    totalPrice += total;
-                });
-            
-                $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
-                $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
+                totalPrice += total;
+            });
 
-            }
-            else
-                displayCart(user_id);
+            $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
+            $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
 
+        }    
+    }
+    else
+        displayCart();
         
 
         // CHANGE PRODUCT'S AMOUNT-BTN: START------------------
@@ -67,7 +68,8 @@
             var price = $(`#book-price-${inputId}`).text(); 
 
             var total = Number(quantity) * Number(price);
-            $(`#pro-total-${inputId}`).text(total.toString()) 
+
+            $(`#pro-total-${inputId}`).text(total.toString());
 
             var totalPrice = 0;
 
@@ -84,24 +86,25 @@
             $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
 
             //update data
-            if (user_id === null) {
+            if (user_id === null || user_id === "") {
                 const cart = JSON.parse(localStorage.getItem("myCart"));
                 changeAmountLocal(getLocalCart(cart), Number(quantity), inputId);
             } else {
                 changeAmountLogin(inputId, quantity);
             }
         });
-        function changeAmountLocal(cartData, productAmount, rowId) {
+    function changeAmountLocal(cartData, productAmount, rowId) {
             cartData[rowId].QUANTITY = productAmount;
-
+           
             var cartArray = [];
             cartData.forEach((row) => {
                 let rowData = {};
+
                 rowData.productName = row.PRODUCT_NAME;
                 rowData.productPrice = `${row.PRICE} VND`;
                 rowData.numberOfProduct = `${row.QUANTITY}`;
                 //co doi FIRST_PICTURE THANH FRONT_COVER Khong
-                rowData.productImage = `data:FIRST_PICTURE/png;base64,${row.FIRST_PICTURE}`;
+                rowData.productImage = `${row.FIRST_PICTURE}`;
                 cartArray.push(rowData);
             });
             localStorage.setItem("myCart", JSON.stringify(cartArray));
@@ -186,13 +189,15 @@
         }
         // REMOVE PRODUCT: END
     
-        function emptyCart() {
-            document.querySelector(".empty-cart").classList.toggle("hidden");
-            document.querySelector(".cart-body").classList.toggle("hidden");
-        }
-
-    
         
+
+   
+});
+
+function emptyCart() {
+    document.querySelector(".empty-cart").classList.toggle("hidden");
+    document.querySelector(".cart-body").classList.toggle("hidden");
+}
         // LAY GIO HANG LUU O CLIENT NEU KHONG DANG NHAP: START
         function getLocalCart(cart) {
             if (cart === null) {
@@ -206,8 +211,7 @@
             function isInclude(arrayObj, value) {
                 for (let i = 0; i < arrayObj.length; i++) {
                     if (
-                        arrayObj[i].PRODUCT_NAME == value.PRODUCT_NAME &&
-                        arrayObj[i].SIZE == value.SIZE
+                        arrayObj[i].PRODUCT_NAME == value.PRODUCT_NAME
                     ) {
                         return i;
                     }
@@ -221,9 +225,9 @@
                 var row = {
                     ORDER_DETAIL_ID: i,
                     PRODUCT_NAME: product.productName,
-                    PRICE: Number(product.productPrice.slice(0, -4).replaceAll(".", "")),
+                    PRICE: Number(product.productPrice.slice(0, -4).replaceAll(",", "")),
                     QUANTITY: Number(product.numberOfProduct),
-                    FIRST_PICTURE: product.productImage.slice(30),
+                    FIRST_PICTURE: product.productImage.replace(/^data:image\/\w+;base64,/, '')
                 };
 
                 // dua vao day san pham (cart)
@@ -239,22 +243,24 @@
         }
         // LAY GIO HANG LUU O CLIENT NEU KHONG DANG NHAP: END
 
-
-        //DISPLAY CART IF USER NOT LOGIN: START
-        function displayCart(user_id) {
-            var total = 0;
-
-         var data = getLocalCart(cart);
-
-        // kt xem gio hang co trong khong
-        if (data.length === 0) {
-            emptyCart();
-            return 0;
+        var rowAmount;
+        function getRowAmount(amount) {
+            rowAmount = amount;
         }
 
-        const tbCart = $(".product-list--body");
-        data.forEach(function (row) {
-            getRowAmount(data.length);
+        //DISPLAY CART IF USER NOT LOGIN: START
+        function displayCart() {
+            var total = 0;
+            var data = getLocalCart(cart);
+            
+            // kt xem gio hang co trong khong
+            if (data.length === 0) {
+                emptyCart();
+                return 0;
+            }
+            const tbCart = $(".product-list--body");
+            data.forEach(function (row) {
+                getRowAmount(data.length);
 
             var imageUrl = "data:image/png;base64," + row.FIRST_PICTURE;
             tbCart.append(`
@@ -273,7 +279,7 @@
                 </td>
 
                 <!-- price -->
-                <td class="price">${row.PRICE * 1}</td>
+                <td id="book-price-${row.ORDER_DETAIL_ID}" class="price">${row.PRICE * 1}</td>
 
                 <!-- amount -->
                 <td class="product-amount">
@@ -287,8 +293,7 @@
                             type="number"
                             min="1"
                             value="${row.QUANTITY}"
-                            id="${row.ORDER_DETAIL_ID}"
-                            onChange="changeAmountInpt(${row.ORDER_DETAIL_ID}, ${row.PRICE})">
+                            id="${row.ORDER_DETAIL_ID}">
                             <button
                                 class="amount-btn pointer plus"
                                 id="btn-plus-${row.ORDER_DETAIL_ID}">
@@ -308,7 +313,6 @@
                     <button
                         class="remove-btn pointer"
                         id="btn-remove-${row.ORDER_DETAIL_ID}"
-                        onClick="removeProduct(${row.ORDER_DETAIL_ID})"
                         type="button">
                         <span class="material-symbols-sharp">
                             delete
@@ -329,4 +333,4 @@
 
 
 
-        });
+        

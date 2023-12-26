@@ -10,7 +10,7 @@
     <!-- CHECKOUT HEADER: Start -->
     <div class="checkout-header">
         <h2>Thanh toán</h2>
-        <a asp-controller="Home" asp-action="Index">
+        <a asp-controller="Book" asp-action="Index">
             <span class="material-symbols-outlined"> keyboard_backspace </span>Tiếp tục mua sắm
         </a>
     </div>
@@ -21,9 +21,9 @@
             <!-- INFOR FORM: Start -->
             <div class="left-col">
                 <div class="infor-form flex flex-col">
-                    <span id="temp-address" style="display: none;"> @if (Model.Order != null)
+                    <span id="temp-address" style="display: none;">@if (Model != null && Model.Order != null)
                             @Model.Order.Address</span>
-                    <span id="temp-user-id" style="display: none;">@if (Model.Order != null)
+                    <span id="temp-user-id" style="display: none;">@if (Model != null && Model.Order != null)
                             @Model.Order.UserId</span>
                     <!-- NAME: Start -->
                     <input type="text"
@@ -31,7 +31,9 @@
                            id="name"
                            required
                            class="input-char customer-name"
-                           value="@if (Model.Order != null) @Model.Order.UserName" />
+                           value="@if (Model != null && Model.Order != null)
+                    @Model.Order.UserName
+" />
                     <!-- NAME: End -->
                     <!-- PHONE NUMBER: Start -->
                     <input type="tel"
@@ -41,7 +43,9 @@
                            required
                            class="input-char customer-phone"
                            pattern="^0[0-9]{9}$"
-                           value="@if (Model.Order != null) @Model.Order.UserTelephone" />
+                           value="@if (Model != null && Model.Order != null)
+                    @Model.Order.UserTelephone
+" />
                     <!-- PHONE NUMBER: End -->
                     <!-- ADDRESS: Start -->
                     <div class="address width-50-30">
@@ -140,7 +144,7 @@
                         </tr>
                     </thead>
                     <tbody class="product-list--body">
-                        @if (Model.Order != null && Model.OrderDetails != null)
+                        @if (Model != null && Model.Order != null && Model.OrderDetails != null)
                         {
                             foreach (var item in Model.OrderDetails)
                             {
@@ -169,15 +173,18 @@
                 <div class="buy-section">
                     <!-- sub total -->
                     <div class="sub-total flex">
-                        <p>Tạm tính (@if (Model.Order != null)
+                        <p>
+                            Tạm tính (@if (Model != null && Model.Order != null)
                                 @Model.Order.TotalBooks sản phẩm)</p>
-                        <p class="sub-total--amount">@if (Model.Order != null)
+                        <p class="sub-total--amount">
+                            @if (Model != null && Model.Order != null)
                                 @Model.Order.TotalPrice.Value.ToString("#,##0") đ</p>
                     </div>
                     <!-- total -->
                     <div class="total flex">
                         <p>Tổng tiền<small> (bao gồm VAT)</small></p>
-                        <p class="total-amount">@if (Model.Order != null)
+                        <p class="total-amount">
+                            @if (Model != null && Model.Order != null)
                                 @Model.Order.TotalPrice.Value.ToString("#,##0") đ</p>
                     </div>
                     <!-- buy -->

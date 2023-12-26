@@ -1,11 +1,10 @@
 ﻿
-    //const cart = JSON.parse(localStorage.getItem("myCart"));
-    //const localCart = getLocalCart(cart);
+    const cart = JSON.parse(localStorage.getItem("myCart"));
+    const localCart = getLocalCart(cart);
 
     $(document).ready(function () {
         var user_id = $('#temp-user-id').text();
         displayCheckout(user_id);
-
         $("#buy-form").submit(function (e) {
             e.preventDefault();
             console.log("buy-form is submitted");
@@ -21,18 +20,16 @@
                 xaPhuong: $("#ward").val(),
                 duongAp: $("#street").val(),
             };
-            console.log(address);
 
              // thoi gian
              const now = new Date();
              const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 
              // phuong thuc thanh toan
-             const paymentMethod = $(`input[name="payment"]:checked`).val();
-             
-             //buy(name, phone, address, user_id, date, paymentMethod, localCart);
-            buy(name, phone, address, user_id, date, paymentMethod, null);
-
+            const paymentMethod = $(`input[name="payment"]:checked`).val();
+            
+             buy(name, phone, address, user_id, date, paymentMethod, localCart);
+            
              if (paymentMethod == "cod") {
                  alert("Đặt hàng thành công!");
                  window.location.href = "/Order/Cart";
@@ -82,9 +79,7 @@ function displayData() {
             // Get the quantity and price values
         var quantity_text = ($(this).find(".amount-feld").text()).slice('X ',);
         var quantity = quantity_text.replace(/^X\s/, '');
-        console.log(quantity);
         var price = $(this).find(".product-total").text();
-        console.log(price);
             var total = Number(quantity) * Number(price);
 
             // Update the product-total td with the calculated total
@@ -100,7 +95,7 @@ function displayData() {
 
 
     function displayCheckout(user_id) {
-        if (user_id) {
+        if (user_id != null && user_id != "") {
             displayData();
         }
         else
@@ -123,12 +118,11 @@ function displayData() {
                     src="${imageUrl}" />
                 <div class="product-descr">
                     <a href="#">${row.PRODUCT_NAME}</a>
-                    <small class="gray-text">Size ${row.SIZE}</small>
-                    <small>X${row.QUANTITY}</small>
+                    <small>X ${row.QUANTITY}</small>
                 </div>
             </td>
 
-            <td>${(row.PRICE * row.QUANTITY).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</td>
+            <td class="product-total">${(row.PRICE * row.QUANTITY).toString()}</td>
         </tr>`);
 
 
@@ -153,7 +147,7 @@ function displayData() {
     user_id,
     date,
     paymentMethod,
-    localCart) {
+        localCart) {
         $.ajax({
             url: "/Checkout/Buy",
             type: "POST",
@@ -171,10 +165,64 @@ function displayData() {
                 localCart: localCart,
             },
             success: function (response) {
-                console.log(response);
+                if (response.success) {
+                    console.log("success");
+                }
+                else
+                    console.log('failed');
             },
             error: function () {
                 console.log(0);
             },
         });
+}
+
+
+function getLocalCart(cart) {
+    if (cart === null) {
+        return [];
     }
+    // get cart form client
+    var mergedCart = [];
+    // LAY DATA NEU NGUOI DUNG KHONG DANG NHAP: START
+    // DINH DANG JSON CHO GIO HANG && GOP SAN PHAM TRUNG
+    // kiem tra xem gio hang da co san pham chua
+    function isInclude(arrayObj, value) {
+        for (let i = 0; i < arrayObj.length; i++) {
+            if (
+                arrayObj[i].PRODUCT_NAME == value.PRODUCT_NAME
+            ) {
+                return i;
+            }
+        }
+        return false;
+    }
+
+    // dinh dang san pham
+    cart.forEach((product, i) => {
+        // chuyen thanh object
+        var row = {
+            ORDER_DETAIL_ID: i,
+            PRODUCT_NAME: product.productName,
+            PRICE: Number(product.productPrice.slice(0, -4).replaceAll(",", "")),
+            QUANTITY: Number(product.numberOfProduct),
+            FIRST_PICTURE: product.productImage.replace(/^data:image\/\w+;base64,/, '')
+        };
+
+        // dua vao day san pham (cart)
+        var varIsInclude = isInclude(mergedCart, row);
+        if (varIsInclude === false) {
+            mergedCart.push(row);
+        } else {
+            mergedCart[varIsInclude].QUANTITY += row.QUANTITY;
+        }
+    });
+    // LAY DATA NEU NHUOI DUNG KHONG DANG NHAP: END
+    return mergedCart;
+}
+// LAY GIO HANG LUU O CLIENT NEU KHONG DANG NHAP: END
+
+var rowAmount;
+function getRowAmount(amount) {
+    rowAmount = amount;
+}

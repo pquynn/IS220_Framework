@@ -105,14 +105,14 @@ namespace DoAnFramework.Models.Service
         }
 
         public bool UpdateOrderLogin(string user_id, string name, string phone, 
-            string tinhThanh, string quanHuyen, string xaPhuong, string duongAp, string date, string paymentMethod)
+            string tinhThanh, string quanHuyen, string xaPhuong, string duongAp, DateTime date, string paymentMethod)
         {
             var existingOrder = _context.Orders.SingleOrDefault(o => o.UserId == user_id && o.Status == "cart");
 
             if (existingOrder != null)
             {
                 existingOrder.Address = duongAp + ", " + quanHuyen + ", " + xaPhuong + ", " + tinhThanh;
-                existingOrder.OrderDate = DateTime.Parse(date);
+                existingOrder.OrderDate = date;
                 existingOrder.Status = "pending";
                 existingOrder.UserName = name;
                 existingOrder.UserTelephone = phone;
@@ -125,12 +125,12 @@ namespace DoAnFramework.Models.Service
         }
 
         public bool InsertOrderLocal(string name, string phone, string tinhThanh, string quanHuyen, 
-            string xaPhuong, string duongAp, string date, string paymentMethod, List<LocalCartItem> localCart)
+            string xaPhuong, string duongAp, DateTime date, string paymentMethod, List<LocalCartItem> localCart)
         {
             var newOrder = new Order
             {
                 Address = $"{duongAp}, {quanHuyen}, {xaPhuong}, {tinhThanh}",
-                OrderDate = DateTime.Parse(date),
+                OrderDate = date,
                 Status = "pending",
                 UserName = name,
                 UserTelephone = phone,
@@ -141,29 +141,37 @@ namespace DoAnFramework.Models.Service
             _context.SaveChanges();
 
             // Get the order ID of the newly inserted order
-            var localOrderId = newOrder.OrderId;
-
-            // Insert order details based on localCart
-            foreach (var cartItem in localCart)
+            var localOrder = _context.Orders
+                .OrderByDescending(od=> od.OrderDate)
+                .FirstOrDefault(od => od.UserName == name);
+           
+            if(localOrder != null)
             {
-                // Find the book_id based on book_name
-                var book = _context.Books.FirstOrDefault(b => b.Name == cartItem.book_name);
+                var localOrderId = localOrder.OrderId;
 
-                var orderDetail = new OrderDetail
+                // Insert order details based on localCart
+                foreach (var cartItem in localCart)
                 {
-                    OrderId = localOrderId,
-                    BookId = book.BookId,
-                    BookName = cartItem.book_name,
-                    Quantity = cartItem.quantity,
-                    Price = cartItem.price
-                };
+                    var book = _context.Books.FirstOrDefault(b => b.Name == cartItem.PRODUCT_NAME);
+                    if (book == null)
+                        return false;
+                    
+                    var orderDetail = new OrderDetail
+                    {
+                        OrderId = localOrderId,
+                        BookId = book.BookId,
+                        BookName = cartItem.PRODUCT_NAME,
+                        Quantity = cartItem.QUANTITY,
+                        Price = cartItem.PRICE
+                    };
 
-                _context.OrderDetails.Add(orderDetail);
-                
+                    _context.OrderDetails.Add(orderDetail);
+                    
+                }
+                _context.SaveChanges();
+                return true;
             }
-
-            _context.SaveChanges();
-            return true;
+             return false;
         }
 
         //cancel order 

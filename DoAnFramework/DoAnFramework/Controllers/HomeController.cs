@@ -17,6 +17,7 @@ namespace DoAnFramework.Controllers
 
         public IActionResult Index()
         {
+
             var listBook = _context.Books
                 .OrderByDescending(item => item.Name)
                 .Include(item => item.BookImage)
@@ -28,6 +29,8 @@ namespace DoAnFramework.Controllers
                 .Include(item => item.BookImage)
                 .Take(4)
                 .ToList();
+
+
 
             var listBlog = _context.Blogs
                 .OrderBy(item => item.BlogId)

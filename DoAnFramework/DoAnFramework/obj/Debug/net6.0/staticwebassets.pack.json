@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog-detail.css",
+      "PackagePath": "staticwebassets\\css\\store\\blog-detail.css"
+    },
+    {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog.css",
       "PackagePath": "staticwebassets\\css\\store\\blog.css"
     },
@@ -211,6 +215,10 @@
     {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order.js",
       "PackagePath": "staticwebassets\\js\\my-order\\my-order.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_detail.js",
+      "PackagePath": "staticwebassets\\js\\product_detail.js"
     },
     {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",

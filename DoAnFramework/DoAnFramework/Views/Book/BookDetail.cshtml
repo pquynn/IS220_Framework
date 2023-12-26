@@ -55,7 +55,7 @@
 						</div>
 
 						<div class="product-property cover">
-						@if (Model.BookCover == "soft")
+						@if (Model.BookCover == 1)
 						{
 						<h4>Loại bìa sách: <span>Bìa mềm</span> </h4>
 						}
@@ -230,7 +230,7 @@
 <!-- PRODUCT DETAIL'S BODY: END -->
 <!-- start of Modal of reading book sample-->
 <!-- Modified 11/21/2023 by Quyen -->
-<div class="modal fade modal-xl read-sample-container" id="read-sample-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#read-sample" aria-hidden="true">
+<div class="modal fade modal-xl read-sample-container" id="read-sample-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="3" aria-labelledby="#read-sample" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 		<div class="modal-content">
 			@if (Model != null)

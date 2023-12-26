@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "axMjjJyI1VSru3JCcaK2Ag+LZAOYc1iq7zekXE7mNAw=",
+  "Hash": "Wn/qIfdlQ8dyHLqvYPbLLJWWEeh+0GCJdImoFKIiVwM=",
   "Source": "DoAnFramework",
   "BasePath": "_content/DoAnFramework",
   "Mode": "Default",
@@ -319,6 +319,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\store\\blog.css"
+    },
+    {
+      "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\blog-detail.css",
+      "SourceId": "DoAnFramework",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\",
+      "BasePath": "_content/DoAnFramework",
+      "RelativePath": "css/store/blog-detail.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\store\\blog-detail.css"
     },
     {
       "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\css\\store\\cart.css",
@@ -1117,6 +1136,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\my-order\\my-order-feedback.js"
+    },
+    {
+      "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_detail.js",
+      "SourceId": "DoAnFramework",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\",
+      "BasePath": "_content/DoAnFramework",
+      "RelativePath": "js/product_detail.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\product_detail.js"
     },
     {
       "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
