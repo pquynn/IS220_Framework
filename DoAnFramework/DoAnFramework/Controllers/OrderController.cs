@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
 using DoAnFramework.Models.Service;
 using AspNetCoreHero.ToastNotification.Abstractions;
+using System.Xml.Linq;
+using DoAnFramework.Models.ViewModel;
 
 namespace DoAnFramework.Controllers
 {
@@ -15,9 +17,11 @@ namespace DoAnFramework.Controllers
     {
 
         private readonly OrderService _orderService;
-        public OrderController(OrderService orderService)
+        private readonly CommentService _commentService;
+        public OrderController(OrderService orderService, CommentService commentService)
         {
             _orderService = orderService;
+            _commentService = commentService;
         }
 
 
@@ -30,23 +34,32 @@ namespace DoAnFramework.Controllers
 
         }
 
+
         //GET: Order/OrderDetail/3
         public IActionResult OrderDetail(int? id)
         {
             var order = _orderService.GetMyOrderDetails(id);
             if (order == null)
             {
-                return NotFound();
+                return RedirectToAction("Index", "Order");
             }
 
             return View(order);
         }
 
+
         //GET: Order/OrderFeedback/3
-        public IActionResult OrderFeedback()
+        public IActionResult OrderFeedback(int? id)
         {
-            return View();
+            var order = _orderService.GetMyOrderDetails(id);
+            if (order == null)
+            {
+                return RedirectToAction("Index", "Order");
+            }
+
+            return View(order);
         }
+
 
         //GET: Order/Cart/"KH009"
         public IActionResult Cart(string user_id = "KH009") //my order
@@ -73,6 +86,7 @@ namespace DoAnFramework.Controllers
             
         }
 
+
         //POST: Order/DeleteOrderDetail/order_detail_id
         [HttpPost]
         public IActionResult DeleteOrderDetail(int orderDetailId)
@@ -85,11 +99,22 @@ namespace DoAnFramework.Controllers
             
         }
 
+
         //POST: Order/CancelOrder/orderId
         [HttpPost]
         public IActionResult CancelOrder(int orderId)
         {
-            var success = _orderService.CancelOrder(orderId);
+            var success = _orderService.updateOrderStatus(orderId, "cancelled");
+
+            return Json(success);
+        }
+
+
+        //POST: Order/AddFeedback/...
+        [HttpPost]
+        public IActionResult AddFeedback(string userId, string userName, List<CommentList> comments)
+        {
+            var success = _commentService.addFeedback(userId, userName, comments);
 
             return Json(success);
         }

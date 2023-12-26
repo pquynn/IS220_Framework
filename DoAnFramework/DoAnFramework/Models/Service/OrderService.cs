@@ -27,7 +27,7 @@ namespace DoAnFramework.Models.Service
         }
 
         //Get my-order detail base on orderid
-        public Order GetMyOrderDetails(int? orderId)
+        public OrderViewModel GetMyOrderDetails(int? orderId)
         {
             if (orderId == null)
             {
@@ -35,13 +35,18 @@ namespace DoAnFramework.Models.Service
             }
 
             var order = _context.Orders
-                .AsNoTracking()
+               .AsNoTracking()
                 .Where(od => od.OrderId == orderId)
-                .Include(x => x.OrderDetails)
-                    .ThenInclude(od => od.Book) // Include the related Book for each OrderDetail
-                        .ThenInclude(od => od.BookImage)
+                .Select(od => new OrderViewModel
+                {
+                    Order = od,
+                    OrderDetails = od.OrderDetails.Select(o => new OrderDetailWithImage
+                    {
+                        OrderDetail = o,
+                        FrontCover = o.Book.BookImage.FrontCover
+                    })
+                })
                 .FirstOrDefault();
-
             return order;
         }
 
@@ -69,6 +74,7 @@ namespace DoAnFramework.Models.Service
 
                 return cart;
             }
+
 
         //Update order detail quantity
         public bool UpdateOrderDetailQuantity(int orderDetailId, int newQuantity)
@@ -140,15 +146,20 @@ namespace DoAnFramework.Models.Service
             // Insert order details based on localCart
             foreach (var cartItem in localCart)
             {
+                // Find the book_id based on book_name
+                var book = _context.Books.FirstOrDefault(b => b.Name == cartItem.book_name);
+
                 var orderDetail = new OrderDetail
                 {
                     OrderId = localOrderId,
+                    BookId = book.BookId,
                     BookName = cartItem.book_name,
                     Quantity = cartItem.quantity,
                     Price = cartItem.price
                 };
 
                 _context.OrderDetails.Add(orderDetail);
+                
             }
 
             _context.SaveChanges();
@@ -156,7 +167,7 @@ namespace DoAnFramework.Models.Service
         }
 
         //cancel order 
-        public bool CancelOrder(int orderId)
+        public bool updateOrderStatus(int orderId, string status)
         {
             try
             {
@@ -164,7 +175,7 @@ namespace DoAnFramework.Models.Service
 
                 if (order != null)
                 {
-                    order.Status = "cancelled";
+                    order.Status = status;
                     _context.SaveChanges();
                     return true;
                 }

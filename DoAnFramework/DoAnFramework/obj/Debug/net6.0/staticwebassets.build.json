@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MaS2o5YkrlLSehdzgWm/n+lWgC9B9JNpBuAljMLnEyU=",
+  "Hash": "axMjjJyI1VSru3JCcaK2Ag+LZAOYc1iq7zekXE7mNAw=",
   "Source": "DoAnFramework",
   "BasePath": "_content/DoAnFramework",
   "Mode": "Default",
@@ -1062,6 +1062,25 @@
       "OriginalItemSpec": "wwwroot\\js\\cart-checkout\\checkout.js"
     },
     {
+      "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order.js",
+      "SourceId": "DoAnFramework",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\",
+      "BasePath": "_content/DoAnFramework",
+      "RelativePath": "js/my-order/my-order.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\my-order\\my-order.js"
+    },
+    {
       "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order-detail.js",
       "SourceId": "DoAnFramework",
       "SourceType": "Discovered",
@@ -1079,6 +1098,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\my-order\\my-order-detail.js"
+    },
+    {
+      "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order-feedback.js",
+      "SourceId": "DoAnFramework",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\",
+      "BasePath": "_content/DoAnFramework",
+      "RelativePath": "js/my-order/my-order-feedback.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\my-order\\my-order-feedback.js"
     },
     {
       "Identity": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",

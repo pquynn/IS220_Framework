@@ -205,6 +205,14 @@
       "PackagePath": "staticwebassets\\js\\my-order\\my-order-detail.js"
     },
     {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order-feedback.js",
+      "PackagePath": "staticwebassets\\js\\my-order\\my-order-feedback.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order.js",
+      "PackagePath": "staticwebassets\\js\\my-order\\my-order.js"
+    },
+    {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

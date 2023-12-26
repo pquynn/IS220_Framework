@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-
+    const orderId = $('#order-id-head').text();
     var status = $('.user-info.status').text();
     // Reset all elements to their initial state
     $("#progressbar li").removeClass("active");
@@ -44,6 +44,10 @@
         }
     });
 
+    //$('.review-order').on('click', function (event) {
+    //    window.location.href = "/Order/OrderFeedback/" + orderId;
+    //}
+
 });
 
 function cancelOrder(orderId) {
@@ -55,7 +59,7 @@ function cancelOrder(orderId) {
             success: function (result) {
                 if (result) {
                     alert("Hủy đơn hàng thành công!");
-                    var url = '/Order/OrderDetail'; // Redirect to your orders page
+                    var url = '/Order/OrderDetail/' + orderId; // Redirect to your orders page
                     window.location.href = url;
                 } else {
                     alert("Hủy đơn hàng không thành công");
