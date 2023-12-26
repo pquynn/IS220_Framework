@@ -10,17 +10,6 @@
 <div class="product-detail--body">
 	<div class="product-nav">
 		<h1>Sách</h1>
-		<nav class="product-detail-link" aria-label="breadcrumb">
-			<ul class="breadcrumb">
-				<li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
-				<li><a class="breadcrumb-item" asp-controller="Book" asp-action="Index">Sách thiếu nhi</a></li>
-				@if (Model != null)
-				{
-					<li class="breadcrumb-item active" aria-current="page">@Model.Name
-					</li>
-				}
-			</ul>
-		</nav>
 	</div>
 	<div class="main-info">
 		@if (Model != null)
@@ -54,7 +43,7 @@
 						</div>
 
 						<div class="product-property category">
-							<h4>Thể loại: <span>@Model.Category</span> </h4>
+							<h4>Thể loại: <span>@Model.Category.NameCategory</span> </h4>
 						</div>
 
 						<div class="product-property day-publish">
@@ -66,7 +55,15 @@
 						</div>
 
 						<div class="product-property cover">
-							<h4>Loại bìa sách: <span>@Model.BookCover</span> </h4>
+						@if (Model.BookCover == "soft")
+						{
+						<h4>Loại bìa sách: <span>Bìa mềm</span> </h4>
+						}
+						else
+						{
+							<h4>Loại bìa sách: <span>Bìa cứng</span> </h4>		
+						}
+
 						</div>
 
 						<div class="product-property pages">
@@ -103,16 +100,6 @@
 				Mô tả
 			</button>
 			<button class="nav-link tag-btn"
-					id="nav-profile-tab"
-					data-bs-toggle="tab"
-					data-bs-target="#nav-profile"
-					type="button"
-					role="tab"
-					aria-controls="nav-profile"
-					aria-selected="false">
-				Chi tiết
-			</button>
-			<button class="nav-link tag-btn"
 					id="nav-contact-tab"
 					data-bs-toggle="tab"
 					data-bs-target="#nav-contact"
@@ -138,27 +125,6 @@
 			}
 		</div>
 		<!-- description's content: end -->
-		<!-- detail's content:start -->
-		<div class="tab-pane fade"
-			 id="nav-profile"
-			 role="tabpanel"
-			 aria-labelledby="nav-profile-tab">
-			<div class="tab-content">
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-					autem quibusdam dolorum dolorem pariatur dolores, non ipsum ad
-					nulla magnam veniam dignissimos vero nam alias minima repellat
-					optio, nihil accusantium? quam.
-				</p>
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem,
-					eius illum consequuntur quae minus iusto voluptatibus inventore
-					exercitationem, similique distinctio repellat veniam animi
-					aspernatur laborum laboriosam iste adipisci consectetur
-				</p>
-			</div>
-		</div>
-		<!-- detail's content:end -->
 		<!-- review's content: start -->
 		<div class="tab-pane fade"
 			 id="nav-contact"
@@ -323,6 +289,8 @@
 		}
 	});
 </script>
+
+<script type="module" src="~/js/product_detail.js"></script>
 
 <!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

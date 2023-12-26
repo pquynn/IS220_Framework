@@ -1,5 +1,6 @@
 ﻿using DoAnFramework.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace DoAnFramework.Controllers
@@ -31,6 +32,7 @@ namespace DoAnFramework.Controllers
                 .Where(item => item.BookId == id)
                 .Include(item => item.Comments)
                 .Include(item => item.BookImage)
+                .Include(item => item.Category)
                 .FirstOrDefault();
 
             return View(product);
@@ -46,10 +48,10 @@ namespace DoAnFramework.Controllers
             return View(listProduct);
         }
 
-        public IActionResult BookCover(int? typeCover)
+        public IActionResult BookCover(string? typeCover)
         {
             var listProduct = _context.Books
-                .Where( item => item.BookCover == typeCover)
+                .Where(item => item.BookCover == typeCover)
                 .Include(item => item.BookImage)
                 .ToList();
 

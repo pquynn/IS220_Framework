@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\img\\user.png"
     },
     {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_detail.js",
+      "PackagePath": "staticwebassets\\js\\product_detail.js"
+    },
+    {
       "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
