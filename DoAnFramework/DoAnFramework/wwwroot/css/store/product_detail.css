@@ -73,6 +73,7 @@ body p {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  flex: 1;
 }
 
 .product-name h2{
@@ -81,6 +82,7 @@ body p {
 
 .product-price{
   margin-bottom: 0;
+  color: red;
 }
 
 .product-price h3 {

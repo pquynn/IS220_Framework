@@ -1,18 +1,40 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using DoAnFramework.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using PagedList.Core;
+using System.Drawing.Printing;
 
 namespace DoAnFramework.Controllers
 {
     public class BlogController : Controller
     {
-        public IActionResult Index()
+		private readonly book_shop_dbContext _context;
+
+		public BlogController(book_shop_dbContext context)
+		{
+			_context = context;
+		}
+
+		public IActionResult Index()
         {
-            return View();
+			var listBlogs = _context.Blogs			// Lấy dữ liệu từ Model Blogs.
+				.OrderBy(x => x.BlogId)
+				.ToList();
+
+			return View(listBlogs);					// Trả dữ liệu lấy được về View.
         }
 
-        public IActionResult BlogDetail()
+        public IActionResult BlogDetail(int? id)
         {
-            return View();
+			if (id == null)
+			{
+				return NotFound();
+			}
+
+			var blogDetail = _context.Blogs
+			   .Where(blog => blog.BlogId == id)
+			   .FirstOrDefault();
+			return View(blogDetail);
         }
     }
 }

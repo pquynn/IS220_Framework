@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Câu hỏi thường gặp";
+    Layout = "../Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/store/question_page_style.css">
+
+    <h2>HỖ TRỢ</h2>
+
+    <div class="contentBox">
+        <div class="contentBox__Left">
+            <div class="Content">
+                <h4>ĐƠN VỊ VẬN CHUYỂN</h4>
+                <p>
+                <br>Tùy vào tình hình và thời điểm, chúng tôi sẽ lựa chọn 1 trong 3 đối tác vận chuyển chính thức:<br>
+                    - Giao Hàng Nhanh.<br>
+                    - Giao Hàng Tiết Kiệm.<br>
+                    - J&T Express.
+                </p>
+            </div>
+
+            <div class="Related_Questions">
+                <p>Các câu hỏi liên quan:</p>
+                <ul style="list-style-type:disc">
+                    <li><a asp-controller="Home" asp-action="question_page_Phuong_thuc_thanh_toan">Các phương thức thanh toán.</a></li>
+                    <li><a asp-controller="Home" asp-action="question_page_Phi_van_chuyen">Phí vận chuyển.</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+@*     <div class="line">
+        <svg height="800px" width="2px">
+            <line x1="0" y1="0" x2="0" y2="590" style="stroke:black; stroke-width: 3px;" />
+        </svg>
+
+        <hr>
+    </div> *@
+
+    <div class="contentBox__Right">
+        <div class="centerBox">
+            <img src="~/../img/chat.png" alt="">
+            <p>EMAIL</p>
+            <p>215215xx@gm.uit.edu.vn</p>
+        </div>
+        <div class="centerBox">
+            <img src="~/../img/telephone.png" alt="">
+            <p>ĐIỆN THOẠI</p>
+            <p>0913567184</p>
+        </div>
+        <div class="centerBox">
+            <img src="~/../img/location.png" alt="">
+            <p>ĐỊA CHỈ</p>
+            <p>Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</p>
+        </div>
+    </div>
+</div>

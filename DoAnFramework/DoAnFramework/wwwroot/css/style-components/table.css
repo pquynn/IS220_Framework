@@ -94,9 +94,9 @@ td{
 }
 
     /* tr when hover */
-.store-table tr:hover:not(.store-table tr:first-child){
+/*.store-table tr:hover:not(.store-table tr:first-child){
     cursor: pointer;
     background-color: var(--table-border);
-}
+}*/
 
 /* end: STORE TABLE */

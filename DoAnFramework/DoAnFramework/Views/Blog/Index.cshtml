@@ -1,97 +1,50 @@
 ﻿@{
-    ViewData["Title"] = "Blogs";
-    Layout = "../Shared/_Layout.cshtml";
+	ViewData["Title"] = "Blogs";
+	Layout = "../Shared/_Layout.cshtml";
 }
+@model IEnumerable<DoAnFramework.Models.Blog>
 
 <div class="container-heading mb-5 mt-3">
-    <div class="row">
-        <h1 class="d-flex justify-content-center align-items-center">Blogs</h1>
-    </div>
+	<div class="row">
+		<h1 class="d-flex justify-content-center align-items-center">Blogs</h1>
+	</div>
 </div>
 
 <div class="main-section-body mb-5 mt-5">
-    <!-- BLOG: START -->
-    <div class="blog">
-        <div class="blog-content zoom-when--hover">
-            <a class="blog-link" href="#">
-                <div class="blog-img--container zoom-img--container">
-                    <img class="blog-img zoom-img" src="~/img/bookstore_2.jpg" alt="" />
-                </div>
-                <p class="blog-title">Tên blog</p>
-                <p class="preview-content">
-                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
-                    ngôi làn
-                    tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
-                </p>
-            </a>
-        </div>
+	<!-- BLOG: START -->
+	<div class="blog">
+		@if (Model != null)
+		{
+			foreach (var item in Model)
+			{
+						<div class="blog-content zoom-when--hover">
+							<a class="blog-link" asp-controller="Blog" asp-action="BlogDetail" asp-route-id="@item.BlogId">
+								<div class="blog-img--container zoom-img--container">
 
-        <div class="blog-content zoom-when--hover">
-            <a class="blog-link" href="#">
-                <div class="blog-img--container zoom-img--container">
-                    <img class="blog-img zoom-img" src="~/img/books.jpg" alt="" />
-                </div>
-                <p class="blog-title">Tên blog</p>
-                <p class="preview-content">
-                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
-                    ngôi làn
-                    tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
-                </p>
-            </a>
-        </div>
-
-        <div class="blog-content zoom-when--hover">
-            <a class="blog-link" href="#">
-                <div class="blog-img--container zoom-img--container">
-                    <img class="blog-img zoom-img" src="~/img/bookstore_1.jpg" alt="" />
-                </div>
-                <p class="blog-title">Tên blog</p>
-                <p class="preview-content">
-                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
-                    ngôi làn
-                    tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
-                </p>
-            </a>
-        </div>
-
-        <div class="blog-content zoom-when--hover">
-            <a class="blog-link" href="#">
-                <div class="blog-img--container zoom-img--container">
-                    <img class="blog-img zoom-img" src="~/img/mat_biec.jpg" alt="" />
-                </div>
-                <p class="blog-title">Tên blog</p>
-                <p class="preview-content">
-                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
-                    ngôi làn
-                    tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
-                </p>
-            </a>
-        </div>
-
-        <div class="blog-content zoom-when--hover">
-            <a class="blog-link" href="#">
-                <div class="blog-img--container zoom-img--container">
-                    <img class="blog-img zoom-img" src="~/img/mat_biec.jpg" alt="" />
-                </div>
-                <p class="blog-title">Tên blog</p>
-                <p class="preview-content">
-                    "Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
-                    ngôi làn
-                    tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
-                </p>
-            </a>
-        </div>
-    </div>
-    <!-- BLOG: END -->
-    <!-- pagination -->
-    <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a class="active" href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <span class="ellipsis">...</span>
-        <a href="#">10</a>
-        <a href="#">&raquo;</a>
-    </div>
+							@if (item.BlogImage != null)
+							{
+								<img class="blog-img zoom-img" 
+								src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BlogImage))" 
+								alt="">
+							}
+								</div>
+								<p class="blog-title">@item.BlogTitle</p>
+								<p class="preview-content">@item.Content</p>
+							</a>
+						</div>    
+			}
+		}
+	</div>
+	<!-- BLOG: END -->
+	<!-- pagination -->
+	<div class="pagination">
+		<a href="#">&laquo;</a>
+		<a class="active" href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<span class="ellipsis">...</span>
+		<a href="#">10</a>
+		<a href="#">&raquo;</a>
+	</div>
 </div>
