@@ -4,10 +4,15 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.TopRight; });
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddScoped<DoAnFramework.Models.Service.OrderService>();
+builder.Services.AddScoped<DoAnFramework.Models.Service.CommentService>();
+
 
 // them vao khi ket noi csdl, de nhan biet dbcontext
 builder.Services.AddDbContext<book_shop_dbContext>(
@@ -43,5 +48,7 @@ app.UseEndpoints(endpoints =>
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 app.Run();

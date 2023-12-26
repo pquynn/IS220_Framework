@@ -175,3 +175,38 @@ p {
 .checkout-bnt:hover {
   background-color: var(--orange) !important;
 }
+
+
+/* empty cart: star */
+.empty-cart {
+    text-align: center;
+}
+
+.empty-cart--img {
+    width: 35%;
+    margin-bottom: 30px;
+}
+
+.empty-cart--notification {
+    font-size: 17px;
+}
+
+.empty-cart > .empty-cart--shopping {
+    font-weight: 800;
+    font-size: 14px;
+    border: solid 1px;
+    border-radius: 0;
+    padding: 10px;
+    margin-top: 16px;
+}
+
+.empty-cart--shopping:hover{
+    background-color: var(--orange);
+    border: none;
+    color: #fff;
+}
+
+.hidden{
+    display: none;
+}
+/* empty cart: end */

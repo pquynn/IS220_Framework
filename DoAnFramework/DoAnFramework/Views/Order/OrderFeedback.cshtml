@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DoAnFramework.Models.ViewModel.OrderWithComment
+@{
     ViewData["Title"] = "Đánh giá sách";
     Layout = "../Shared/_Layout.cshtml";
 }
@@ -10,34 +11,89 @@
     <!--MY_ORDER-FEEDBACK START-->
     <div class="my-order-feedback w-100 ">
         <ul class="breadcrumb-my-order">
-            <li><a asp-controller="Order" asp-action="Index">Danh sách đơn hàng</a> / </li>
-            <li> <a asp-controller="Order" asp-action="OrderDetail">Chi tiết đơn hàng</a> / </li>
+            <li><a asp-controller="Order" asp-action="Index" asp-route-id="@Model.Order.Order.UserId">Danh sách đơn hàng</a> / </li>
+            <li> <a asp-controller="Order" asp-action="OrderDetail" asp-route-id="@Model.Order.Order.OrderId">Chi tiết đơn hàng</a> / </li>
             <li class="breadcrumb-current-page">Đánh giá đơn hàng</li>
         </ul>
 
         <h2>Đánh giá đơn hàng</h2>
 
-        <p class="star product">
-            Đánh giá sản phẩm
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </p>
+        <div class="form-container">
+            <span id="temp-order-id" style="display: none;">@if(Model != null) @Model.Order.Order.OrderId</span>
+             <span id="temp-user-id" style="display: none;">@if(Model != null) @Model.Order.Order.UserId</span>
+             <span id="temp-user-name" style="display: none;">@if(Model != null) @Model.Order.Order.UserName</span>
+            <form class="add-order-feedback">
+                
+                @if (Model.Order.OrderDetails != null)
+                {
+                    foreach (var item in Model.Order.OrderDetails)
+                    {
+                        <div class="product-line" id="@item.OrderDetail.OrderDetailId">
+                            <div class="infor-row">
+                                @if (item.FrontCover != null)
+                                {
+                                    var base64 = Convert.ToBase64String(item.FrontCover);
+                                    var imgUrl = String.Format("data:image/png;base64,{0}", base64);
 
-        <p class="star service">
-            Đánh giá dịch vụ người bán
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-        </p>
+                                    <div class="review-img" style="background-image: url('@imgUrl');"></div>
+                                }
+                                else
+                                {
+                                    <div class="review-img"></div>
+                                }
+                                <div class="second-col">
+                                    <p id="@item.OrderDetail.BookId" class="book-name">@item.OrderDetail.BookName</p>
+                   
+                                    <div class="rating-star">
+                                        Chất lượng sản phẩm
+                                        <div class="stars">
+                                            <input type="radio" id="star5 @item.OrderDetail.BookId" name="rating @item.OrderDetail.BookId" value=5>
+                                            <label for="star5 @item.OrderDetail.BookId" class="fa-solid fa-star"></label>
+                                            <input type="radio" id="star4 @item.OrderDetail.BookId" name="rating @item.OrderDetail.BookId" value=4>
+                                            <label for="star4 @item.OrderDetail.BookId" class="fa-solid fa-star"></label>
+                                            <input type="radio" id="star3 @item.OrderDetail.BookId" name="rating @item.OrderDetail.BookId" value=3>
+                                            <label for="star3 @item.OrderDetail.BookId" class="fa-solid fa-star"></label>
+                                            <input type="radio" id="star2 @item.OrderDetail.BookId" name="rating @item.OrderDetail.BookId" value=2>
+                                            <label for="star2 @item.OrderDetail.BookId" class="fa-solid fa-star"></label>
+                                            <input type="radio" id="star1 @item.OrderDetail.BookId" name="rating @item.OrderDetail.BookId" value=1>
+                                            <label for="star1 @item.OrderDetail.BookId" class="fa-solid fa-star"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                            <textarea placeholder="Nhận xét sản phẩm*" class="form-control w-100 input-feedback" required></textarea>
+                            
+                        </div>
+                    }
+                }
 
-        <textarea placeholder="Nhận xét đơn hàng" class="form-control w-100"></textarea>
+                <div class="update-order-status">
+                    <button type="button" class="btn btn-cancel">Thoát</button>
+                    <button type="submit" class="btn btn-confirm" value="Xác nhận">Xác nhận</button>
+                </div>
 
-        <button class="btn btn-confirm m-3 float-end">Đánh giá</button>
+
+            </form>
+        </div>
+        
+        @if(Model.Comment != null){
+            <div id="temp-comments" style="display: none;">
+            @foreach(var cmt in Model.Comment)
+            {
+                <div class="cmt-info" id="@cmt.CmtId">
+                    <span class="cmt-id">@cmt.CmtId</span>
+                    <span class="cmt-content">@cmt.Content</span>
+                    <span class="cmt-score">@cmt.Score</span>
+                 </div>
+            }
+        </div>
+        }
 
     </div>
+
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/js/my-order/my-order-feedback.js"></script>

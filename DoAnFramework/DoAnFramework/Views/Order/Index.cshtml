@@ -21,10 +21,10 @@
 
         <h2>Danh sách đơn hàng của tôi</h2>
         <!--search bar-->
-        <div class="search-bar">
-            <input type="text" name="" placeholder="Tìm kiếm đơn hàng..." class="search-field">
+        @* <div class="search-bar">
+            <input id="search" type="text" name="" placeholder="Nhập mã đơn hàng để tìm kiếm" class="search-field">
             <a href="#" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></a>
-        </div>
+        </div> *@
         <!--          -->
         <!-- Change table style. modified 10/28 by Quyen -->
         <!--Table list orders--start-->
@@ -44,7 +44,7 @@
                         <th></th>
                     </tr>
                 </thead>
-               
+                
                 <tbody>
                     @if (Model != null)
                     {
@@ -63,7 +63,8 @@
                                 <td>
                                     <a class="link-to-detail" asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId">
                                         <i class="fa-solid fa-eye"></i>
-                                    </a></td>
+                                    </a>
+                                </td>
                             </tr>
                         }
                     }
@@ -72,17 +73,6 @@
         </div>
         <!--Table list orders--end-->
         <!--pagination--start-->
-
-           @*  <div class="pagination" id="pagination-my-orders">
-                <a href="#">&laquo;</a>
-                <a class="active" href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <span class="ellipsis">...</span>
-                <a href="#">10</a>
-                <a href="#">&raquo;</a> 
-            </div> *@
 
         <div class="pagination" id="pagination-my-orders">
             @if (Model.HasPreviousPage)
@@ -104,5 +94,3 @@
     </div>
     <!--LIST-ORDERS END-->
 </div>
-
-

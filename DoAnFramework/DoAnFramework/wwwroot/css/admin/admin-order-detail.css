@@ -108,7 +108,8 @@
 
 /* Update order status: start */
 
-.update-order-status button{
+.update-order-status button,
+.update-order-status a{
     float: right;
     width: 180px;
     margin-right: 10px;

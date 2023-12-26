@@ -197,8 +197,8 @@ namespace DoAnFramework.Models
                     .HasColumnName("USER_ID");
 
                 entity.Property(e => e.UserName)
+                    .IsUnicode(true)
                     .HasMaxLength(30)
-                    .IsUnicode(false)
                     .HasColumnName("USER_NAME");
 
                 entity.HasOne(d => d.Book)
@@ -246,8 +246,8 @@ namespace DoAnFramework.Models
                 entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
 
                 entity.Property(e => e.Address)
+                    .IsUnicode(true)
                     .HasMaxLength(100)
-                    .IsUnicode(false)
                     .HasColumnName("ADDRESS");
 
                 entity.Property(e => e.OrderDate)
