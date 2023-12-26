@@ -2,9 +2,9 @@
     ViewData["Title"] = "Chi tiết Blog";
     Layout = "../Shared/_Layout.cshtml";
 }
-@* @model IEnumerable<DoAnFramework.Models.Blog>
- *@
-    <link rel="stylesheet" href="~css/store/blog-detail.css">
+@model DoAnFramework.Models.Blog
+
+    <link rel="stylesheet" href="~/css/store/blog-detail.css">
 
     <div class="container-heading blog-heading">
         <div class="breadcrumb-box">
@@ -20,28 +20,27 @@
             </div>
         @if (Model != null)
         {
-            foreach (var item in Model)
-            {
                     <div class="blog-title row2">
-                        <h4>@item.BlogTitle</h4>
+                        <h4>@Model.BlogTitle</h4>
 
                     <div class="row3">
                         <div class="blog-author">
-                            <p>@item.User</p>
+                            <p>@Model.UserName</p>
                         </div>
                         <div class="blog-date">
-                            <p>@item.BlogDay.Date</p>
+                            <p>@Model.BlogDay</p>
                         </div>
                     </div>
                     <div class="blog-img">
-                        <img src="~/img/bookstore_2.jpg">
+                    @if (Model.BlogImage != null)
+                    {
+                        <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BlogImage))">    
+                    }
                     </div>    
             </div>
 
 
             <div class="blog-content">
-                <p>@item.Content</p>
+                <p>@Model.Content</p>
             </div>
-            }
         }
-

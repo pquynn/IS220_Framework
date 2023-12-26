@@ -32,7 +32,8 @@ namespace DoAnFramework.Controllers
 			}
 
 			var blogDetail = _context.Blogs
-			   .Where(blog => blog.BlogId == id);
+			   .Where(blog => blog.BlogId == id)
+			   .FirstOrDefault();
 			return View(blogDetail);
         }
     }

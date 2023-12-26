@@ -15,7 +15,9 @@ namespace DoAnFramework.Controllers
 
         public IActionResult Index()
         {
-            var listBook = _context.Books.ToList();
+            var listBook = _context.Books
+                .Include(item => item.BookImage)
+                .ToList();
             return View(listBook);
         }
 
@@ -33,5 +35,25 @@ namespace DoAnFramework.Controllers
 
             return View(product);
         }
-	}
+
+        public IActionResult BookCategory(int? id)
+        {
+            var listProduct = _context.Books
+                .Where(item => item.CategoryId == id)
+                .Include(item => item.BookImage)
+                .ToList();
+
+            return View(listProduct);
+        }
+
+        public IActionResult BookCover(int? typeCover)
+        {
+            var listProduct = _context.Books
+                .Where( item => item.BookCover == typeCover)
+                .Include(item => item.BookImage)
+                .ToList();
+
+            return View(listProduct);
+        }
+    }
 }

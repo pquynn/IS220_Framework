@@ -58,7 +58,7 @@
                     <!-- accordion-item body: start  -->
                 </div>
                 <!-- collection: end -->
-              
+
                 <!-- book cover: start -->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingThree">
@@ -76,7 +76,7 @@
                          aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body size color-list">
                             <a asp-controller="Book" asp-action="BookCover" asp-route-id="1">Bìa cứng</a>
-@*                             <div class="size-option">
+                            @*                             <div class="size-option">
                                 <input type="checkbox"
                                        name=""
                                        value="Small"
@@ -86,7 +86,7 @@
                             </div> *@
                             <a asp-controller="Book" asp-action="BookCover" asp-route-id="2">Bìa mềm</a>
 
-@*                             <div class="size-option">
+                            @*                             <div class="size-option">
                                 <input type="checkbox"
                                        name=""
                                        value="Medium"
@@ -99,7 +99,7 @@
                 </div>
                 <!-- book cover: end -->
             </div>
-           
+
         </div>
         <!-- left-col: end -->
         <!--Khung Sản phẩm-->
@@ -117,35 +117,35 @@
             <div class="product-list">
                 @if (@Model != null)
                 {
-                    foreach(var item in Model) 
+                    foreach (var item in Model)
                     {
-                        <div class="product-detail">
-                            <div class="product-img--container">
+                                <div class="product-detail">
+                                    <div class="product-img--container">
                                 @if (item.BookImage != null)
                                 {
-                                    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BookImage.FrontCover))">
+                                                <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BookImage.FrontCover))">
                                 }
                                 else
                                 {
-                                    <img src="~img/mat_biec.jpg">
+                                                <img src="~img/mat_biec.jpg">
                                 }
-                                    </div>
-                                    <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
-                                            <p>@item.Price.Value.ToString("#0,##0") VND</p>
-@*                                     <div class="product-star">
+                                            </div>
+                                            <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
+                                                    <p>@item.Price.Value.ToString("#0,##0") VND</p>
+                            @*                                     <div class="product-star">
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <ion-icon name="star-sharp"></ion-icon>
                                     </div> *@
-                                </div>    
+                                        </div>    
                     }
                 }
             </div>
             <!-- product-list: end -->
 
-@*             <div class="pagination m-5">
+            @*             <div class="pagination m-5">
                 <a href="#">&laquo;</a>
                 <a class="active" href="#">1</a>
                 <a href="#">2</a>

@@ -30,7 +30,7 @@
 				@if (Model.BookImage != null)
 				{
 					var base64 = Convert.ToBase64String(Model.BookImage.FrontCover);
-					var imgUrl = String.Format("data:image/png;base,{0}", base64);
+					var imgUrl = String.Format("data:image/png;base64,{0}", base64);
 					<div class="product-main-img">
 									<img src="@imgUrl">
 								</div>					
@@ -271,13 +271,7 @@
 			{
 				<div class="modal-header">
 					<h1 class="modal-title fs-5" id="read-sample">Đọc thử:</h1>
-					<h1 class="book-name-heading modal-title fs-5"></h1>
-					@if (Model.BookImage != null)
-					{
-						<script>
-							$('.book-name-heading').text(@Model.BookImage.BookId);
-						</script>
-					}
+					<h1 class="book-name-heading modal-title fs-5">@Model.Name</h1>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>	
 				<div class="row modal-body">
@@ -296,11 +290,14 @@
 					</div>
 
 					<div class="right-col">
-						<img src="~/../img/mat_biec.jpg" alt="" class="book-img front-cover">
-						<img src="https://newshop.vn/public/uploads/products/4602/kheo-an-noi-se-co-duoc-thien-ha-7-1.jpg" alt="" class="book-img first-cover">
-						<img src="https://newshop.vn/public/uploads/products/4602/kheo-an-noi-se-co-duoc-thien-ha-8-1.jpg" alt="" class="book-img second-cover">
-						<img src="https://newshop.vn/public/uploads/products/4602/kheo-an-noi-se-co-duoc-thien-ha-9-1.jpg" alt="" class="book-img third-cover">
-						<img src="https://newshop.vn/public/uploads/products/4602/kheo-an-noi-se-co-duoc-thien-ha-13-1.jpg" alt="" class="book-img back-cover">
+						@if (Model.BookImage != null)
+						{
+							<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.FrontCover))" class="book-img front-cover">								
+							<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.BackCover))" alt="" class="book-img first-cover">
+							<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.FisrtImage))" alt="" class="book-img second-cover">
+							<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.SecondImage))" alt="" class="book-img third-cover">
+							<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.ThirdImage))" alt="" class="book-img back-cover">							
+						}
 					</div>
 				</div>				
 			}

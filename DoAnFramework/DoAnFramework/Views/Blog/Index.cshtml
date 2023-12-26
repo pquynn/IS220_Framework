@@ -20,35 +20,20 @@
 						<div class="blog-content zoom-when--hover">
 							<a class="blog-link" asp-controller="Blog" asp-action="BlogDetail" asp-route-id="@item.BlogId">
 								<div class="blog-img--container zoom-img--container">
-					@* 		@if (item.BlogImage != null && item.BlogImage.Length > 0)
+
+							@if (item.BlogImage != null)
 							{
-								string base64Image = Convert.ToBase64String(@item.BlogImage);
-												<img class="blog-img zoom-img" src="data:image/jpeg;base64,@(Convert.ToBase64String(item.BlogImage))" alt="" />
+								<img class="blog-img zoom-img" 
+								src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BlogImage))" 
+								alt="">
 							}
-							else
-							{ *@
-								<img class="blog-img zoom-img" src="~/img/bookstore_2.jpg" alt="" /> <!-- Provide a default image URL -->
-@* 							}
- *@								</div>
+								</div>
 								<p class="blog-title">@item.BlogTitle</p>
 								<p class="preview-content">@item.Content</p>
 							</a>
 						</div>    
 			}
 		}
-		<!--<div class="blog-content zoom-when--hover">
-			<a class="blog-link" href="#">
-				<div class="blog-img--container zoom-img--container">
-					<img class="blog-img zoom-img" src="~/img/bookstore_2.jpg" alt="" />
-				</div>
-				<p class="blog-title">Tên blog</p>
-				<p class="preview-content">
-					"Mắt Biếc" là câu chuyện kể về cuộc đời của nhân vật Ngạn. Sinh ra và lớn lên ở một
-					ngôi làn
-					tên Đo Đo, Ngạn thầm yêu từ nhỏ cô nàng cùng xóm có đôi mắt tuyệt đẹp - Hà Lan....
-				</p>
-			</a>
-		</div>-->
 	</div>
 	<!-- BLOG: END -->
 	<!-- pagination -->
