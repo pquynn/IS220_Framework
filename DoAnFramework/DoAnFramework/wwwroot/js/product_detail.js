@@ -49,7 +49,13 @@ if (window.location.href.includes("BookDetail")) {
                     },
                     datatype: 'json',
                     success: function (response) {
-                        alert("success", "Sản phẩm đã được thêm vào giỏ hàng")
+                        if (response) {
+                            console.log(response);
+                            alert("Sản phẩm đã được thêm vào giỏ hàng");
+                        }
+                        else {
+                            alert("Không có dữ liệu trả về");
+                        }
                     },
                     error: function (error) {
                         alert("Sản phẩm bị lỗi khi đưa vào giỏ hàng");

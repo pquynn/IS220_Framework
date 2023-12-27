@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N97J/ux+Xq6B1ZLEyaJfGri6cPH55fX7M/y7DiCgNko=",
+  "Hash": "L9HacaSOdPmMhLIa36jrt5bPu4Gvx/K2wpC41vJNiLU=",
   "Source": "DoAnFramework",
   "BasePath": "_content/DoAnFramework",
   "Mode": "Default",
@@ -1035,6 +1035,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\product_detail.js"
+    },
+    {
+      "Identity": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_list.js",
+      "SourceId": "DoAnFramework",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\",
+      "BasePath": "_content/DoAnFramework",
+      "RelativePath": "js/product_list.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\product_list.js"
     },
     {
       "Identity": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",

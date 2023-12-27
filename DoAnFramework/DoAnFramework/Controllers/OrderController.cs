@@ -90,34 +90,35 @@ namespace DoAnFramework.Controllers
 		{
 			// Truy cập thông tin sản phẩm từ JObject
 			string? productName = productData.GetValue("productName")?.ToString();
-			int productID = productData.GetValue("productID")?.ToObject<int>() ?? 0;
-			int productPrice = productData.GetValue("productPrice")?.ToObject<int>() ?? 0;
-			int numberOfProduct = productData.GetValue("numberOfProduct")?.ToObject<int>() ?? 0;
+			return Json(productName);
+			//int productID = productData.GetValue("productID")?.ToObject<int>() ?? 0;
+			//int productPrice = productData.GetValue("productPrice")?.ToObject<int>() ?? 0;
+			//int numberOfProduct = productData.GetValue("numberOfProduct")?.ToObject<int>() ?? 0;
 
-			var orderID = _context.Orders.Where(item => item.UserId == userID).FirstOrDefault();
+			//var orderID = _context.Orders.Where(item => item.UserId == userID).FirstOrDefault();
 
-			if (orderID == null)
-			{
-				// Trường hợp chưa có giỏ hàng trước đó.
-				var newOrder = new Order
-				{
-					UserId = userID,
-					Status = "cart"
-				};
-				_context.Orders.Add(newOrder);
+			//if (orderID == null)
+			//{
+			//	// Trường hợp chưa có giỏ hàng trước đó.
+			//	var newOrder = new Order
+			//	{
+			//		UserId = userID,
+			//		Status = "cart"
+			//	};
+			//	_context.Orders.Add(newOrder);
 
-				orderID = _context.Orders.Where(item => item.UserId == userID && item.Status == "cart").FirstOrDefault();
-			}
-			var newProduct = new OrderDetail { 
-				OrderId = orderID.OrderId, 
-				BookId = productID, 
-				BookName = productName, 
-				Quantity = numberOfProduct,
-				Price = productPrice
-			};
-			_context.OrderDetails.Add(newProduct);
+			//	orderID = _context.Orders.Where(item => item.UserId == userID && item.Status == "cart").FirstOrDefault();
+			//}
+			//var newProduct = new OrderDetail { 
+			//	OrderId = orderID.OrderId, 
+			//	BookId = productID, 
+			//	BookName = productName, 
+			//	Quantity = numberOfProduct,
+			//	Price = productPrice
+			//};
+			//_context.OrderDetails.Add(newProduct);
 
-			return Json(true);
+			//return Json(true);
 		}
 	}
 }

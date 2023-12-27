@@ -14,7 +14,8 @@ namespace DoAnFramework.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index()                //.Select(item => new { item.BookId , item.Name, item.Price, item.BookImage.FrontCover})
+
         {
             var listBook = _context.Books
                 .Include(item => item.BookImage)
@@ -48,10 +49,10 @@ namespace DoAnFramework.Controllers
             return View(listProduct);
         }
 
-        public IActionResult BookCover(int? typeCover)
+        public IActionResult BookCover(int? id)
         {
             var listProduct = _context.Books
-                .Where(item => item.BookCover == typeCover)
+                .Where(item => item.BookCover == id)
                 .Include(item => item.BookImage)
                 .ToList();
 
@@ -61,8 +62,9 @@ namespace DoAnFramework.Controllers
         public IActionResult searchProduct(string? searchString)
         {
             var product = _context.Books
+                .Select(item => new { item.BookId, item.Name, item.Price, item.BookImage.FrontCover})
                 .Where(item => SearchInString(item.Name, searchString))
-                .Include(item => item.BookImage)
+                //.Include(item => item.BookImage)
                 .ToList();
 
             return View(product);

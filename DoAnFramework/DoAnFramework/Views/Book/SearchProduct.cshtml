@@ -54,6 +54,12 @@
                         <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="10">Lịch sử</a>
                         <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="8">Nấu ăn</a>
                         <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="4">Kinh dị</a>
+                        @*                         <a class="">Truyền cảm hứng</a>
+                        <a class="">Tự truyện, hồi ký</a>
+                        <a class="">Truyện ngắn</a>
+                        <a class="">Lịch sử</a>
+                        <a class="">Nấu ăn</a>
+                        <a class="">Kinh dị</a> *@
                     </div>
                     <!-- accordion-item body: start  -->
                 </div>
@@ -61,26 +67,31 @@
 
                 <!-- book cover: start -->
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                        <button class="accordion-button collapsed"
+                    <h2 class="accordion-header" id="panelsStayOpen-collapseOne">
+                        <button class="accordion-button"
                                 type="button"
                                 data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree"
-                                aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapseThree">
+                                data-bs-target="#panelsStayOpen-collapseOne"
+                                aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
                             Loại bìa sách
                         </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseThree"
-                         class="accordion-collapse collapse"
-                         aria-labelledby="panelsStayOpen-headingThree">
+                    <div id="panelsStayOpen-collapseOne"
+                         class="accordion-collapse collapse show"
+                         aria-labelledby="panelsStayOpen-headingOne">
                         <div class="accordion-body size color-list">
-                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="hard">Bìa cứng</a>
-                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="soft">Bìa mềm</a>
+                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="2">Bìa cứng</a>
+                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="1">Bìa mềm</a>
+                            @*                             <a>Bìa cứng</a>
+                            <a>Bìa mềm</a> *@
                         </div>
                     </div>
                 </div>
                 <!-- book cover: end -->
+            <div style="position: relative; height: 50px;">
+                <button id="clearFilter">Bỏ chọn</button>
+            </div>
             </div>
 
         </div>
@@ -91,9 +102,9 @@
             <!-- sort-option: start -->
             <select name="sort" id="sort">
                 <option value="expensive-to-cheap">Giá tăng dần</option>
-                <option value="expensive-to-cheap">Giá giảm dần</option>
-                <option value="expensive-to-cheap">Mới nhất</option>
-                <option value="expensive-to-cheap">Đánh giá cao nhất</option>
+                <option value="cheap-to-expensive">Giá giảm dần</option>
+                @*                 <option value="expensive-to-cheap">Mới nhất</option>
+                <option value="expensive-to-cheap">Đánh giá cao nhất</option> *@
             </select>
             <!-- sort-option: end -->
             <!-- product-list: start -->
@@ -102,7 +113,7 @@
                 {
                     foreach (var item in Model)
                     {
-                                <div class="product-detail">
+                                <div class="product-detail" data-price="@item.Price">
                                     <div class="product-img--container">
                                 @if (item.BookImage != null)
                                 {
@@ -112,7 +123,7 @@
                                 {
                                                 <img src="~/img/mat_biec.jpg">
                                 }
-                                            </div>
+                                    </div>
                                             <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
                             @if (item.Price != null)
                             {
@@ -132,6 +143,7 @@
     </div>
 </div>
 
+<script type="module" src="~/js/product_list.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
