@@ -12515,19 +12515,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\trung\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DoAn\\Frame\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
+      "projectUniqueName": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
       "projectName": "DoAnFramework",
-      "projectPath": "D:\\DoAn\\Frame\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\DoAn\\Frame\\IS220_Framework\\DoAnFramework\\DoAnFramework\\obj\\",
+      "projectPath": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
+      "packagesPath": "C:\\Users\\trung\\.nuget\\packages\\",
+      "outputPath": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\trung\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
