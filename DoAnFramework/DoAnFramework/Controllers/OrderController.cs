@@ -86,34 +86,30 @@ namespace DoAnFramework.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult addToCart(string? userID, productData productData)
+		public IActionResult addToCart(string userID, productData productData)
 		{
-			var orderID = _context.Orders
-				.Where(item => item.UserId == userID && item.Status=="cart")
-				.Select(item => item.OrderId)
-				.FirstOrDefault();
-
-			if (orderID == null)
-			{
-				// Trường hợp chưa có giỏ hàng trước đó.
-				var newOrder = new Order
-				{
-					UserId = userID,
-					Status = "cart"
-				};
-				_context.Orders.Add(newOrder);
-				_context.SaveChanges();
-			}
-			orderID = _context.Orders
+            var order= _context.Orders
 				.Where(item => item.UserId == userID && item.Status == "cart")
-				.Select(item => item.OrderId)
 				.FirstOrDefault();
 
-			return Json(orderID);
+            if (order == null)
+            {
+                // Trường hợp chưa có giỏ hàng trước đó.
+                var newOrder = new Order
+                {
+                    UserId = userID,
+                    Status = "cart"
+                };
+                _context.Orders.Add(newOrder);
+                _context.SaveChanges();
+            }
+            order = _context.Orders
+                .Where(item => item.UserId == userID && item.Status == "cart")
+                .FirstOrDefault();
 
 			var newProduct = new OrderDetail
 			{
-				OrderId = orderID,
+				OrderId = order.OrderId,
 				BookId = productData.productID,
 				BookName = productData.productName,
 				Quantity = productData.numberOfProduct,
