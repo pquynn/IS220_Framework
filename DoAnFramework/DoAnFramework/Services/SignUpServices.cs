@@ -48,7 +48,8 @@ namespace DoAnFramework.Services
                 var newLogin = new Login
                 {
                     UserLogin = Userlogin,
-                    UserPassword = Password
+                    UserPassword = Password,
+                    RoleId = 3
                 };
 
                 _book_shop_dbContext.Add(newUser);
