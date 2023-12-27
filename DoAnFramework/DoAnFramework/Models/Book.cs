@@ -13,7 +13,7 @@ namespace DoAnFramework.Models
 
         public int BookId { get; set; }
         public string? Name { get; set; }
-        public string? BookCover { get; set; }
+        public int? BookCover { get; set; }
         public int? Pages { get; set; }
         public string? Author { get; set; }
         public DateTime? YearPublish { get; set; }
@@ -21,6 +21,7 @@ namespace DoAnFramework.Models
         public int? Price { get; set; }
         public string? Description { get; set; }
         public int? CategoryId { get; set; }
+        public int? Quantity { get; set; }
 
         public virtual Category? Category { get; set; }
         public virtual BookImage? BookImage { get; set; }

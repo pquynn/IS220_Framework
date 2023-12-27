@@ -14,7 +14,8 @@ namespace DoAnFramework.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index()                //.Select(item => new { item.BookId , item.Name, item.Price, item.BookImage.FrontCover})
+
         {
             var listBook = _context.Books
                 .Include(item => item.BookImage)
@@ -48,14 +49,32 @@ namespace DoAnFramework.Controllers
             return View(listProduct);
         }
 
-        public IActionResult BookCover(string? typeCover)
+        public IActionResult BookCover(int? id)
         {
             var listProduct = _context.Books
-                .Where(item => item.BookCover == typeCover)
+                .Where(item => item.BookCover == id)
                 .Include(item => item.BookImage)
                 .ToList();
 
             return View(listProduct);
+        }
+
+        public IActionResult searchProduct(string? searchString)
+        {
+            var product = _context.Books
+                .Select(item => new { item.BookId, item.Name, item.Price, item.BookImage.FrontCover})
+                .Where(item => SearchInString(item.Name, searchString))
+                //.Include(item => item.BookImage)
+                .ToList();
+
+            return View(product);
+        }
+        static bool SearchInString(string productName, string optionName)
+        {
+            // Kiểm tra xem optionName có trong productName không
+            bool isOptionInProduct = productName.ToLower().Contains(optionName.ToLower());
+
+            return isOptionInProduct;
         }
     }
 }
