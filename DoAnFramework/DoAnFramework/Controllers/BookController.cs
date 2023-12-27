@@ -57,5 +57,22 @@ namespace DoAnFramework.Controllers
 
             return View(listProduct);
         }
+
+        public IActionResult searchProduct(string? searchString)
+        {
+            var product = _context.Books
+                .Where(item => SearchInString(item.Name, searchString))
+                .Include(item => item.BookImage)
+                .ToList();
+
+            return View(product);
+        }
+        static bool SearchInString(string productName, string optionName)
+        {
+            // Kiểm tra xem optionName có trong productName không
+            bool isOptionInProduct = productName.ToLower().Contains(optionName.ToLower());
+
+            return isOptionInProduct;
+        }
     }
 }

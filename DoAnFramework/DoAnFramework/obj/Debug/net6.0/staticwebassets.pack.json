@@ -177,6 +177,18 @@
       "PackagePath": "staticwebassets\\img\\message.jpg"
     },
     {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider1.png",
+      "PackagePath": "staticwebassets\\img\\slider1.png"
+    },
+    {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider2.jpg",
+      "PackagePath": "staticwebassets\\img\\slider2.jpg"
+    },
+    {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider3.jpg",
+      "PackagePath": "staticwebassets\\img\\slider3.jpg"
+    },
+    {
       "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider_img\\slider1.webp",
       "PackagePath": "staticwebassets\\img\\slider_img\\slider1.webp"
     },
@@ -195,6 +207,14 @@
     {
       "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\user.png",
       "PackagePath": "staticwebassets\\img\\user.png"
+    },
+    {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\header.js",
+      "PackagePath": "staticwebassets\\js\\header.js"
+    },
+    {
+      "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\homepage-slider.js",
+      "PackagePath": "staticwebassets\\js\\homepage-slider.js"
     },
     {
       "Id": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_detail.js",

@@ -4,23 +4,18 @@
 }
 @model DoAnFramework.Models.HomepageProduct_Blog
 
+<!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
+
 <!-- MAIN SLIDER: START -->
 <div class="main-slider">
     <!-- SLIDER COTAINER: STAR -->
     <div class="slider-container">
-        <!-- img -->
-        <img id="slider-1" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
-        <img id="slider-1" src="" alt="" />
-        <img id="slider-1" src="" alt="" />
-
-        <!-- slider btn -->
-        <div class="slider-bnt">
-            <button class="btn-back">
-                <span class="material-symbols-outlined"> keyboard_arrow_left </span>
-            </button>
-            <button class="btn-next">
-                <span class="material-symbols-outlined"> chevron_right </span>
-            </button>
+        <div id="slider">
+          <ul>
+            <li><img id="slider-img" src="~/img/slider1.png" alt="" /></li>
+            <li style="background: #aaa;"><img id="slider-img" src="~/img/slider2.jpg" alt="" /></li>
+            <li><img id="slider-img" src="~/img/slider3.jpg" alt="" /></li>
+          </ul>  
         </div>
     </div>
     <!-- SLIDER COTAINER: END -->
@@ -96,8 +91,8 @@
             </div>
             <!-- text -->
             <div class="collection-text">
-                <p class="">Sách thiếu nhi</p>
-                <a class="" href="#">
+                <p class="">Lịch sử</p>
+                <a asp-controller="Book" asp-action="BookCategory" asp-route-id="10">
                     Xem thêm
                     <span class="material-symbols-outlined"> double_arrow </span>
                 </a>
@@ -112,8 +107,8 @@
             </div>
             <!-- tetx -->
             <div class="collection-text">
-                <p class="">Sách kỹ năng</p>
-                <a class="" href="#">
+                <p class="">Truyện ngắn</p>
+                <a asp-controller="Book" asp-action="BookCategory" asp-route-id="7">
                     Xem thêm
                     <span class="material-symbols-outlined"> double_arrow </span>
                 </a>
@@ -156,3 +151,5 @@
     <!-- NEW ARRIVALS: END -->
 </div>
 <!-- MAIN SLIDER: END -->
+
+   <script type="module" src="~/js/homepage-slider.js"></script>

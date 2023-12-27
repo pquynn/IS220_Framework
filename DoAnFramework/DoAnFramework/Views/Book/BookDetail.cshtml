@@ -244,12 +244,15 @@
 					<div class="left-col">
 						<div class="row p-1">
 							<div class="col-5 img-container">
-								<img src="~/../img/mat_biec.jpg" alt="" class="small-book-img front-cover">
+								@if (Model.BookImage != null)
+								{
+									<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.FrontCover))" class="small-book-img front-cover">
+								}
 							</div>
 							<div class="col-7 book-info-container">
 								<p class="book-name fw-bold text-uppercase">@Model.Name</p>
 								<p class="book-author">@Model.Author</p>
-								<p class="book-price">@Model.Price.Value.ToString("") đ</p>
+								<p class="book-price">@Model.Price.Value.ToString("#0, ##0") đ</p>
 							</div>
 							<button class="btn btn-confirm">Mua ngay</button>
 						</div>

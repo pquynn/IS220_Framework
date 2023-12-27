@@ -58,7 +58,7 @@
                     <!-- accordion-item body: start  -->
                 </div>
                 <!-- collection: end -->
-              
+
                 <!-- book cover: start -->
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="panelsStayOpen-headingThree">
@@ -82,7 +82,7 @@
                 </div>
                 <!-- book cover: end -->
             </div>
-           
+
         </div>
         <!-- left-col: end -->
         <!--Khung Sản phẩm-->
@@ -100,29 +100,29 @@
             <div class="product-list">
                 @if (@Model != null)
                 {
-                    foreach(var item in Model) 
+                    foreach (var item in Model)
                     {
-                        <div class="product-detail">
-                            <div class="product-img--container">
+                                <div class="product-detail">
+                                    <div class="product-img--container">
                                 @if (item.BookImage != null)
                                 {
-                                    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BookImage.FrontCover))">
+                                                <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BookImage.FrontCover))">
                                 }
                                 else
                                 {
-                                    <img src="~/img/mat_biec.jpg">
+                                                <img src="~/img/mat_biec.jpg">
                                 }
-                                    </div>
-                                    <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
-                                @if (item.Price != null)
-                                {
-                                    <p>@item.Price.Value.ToString("#0,##0") VND</p>
-                                }
-                                else
-                                {
-                                    <p>0 VND</p>   
-                                }
-                        </div>    
+                                            </div>
+                                            <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
+                            @if (item.Price != null)
+                            {
+                                                <p>@item.Price.Value.ToString("#0,##0") VND</p>
+                            }
+                            else
+                            {
+                                                <p>0 VND</p>   
+                            }
+                                </div>    
                     }
                 }
             </div>
