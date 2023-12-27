@@ -86,6 +86,8 @@
 .blog-title {
   font-size: 20px;
   font-weight: 500;
+  height: 60px;
+  overflow: hidden;
 }
 
 .blog-author {
@@ -94,6 +96,11 @@
 
 .blog-author:hover {
   color: var(--orange);
+}
+
+.preview-content{
+    height: 47px;
+    overflow: hidden;
 }
 /* BLOG: end */
 
@@ -146,6 +153,8 @@
   font-weight: 500;
   padding-top: 15px;
   margin-bottom: 5px !important;
+  height: 70px;
+  overflow: hidden;
 }
 
 .product-price {

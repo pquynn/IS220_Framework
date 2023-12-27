@@ -1,4 +1,4 @@
-﻿@{
+﻿@* @{
     ViewData["Title"] = "Trang chủ";
     Layout = "../Shared/_Layout.cshtml";
 }
@@ -156,3 +156,169 @@
     <!-- NEW ARRIVALS: END -->
 </div>
 <!-- MAIN SLIDER: END -->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+ *@
+
+
+
+@{
+    ViewData["Title"] = "Trang chủ";
+    Layout = "../Shared/_Layout.cshtml";
+}
+@model DoAnFramework.Models.HomepageProduct_Blog
+
+<!-- MAIN SLIDER: START -->
+<div class="main-slider">
+    <!-- SLIDER COTAINER: STAR -->
+    <div class="slider-container">
+        <!-- img -->
+        <img id="slider-1" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+        <img id="slider-1" src="" alt="" />
+        <img id="slider-1" src="" alt="" />
+
+        <!-- slider btn -->
+        <div class="slider-bnt">
+            <button class="btn-back">
+                <span class="material-symbols-outlined"> keyboard_arrow_left </span>
+            </button>
+            <button class="btn-next">
+                <span class="material-symbols-outlined"> chevron_right </span>
+            </button>
+        </div>
+    </div>
+    <!-- SLIDER COTAINER: END -->
+    <!-- BLOG: START -->
+    <div class="blog">
+        @if (Model != null)
+        {
+            foreach (var item in Model.listBlog)
+            {
+                <div class="blog-content zoom-when--hover">
+                    <a class="blog-link"
+                       asp-controller="Blog" asp-action="BlogDetail" asp-route-id="@item.BlogId">
+                        <div class="blog-img--container zoom-img--container">
+                            @if (item.BlogImage != null)
+                            {
+                                <img class="blog-img zoom-img"
+                                     src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.BlogImage))"
+                                     alt="">
+                            }
+                            else
+                            {
+                                <img src="~/img/mat_biec.jpg">
+                            }
+                        </div>
+                        <p class="blog-title">@item.BlogTitle</p>
+                        <p class="preview-content">@item.Content</p>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+    <!-- BLOG: END -->
+    <!-- BEST SELLER: START -->
+    <div class="gallery">
+        <h4>SẢN PHẨM BÁN CHẠY</h4>
+
+        <div class="product-list">
+            @if (Model != null && Model.listBook != null)
+            {
+                foreach (var item in Model.listBook)
+                {
+                    <a class="product zoom-when--hover"
+                       asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">
+                        <div class="product-img--container zoom-img--container">
+                            @if (item.FrontCover != null)
+                            {
+                                <img class="product-img zoom-img"
+                                     src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.FrontCover))"
+                                     alt="">
+                            }
+                            else
+                            {
+                                <img src="~/img/mat_biec.jpg">
+                            }
+                        </div>
+                        <div class="product-infor">
+                            <p class="product-name">@item.Name</p>
+                            <p class="product-price">@item.Price.Value.ToString("#0, ##0") VNĐ</p>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+    <!-- BEST SELLER: END -->
+    <!-- PRODUCT categories: start -->
+    <div class="collection">
+        <div class="collection-item zoom-when--hover">
+            <!-- img -->
+            <div class="zoom-img--container">
+                <img class="collection-img zoom-img"
+                     src="https://images.unsplash.com/photo-1610558495616-9ce40f904dde?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <!-- text -->
+            <div class="collection-text">
+                <p class="">Sách thiếu nhi</p>
+                <a class="" href="#">
+                    Xem thêm
+                    <span class="material-symbols-outlined"> double_arrow </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="collection-item zoom-when--hover">
+            <!-- img -->
+            <div class="zoom-img--container">
+                <img class="collection-img zoom-img"
+                     src="https://images.unsplash.com/photo-1593340010859-83edd3d6d13f?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <!-- tetx -->
+            <div class="collection-text">
+                <p class="">Sách kỹ năng</p>
+                <a class="" href="#">
+                    Xem thêm
+                    <span class="material-symbols-outlined"> double_arrow </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- PRODUCT categories: end -->
+    <!-- NEW ARRIVALS: START -->
+    <div class="gallery">
+        <h4>SẢN PHẨM MỚI</h4>
+
+        <div class="product-list">
+            @if (Model != null)
+            {
+                foreach (var item in Model.listBookNew)
+                {
+                    <a class="product zoom-when--hover"
+                       asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">
+                        <div class="product-img--container zoom-img--container">
+                            @if ( item.FrontCover != null)
+                            {
+                                <img class="product-img zoom-img"
+                                     src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.FrontCover))"
+                                     alt="">
+                            }
+                            else
+                            {
+                                <img src="~/img/mat_biec.jpg">
+                            }
+                        </div>
+                        <div class="product-infor">
+                            <p class="product-name">@item.Name</p>
+                            <p class="product-price">@item.Price.Value.ToString("#0, ##0") VNĐ</p>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+    <!-- NEW ARRIVALS: END -->
+</div>
+<!-- MAIN SLIDER: END -->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
