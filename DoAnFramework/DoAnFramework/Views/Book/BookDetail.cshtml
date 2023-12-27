@@ -115,13 +115,18 @@
 	<!-- TAG-CONTENT: start -->
 	<div class="tab-content" id="nav-tabContent">
 		<!-- description's content: start -->
+		
 		<div class="tab-pane fade show active"
 			 id="nav-home"
 			 role="tabpanel"
 			 aria-labelledby="nav-home-tab">
 			@if (Model != null)
 			{
-					<p>@Model.Description</p>
+				<div class='description-container'>
+					<div class="description-box">
+						<p style="flex: 1;">@Model.Description</p>
+					</div>
+				</div>
 			}
 		</div>
 		<!-- description's content: end -->

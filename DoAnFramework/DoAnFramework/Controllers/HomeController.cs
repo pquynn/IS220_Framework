@@ -72,6 +72,13 @@ namespace DoAnFramework.Controllers
             var listBlog = _context.Blogs
                 .OrderBy(item => item.BlogId)
                 .Take(3)
+                .Select(item=> new Blog 
+                { 
+                    BlogId = item.BlogId ,
+                    BlogImage = item.BlogImage,
+                    BlogTitle = item.BlogTitle,
+                    Content = item.Content
+                })
                 .ToList();
 
             var homepageData = new HomepageProduct_Blog(listBook, listBlog, listBookNew);

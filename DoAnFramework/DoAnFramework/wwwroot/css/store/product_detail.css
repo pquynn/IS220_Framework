@@ -351,3 +351,22 @@ button.btn{
 /* end: modal */
 /* end: read sample */
 
+/* description style */
+.description-container {
+    margin-bottom: 20px;
+}
+
+.description-box {
+    white-space: pre-wrap;
+    height: fit-content;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .description-box p {
+        font-size: 20px;
+        text-align: justify;
+        
+    }
+

@@ -4,6 +4,7 @@
 }
 
 
+
 .blog{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -28,7 +29,8 @@
 .blog-title{
     text-align: center;
     font-size: 20px;
-    
+    height: 60px;
+    overflow: hidden;
     margin: 10px;
 }
 
@@ -36,9 +38,13 @@
     color: var(--orange);
 }
 
-.preview-content{
+.preview-content {
     text-align: justify;
     padding: 0px 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 @media(max-width: 1200px) {

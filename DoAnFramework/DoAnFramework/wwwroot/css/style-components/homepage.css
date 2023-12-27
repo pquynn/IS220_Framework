@@ -98,9 +98,11 @@
   color: var(--orange);
 }
 
-.preview-content{
-    height: 47px;
+.preview-content {
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 /* BLOG: end */
 
@@ -149,12 +151,12 @@
 }
 
 .product-name {
-  font-size: 18px;
-  font-weight: 500;
-  padding-top: 15px;
-  margin-bottom: 5px !important;
-  height: 70px;
-  overflow: hidden;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 15px;
+    margin-bottom: 5px !important;
+    height: 70px;
+    overflow: hidden;
 }
 
 .product-price {
