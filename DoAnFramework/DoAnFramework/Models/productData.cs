@@ -6,5 +6,6 @@
 		public string? productName { get; set; }
 		public int productPrice { get; set; }
 		public int numberOfProduct {  get; set; }
+		public string imageOfProduct { get; set; }
 	}
 }

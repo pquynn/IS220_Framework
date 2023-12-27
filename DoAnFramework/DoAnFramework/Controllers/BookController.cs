@@ -62,9 +62,9 @@ namespace DoAnFramework.Controllers
         public IActionResult searchProduct(string? searchString)
         {
             var product = _context.Books
-                .Select(item => new { item.BookId, item.Name, item.Price, item.BookImage.FrontCover})
+                //.Select(item => new { item.BookId, item.Name, item.Price, item.BookImage.FrontCover})
                 .Where(item => SearchInString(item.Name, searchString))
-                //.Include(item => item.BookImage)
+                .Include(item => item.BookImage)
                 .ToList();
 
             return View(product);
