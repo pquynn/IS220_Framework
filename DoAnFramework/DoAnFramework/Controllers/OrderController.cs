@@ -26,8 +26,9 @@ namespace DoAnFramework.Controllers
 
 
         //GET: Order/order list/"KH009"
-        public IActionResult Index(int page = 1, string user_id = "") //my order
+        public IActionResult Index(int page = 1) //my order
         {
+            var user_id = HttpContext.Session.GetString("userId");
             var models = _orderService.GetMyOrderList(user_id, page, 20);
             ViewBag.CurrentPage = page;
             return View(models);

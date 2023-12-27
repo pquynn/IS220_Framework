@@ -152,6 +152,11 @@ namespace DoAnFramework.Controllers
             }
             else
             {
+                var tbl_user = _book_shop_dbContext.Users
+                      .Where(u => u.UserLogin == user.UserLogin)
+                      .FirstOrDefault();
+
+                HttpContext.Session.SetString("userId", tbl_user.UserId);
                 HttpContext.Session.SetString("userLogin", user.UserLogin);
                 HttpContext.Session.SetString("roleId", user.RoleId.ToString());
             }
@@ -162,9 +167,8 @@ namespace DoAnFramework.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index");
 
-            return View();
         }
 
         // SignUp

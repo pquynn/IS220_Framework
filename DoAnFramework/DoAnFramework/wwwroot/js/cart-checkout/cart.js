@@ -227,7 +227,7 @@ function emptyCart() {
                     PRODUCT_NAME: product.productName,
                     PRICE: Number(product.productPrice),
                     QUANTITY: Number(product.numberOfProduct),
-                    FIRST_PICTURE: product.productImage.replace(/^data:image\/\w+;base64,/, '')
+                    FIRST_PICTURE: product.imageOfProduct.replace(/^data:image\/\w+;base64,/, '')
                 };
 
                 // dua vao day san pham (cart)
