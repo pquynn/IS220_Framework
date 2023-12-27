@@ -37,39 +37,10 @@ namespace DoAnFramework.Controllers
 		[HttpPost]
 		public IActionResult addToCart(string userID, productData productData)
 		{
-            var order= _context.Orders
-				.Where(item => item.UserId == userID && item.Status == "cart")
-				.FirstOrDefault();
 
-            if (order == null)
-            {
-                // Trường hợp chưa có giỏ hàng trước đó.
-                var newOrder = new Order
-                {
-                    UserId = userID,
-                    Status = "cart"
-                };
-                _context.Orders.Add(newOrder);
-                _context.SaveChanges();
-            }
-            order = _context.Orders
-                .Where(item => item.UserId == userID && item.Status == "cart")
-                .FirstOrDefault();
-
-			var newProduct = new OrderDetail
-			{
-				OrderId = order.OrderId,
-				BookId = productData.productID,
-				BookName = productData.productName,
-				Quantity = productData.numberOfProduct,
-				Price = productData.productPrice
-			};
-			_context.OrderDetails.Add(newProduct);
-			_context.SaveChanges();
-
-			return Json(true);
+			return Json(_orderService.addToCart(userID, productData));
 		}
-	}
+	
 
 
         //GET: Order/OrderDetail/3
