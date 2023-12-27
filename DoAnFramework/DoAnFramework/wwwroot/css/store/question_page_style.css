@@ -20,7 +20,11 @@ h2 {
     height: 100px;
 }
 
-.contentBox__Right{
+.contentBox__Left {
+    flex: 2;
+}
+
+.contentBox__Right {
     border-left: 1px solid #000;
     margin-left: 10px;
     padding: 0 10px;

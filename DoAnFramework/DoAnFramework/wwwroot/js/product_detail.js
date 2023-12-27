@@ -1,12 +1,15 @@
 /** @format */
 // console.log(user_id);
-var user_id=null;
+//var user_id = "KH009";
+var user_id = null;
+
 
 var myCart = [];
 
 var productName;
 var productPrice;
 var numberOfProduct;
+var imageOfProduct;
 var productID;
 var soLuongTonKho;
 
@@ -18,17 +21,19 @@ if (window.location.href.includes("BookDetail")) {
     $(".btn-cancel").click(function () {
         productName = $(".product-name").text();
         productID = Number($(".product-name").data('value'));
+        imageOfProduct = $(".product-main-img img").attr("src");
         productPrice = convertCurrencyToNumber($(".product-price").text());
         numberOfProduct = Number($(".number").text());
         soLuongTonKho = Number($(".product-price").data('value'));
 
 
-        if (productName && productPrice && numberOfProduct) {
+        if (productName && productPrice && numberOfProduct && imageOfProduct) {
             let tempProduct = {
                 productID: productID,
                 productName: productName,
                 productPrice: productPrice,
-                numberOfProduct: numberOfProduct
+                numberOfProduct: numberOfProduct,
+                imageOfProduct: imageOfProduct
             };
 
             // Trường hợp không đăng nhập
