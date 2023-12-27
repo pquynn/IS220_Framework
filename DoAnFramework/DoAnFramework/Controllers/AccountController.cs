@@ -274,5 +274,10 @@ namespace DoAnFramework.Controllers
             }
             return null;
         }
+
+        [HttpPost]
+        public IActionResult getSession(string sessionName) {
+            return Json(HttpContext.Session.GetString(sessionName));
+        }
     }
 }

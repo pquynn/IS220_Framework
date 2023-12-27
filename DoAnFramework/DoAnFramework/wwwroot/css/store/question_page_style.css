@@ -21,7 +21,8 @@ h2 {
 }
 
 .contentBox__Left {
-    flex: 2;
+    font-size: 20px;
+    flex: 4;
 }
 
 .contentBox__Right {
