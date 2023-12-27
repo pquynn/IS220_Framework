@@ -23,7 +23,12 @@ namespace DoAnFramework.Controllers
         }
         public IActionResult Index() //account profile
         {
-            
+
+            var user_id = HttpContext.Session.GetString("userId");
+            if (user_id == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
         
@@ -273,6 +278,13 @@ namespace DoAnFramework.Controllers
                 }
             }
             return null;
+        }
+
+
+        [HttpPost]
+        public IActionResult getSession(string sessionName)
+        {
+            return Json(HttpContext.Session.GetString(sessionName));
         }
     }
 }

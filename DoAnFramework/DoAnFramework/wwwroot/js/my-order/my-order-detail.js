@@ -1,4 +1,24 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
+    //lấy thử session
+    //$.ajax({
+    //    type: "POST",
+    //    url: "/Account/getSession",
+    //    data: { sessionName: "userId" },
+    //    success: function (response) {
+    //        if (response) {
+    //            console.log(response);
+    //            user_id = response;
+    //        }
+    //        else {
+    //            alert("Không có dữ liệu trả về");
+    //        }
+    //    },
+    //    error: function (error) {
+    //        console.error("Đã xảy ra lỗi:", error);
+    //    },
+    //});
+
     const orderId = $('#order-id-head').text();
     var status = $('.user-info.status').text();
     // Reset all elements to their initial state

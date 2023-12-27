@@ -18,14 +18,14 @@ namespace DoAnFramework.Controllers
         }
 
         //GET: Checkout/Index/"KH009"
-        public IActionResult Index(string user_id = "")
+        public IActionResult Index()
         {
-            var cartViewModel = _orderService.GetLoginCart(user_id);
-
-            if (cartViewModel == null)
+            var user_id = HttpContext.Session.GetString("userId");
+            if (user_id == null)
             {
-                return View(); // Handle the case where the cart is null
+                return View();
             }
+            var cartViewModel = _orderService.GetLoginCart(user_id);
 
             return View(cartViewModel);
         }

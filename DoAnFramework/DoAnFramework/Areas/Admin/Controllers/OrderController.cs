@@ -16,6 +16,12 @@ namespace DoAnFramework.Areas.Admin.Controllers
         //GET: Admin/Order/order list/
         public IActionResult Index(int page = 1) 
         {
+            var roleId = HttpContext.Session.GetString("roleId");
+            if (roleId != "1" && roleId != "2")
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var models = _orderService.GetOrderList(page, 10);
             ViewBag.CurrentPage = page;
             return View(models);
@@ -24,6 +30,12 @@ namespace DoAnFramework.Areas.Admin.Controllers
         //GET: Admin/Order/OrderDetail/3
         public IActionResult OrderDetail(int? id)
         {
+            var roleId = HttpContext.Session.GetString("roleId");
+            if (roleId != "1" && roleId != "2")
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var order = _orderService.GetMyOrderDetails(id);
             if (order == null)
             {

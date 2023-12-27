@@ -24,11 +24,17 @@ namespace DoAnFramework.Controllers
             _commentService = commentService;
         }
 
+       
 
         //GET: Order/order list/"KH009"
         public IActionResult Index(int page = 1) //my order
         {
             var user_id = HttpContext.Session.GetString("userId");
+            if(user_id == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var models = _orderService.GetMyOrderList(user_id, page, 20);
             ViewBag.CurrentPage = page;
             return View(models);
@@ -47,6 +53,12 @@ namespace DoAnFramework.Controllers
         //GET: Order/OrderDetail/3
         public IActionResult OrderDetail(int? id)
         {
+            var user_id = HttpContext.Session.GetString("userId");
+            if (user_id == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
             var order = _orderService.GetMyOrderDetails(id);
             if (order == null)
             {
@@ -60,6 +72,12 @@ namespace DoAnFramework.Controllers
         //GET: Order/OrderFeedback/3
         public IActionResult OrderFeedback(int? id)
         {
+            var user_id = HttpContext.Session.GetString("userId");
+            if (user_id == null)
+            {
+                return NotFound();
+            }
+
             var order = _commentService.GetMyOrderWithComment(id);
             if (order == null)
             {
@@ -71,15 +89,15 @@ namespace DoAnFramework.Controllers
 
 
         //GET: Order/Cart/"KH009"
-        public IActionResult Cart(string user_id = "") //my order
+        public IActionResult Cart() //my order
         {
-            var cartViewModel = _orderService.GetLoginCart(user_id);
-
-            if (cartViewModel == null)
+            var user_id = HttpContext.Session.GetString("userId");
+            if (user_id == null)
             {
-                return View(); // Handle the case where the cart is null
+                return View();
             }
 
+            var cartViewModel = _orderService.GetLoginCart(user_id);
             return View(cartViewModel);
         }
 

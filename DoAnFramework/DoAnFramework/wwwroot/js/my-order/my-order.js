@@ -1,7 +1,19 @@
-﻿
+﻿var user_id = null;
 $(document).ready(function () {
-
-     user_id='KH009'; //giả sử
+    //lấy thử session
+    $.ajax({
+        type: "POST",
+        url: "/Account/getSession",
+        data: {sessionName: "userId"}
+        success: function (response) {
+                alert(response);
+                console.log(response);
+                user_id = response;
+        },
+        error: function (error) {
+            console.error("Đã xảy ra lỗi:", error);
+        },
+    });
     
 
     //SEARCH ORDER

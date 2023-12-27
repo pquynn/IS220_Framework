@@ -1,12 +1,26 @@
-﻿
+﻿var user_id = null;
 const cart = JSON.parse(localStorage.getItem("myCart"));
 const localCart = getLocalCart(cart);
 
     // Render cart row: start
 $(document).ready(function () {
-     var user_id = $('#temp-user-id').text();
+    //lấy session
+    $.ajax({
+        type: "POST",
+        url: "/Account/getSession",
+        data: { sessionName: "userId" },
+        success: function (response) {
+            if (response) {
+                console.log(response);
+                user_id = response;
+            }
+        },
+        error: function (error) {
+            console.error("Đã xảy ra lỗi:", error);
+        },
+    });
         
-    if (user_id != null && user_id != "") {
+    if (user_id != null) {
 
         var rowCount = $('.product-list--body tr').length;
         if (rowCount === 0 || typeof rowCount === "undefined") {

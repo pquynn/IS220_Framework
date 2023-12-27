@@ -1,51 +1,66 @@
-﻿
-    const cart = JSON.parse(localStorage.getItem("myCart"));
-    const localCart = getLocalCart(cart);
+﻿var user_id = null;
+const cart = JSON.parse(localStorage.getItem("myCart"));
+const localCart = getLocalCart(cart);
 var sendPrice = 0;
-    $(document).ready(function () {
-        var user_id = $('#temp-user-id').text();
+$(document).ready(function () {
+    //lấy session
+    $.ajax({
+        type: "POST",
+        url: "/Account/getSession",
+        data: { sessionName: "userId" },
+        success: function (response) {
+            if (response) {
+                console.log(response);
+                user_id = response;
+            }
+        },
+        error: function (error) {
+            console.error("Đã xảy ra lỗi:", error);
+        },
+    });
+        
 
         
-        displayCheckout(user_id);
+    displayCheckout(user_id);
         
 
-        $("#buy-form").submit(function (e) {
-            e.preventDefault();
-        // Ten, sdt
-             const name = $(".customer-name").val();
-             const phone = $(".customer-phone").val();
+    $("#buy-form").submit(function (e) {
+        e.preventDefault();
+    // Ten, sdt
+            const name = $(".customer-name").val();
+            const phone = $(".customer-phone").val();
          
-             // Dia chi
+            // Dia chi
          
-            const address = {
-                tinhThanh: $("#city").val(),
-                quanHuyen: $("#district").val(),
-                xaPhuong: $("#ward").val(),
-                duongAp: $("#street").val(),
-            };
+        const address = {
+            tinhThanh: $("#city").val(),
+            quanHuyen: $("#district").val(),
+            xaPhuong: $("#ward").val(),
+            duongAp: $("#street").val(),
+        };
 
-             // thoi gian
-             const now = new Date();
-             const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+            // thoi gian
+            const now = new Date();
+            const date = `${now.getFullYear()}-${now.getMonth()}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 
-             // phuong thuc thanh toan
-            const paymentMethod = $(`input[name="payment"]:checked`).val();
+            // phuong thuc thanh toan
+        const paymentMethod = $(`input[name="payment"]:checked`).val();
 
-            // tong tien
-            console.log(sendPrice);
-             buy(name, phone, address, user_id, date, paymentMethod, localCart, Number(sendPrice));
+        // tong tien
+        console.log(sendPrice);
+            buy(name, phone, address, user_id, date, paymentMethod, localCart, Number(sendPrice));
             
-             if (paymentMethod == "cod") {
-                 alert("Đặt hàng thành công!");
-                 window.location.href = "/Checkout/Cart";
-             }
+            if (paymentMethod == "cod") {
+                alert("Đặt hàng thành công!");
+                window.location.href = "/Checkout/Cart";
+            }
              
 
-             // xoa localstorage chua gio hàng khi ko đăng nhập
-             localStorage.clear();
-        });
-            
+            // xoa localstorage chua gio hàng khi ko đăng nhập
+            localStorage.clear();
     });
+            
+});
 
 function displayData() {
         var addressString = $('#temp-address').text();
