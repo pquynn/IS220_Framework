@@ -55,9 +55,10 @@
 						</div>
 
 						<div class="product-property cover">
-						@if (Model.BookCover == "soft")
+							<script>console.log(@Model.BookCover);</script>
+						@if (Model.BookCover == 1)
 						{
-						<h4>Loại bìa sách: <span>Bìa mềm</span> </h4>
+							<h4>Loại bìa sách: <span>Bìa mềm</span> </h4>
 						}
 						else
 						{

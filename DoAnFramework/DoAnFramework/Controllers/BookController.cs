@@ -48,7 +48,7 @@ namespace DoAnFramework.Controllers
             return View(listProduct);
         }
 
-        public IActionResult BookCover(string? typeCover)
+        public IActionResult BookCover(int? typeCover)
         {
             var listProduct = _context.Books
                 .Where(item => item.BookCover == typeCover)

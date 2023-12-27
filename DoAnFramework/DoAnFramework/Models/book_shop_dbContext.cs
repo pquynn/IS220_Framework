@@ -86,7 +86,6 @@ namespace DoAnFramework.Models
                     .HasColumnName("AUTHOR");
 
                 entity.Property(e => e.BookCover)
-                    .HasMaxLength(10)
                     .HasColumnName("BOOK_COVER");
 
                 entity.Property(e => e.CategoryId).HasColumnName("CATEGORY_ID");

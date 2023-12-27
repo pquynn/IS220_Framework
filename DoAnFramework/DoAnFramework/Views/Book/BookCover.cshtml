@@ -48,12 +48,12 @@
                     <div id="panelsStayOpen-collapseOne"
                          class="accordion-collapse collapse show"
                          aria-labelledby="panelsStayOpen-headingOne">
-                        <a asp-controller="Book" asp-action="BookCategory" asp-route-id="5">Truyền cảm hứng</a>
-                        <a asp-controller="Book" asp-action="BookCategory" asp-route-id="6">Tự truyện, hồi ký</a>
-                        <a asp-controller="Book" asp-action="BookCategory" asp-route-id="7">Truyện ngắn</a>
-                        <a asp-controller="Book" asp-action="BookCategory" asp-route-id="10">Lịch sử</a>
-                        <a asp-controller="Book" asp-action="BookCategory" asp-route-id="8">Nấu ăn</a>
-                        <a asp-controller="Book" asp-action="BookCategory" asp-route-id="4">Kinh dị</a>
+                        <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="5">Truyền cảm hứng</a>
+                        <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="6">Tự truyện, hồi ký</a>
+                        <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="7">Truyện ngắn</a>
+                        <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="10">Lịch sử</a>
+                        <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="8">Nấu ăn</a>
+                        <a class="" asp-controller="Book" asp-action="BookCategory" asp-route-id="4">Kinh dị</a>
                     </div>
                     <!-- accordion-item body: start  -->
                 </div>
@@ -75,8 +75,8 @@
                          class="accordion-collapse collapse"
                          aria-labelledby="panelsStayOpen-headingThree">
                         <div class="accordion-body size color-list">
-                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="1">Bìa cứng</a>
-                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="2">Bìa mềm</a>
+                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="2">Bìa cứng</a>
+                            <a asp-controller="Book" asp-action="BookCover" asp-route-id="1">Bìa mềm</a>
                         </div>
                     </div>
                 </div>
@@ -110,19 +110,19 @@
                                 }
                                 else
                                 {
-                                                <img src="~img/mat_biec.jpg">
+                                                <img src="~/img/mat_biec.jpg">
                                 }
                                             </div>
                                             <a asp-controller="Book" asp-action="BookDetail" asp-route-id="@item.BookId">@item.Name</a>
-                                                    <p>@item.Price.Value.ToString("#0,##0") VND</p>
-                            @*                                     <div class="product-star">
-                                        <ion-icon name="star-sharp"></ion-icon>
-                                        <ion-icon name="star-sharp"></ion-icon>
-                                        <ion-icon name="star-sharp"></ion-icon>
-                                        <ion-icon name="star-sharp"></ion-icon>
-                                        <ion-icon name="star-sharp"></ion-icon>
-                                    </div> *@
-                                        </div>    
+                            @if (item.Price != null)
+                            {
+                                                <p>@item.Price.Value.ToString("#0,##0") VND</p>
+                            }
+                            else
+                            {
+                                                <p>0 VND</p>   
+                            }
+                                </div>    
                     }
                 }
             </div>
