@@ -14,7 +14,7 @@ namespace DoAnFramework.Controllers
             _context = context;
         }
 
-        public IActionResult Index()                //.Select(item => new { item.BookId , item.Name, item.Price, item.BookImage.FrontCover})
+        public IActionResult Index()                
 
         {
             var listBook = _context.Books
@@ -62,7 +62,6 @@ namespace DoAnFramework.Controllers
         public IActionResult searchProduct(string? searchString)
         {
             var product = _context.Books
-                //.Select(item => new { item.BookId, item.Name, item.Price, item.BookImage.FrontCover})
                 .Where(item => SearchInString(item.Name, searchString))
                 .Include(item => item.BookImage)
                 .ToList();

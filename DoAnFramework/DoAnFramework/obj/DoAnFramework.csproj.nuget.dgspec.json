@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {}
+    "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {}
   },
   "projects": {
-    "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {
+    "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
+        "projectUniqueName": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
         "projectName": "DoAnFramework",
-        "projectPath": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\obj\\",
+        "projectPath": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\DoAnFramework.csproj",
+        "packagesPath": "C:\\Users\\trung\\.nuget\\packages\\",
+        "outputPath": "D:\\UIT HK1 2023\\Framework\\IS220_Framework\\DoAnFramework\\DoAnFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\trung\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -112,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

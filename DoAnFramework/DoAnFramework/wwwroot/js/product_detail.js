@@ -1,8 +1,24 @@
 /** @format */
-// console.log(user_id);
-//var user_id = "KH009";
+
 var user_id = null;
 
+$.ajax({
+    type: "POST",
+    url: "/Account/getSession",
+    data: { sessionName: "userId" },
+    success: function (response) {
+        if (response) {
+            console.log(response);
+            user_id = response;
+        }
+        else {
+            alert("Không có dữ liệu trả về");
+        }
+    },
+    error: function (error) {
+        console.error("Đã xảy ra lỗi:", error);
+    },
+});
 
 var myCart = [];
 
@@ -18,7 +34,7 @@ if (window.location.href.includes("BookDetail")) {
         myCart = JSON.parse(localStorage.getItem("myCart"));
     }
 
-    $(".btn-cancel").click(function () {
+    function productToCart() {
         productName = $(".product-name").text();
         productID = Number($(".product-name").data('value'));
         imageOfProduct = $(".product-main-img img").attr("src");
@@ -38,19 +54,15 @@ if (window.location.href.includes("BookDetail")) {
 
             // Trường hợp không đăng nhập
             if (user_id === null) {
-                alert("Chưa đăng nhập");
-
                 // Đưa sản phẩm được chọn vào giỏ hàng.
                 myCart.push(tempProduct);
 
                 localStorage.setItem("myCart", JSON.stringify(myCart));
                 $('.product-price').data('value', soLuongTonKho - numberOfProduct);
                 alert("Sản phẩm đã được thêm vào giỏ hàng");
-                console.log(myCart);
             }
             // Trường hợp có đăng nhập.
             else {
-                alert("Đã đăng nhập");
                 $.ajax({
                     type: "POST",
                     url: "/Order/addToCart",
@@ -65,7 +77,7 @@ if (window.location.href.includes("BookDetail")) {
                             alert("Sản phẩm đã được thêm vào giỏ hàng");
                         }
                         else {
-                            alert("Không có dữ liệu trả về");
+                            alert("Đã xảy ra lỗi!");
                         }
                     },
                     error: function (error) {
@@ -76,45 +88,18 @@ if (window.location.href.includes("BookDetail")) {
             }
         }
         else {
-            alert("Thieu thong tin!");
+            alert("Thiếu thông tin !");
         }
+    }
+    $(".btn-cancel").click(function () {
+        productToCart();
     });
 
     $('.btn-confirm').click(function () {
-        alert("Mua hang");
+        productToCart();
+        window.location.href = "/Order/Cart";
     });
 }
-//$(".btn-confirm").click(function () {
-//    productName = $(".product-name").text();
-//    productPrice = $(".product-price").text();
-//    numberOfProduct = $(".number").text();
-//    productImage = $(".product-main-img img").attr("src");
-
-//    if (productName && productPrice && numberOfProduct && productImage) {
-//        let tempProduct = {
-//            productName: productName,
-//            productPrice: productPrice,
-//            productSize: productSize,
-//            numberOfProduct: numberOfProduct,
-//            productImage: productImage,
-//        };
-
-//        // Trường hợp không đăng nhập
-//        if (user_id === null) {
-//            // Đưa sản phẩm được chọn vào giỏ hàng.
-//            myCart.push(tempProduct);
-//            console.log(myCart);
-
-//            // Lưu dữ liệu vào localStorage.
-//            localStorage.setItem("myCart", JSON.stringify(myCart));
-//            alert("Sản phẩm đã được thêm vào giỏ hàng");
-//        }
-//        // Trường hợp có đăng nhập.
-//        else {
-//            console.log("Chua login");
-//        }
-//    }
-//}
 
 
 function convertCurrencyToNumber(currencyString) {
@@ -126,14 +111,3 @@ function convertCurrencyToNumber(currencyString) {
 
     return integerValue;
 }
-//}
-//} else if (window.location.href.includes("cart.php")) {
-//    // Chuyển giỏ hàng qua các file có dạng "cart.php"
-//    myCart = JSON.parse(localStorage.getItem("myCart"));
-//}
-
-// Hàm lấy số sản phẩm có trong giỏ hàng.
-//function countProductInCart(myCart) {
-//    if (myCart !== null) return myCart.length;
-//    return 0;
-//}
