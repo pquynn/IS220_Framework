@@ -249,13 +249,13 @@
 				<div class="row modal-body">
 					<div class="left-col">
 						<div class="row p-1">
-							<div class="col-5 img-container">
+							<div class="col-6 img-container">
 								@if (Model.BookImage != null)
 								{
 									<img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.BookImage.FrontCover))" class="small-book-img front-cover">
 								}
 							</div>
-							<div class="col-7 book-info-container">
+							<div class="col-6 book-info-container">
 								<p class="book-name fw-bold text-uppercase">@Model.Name</p>
 								<p class="book-author">@Model.Author</p>
 								<p class="book-price">@Model.Price.Value.ToString("#0, ##0") đ</p>

@@ -46,11 +46,11 @@
             </a>
 
             <ul class="nav-admin-menu">
-                <li><a asp-controller="Home" asp-action="Index">Về Cửa Hàng</a></li>
+                <li><a asp-area="Default" asp-controller="Home" asp-action="Index">Về Cửa Hàng</a></li>
                 <li><a href="Dashboard.php">Thống Kê</a></li>
                 <li><a asp-area="Admin" asp-controller="Categories" asp-action="Index">Danh Mục</a></li>
-                <li><a  class="active">Sản Phẩm</a></li>
-                <li><a asp-area="Admin" asp-controller="Order" asp-action="Index">Đơn Hàng</a></li>
+                <li><a  >Sản Phẩm</a></li>
+                <li><a class="active" asp-area="Admin" asp-controller="Order" asp-action="Index">Đơn Hàng</a></li>
                 <li><a href="CustomersManagement.php">Khách Hàng</a></li>
                 <li><a href="EmployeesManagement.php">Nhân Viên</a></li>
                 <li><a href="BlogManagement.php">Blog</a></li>

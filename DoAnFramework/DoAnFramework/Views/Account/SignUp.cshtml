@@ -28,22 +28,22 @@
                 </div>
 
                 <div class="col-12 form-floating">
-                    <input class="form-control" type="tel" id="phonenumber" name="UserTelephone" placeholder=" Số điện thoại">
+                    <input class="form-control" type="tel" id="phonenumber" name="UserTelephone" placeholder=" Số điện thoại" required pattern="^0[0-9]{9}$">
                     <label for="phonenumber" class="form-label"> Số điện thoại</label>
                 </div>
 
                 <div class="col-12 form-floating">
-                    <input class="form-control" type="text" id="login_name" name="UserLogin" placeholder=" Tên đăng nhập" style="font-size: 12px;">
+                    <input class="form-control" type="text" id="login_name" name="UserLogin" placeholder=" Tên đăng nhập" style="font-size: 12px;" required>
                     <label for="login_name" class="form-label">Tên đăng nhập</label>
                 </div>
                 
                 <div class="col-12 form-floating">
-                    <input class="form-control" type="password" id="pass" name="UserPassword" placeholder=" Mật khẩu">
+                    <input class="form-control" type="password" id="pass" name="UserPassword" placeholder=" Mật khẩu" required>
                     <label for="pass" class="form-label"> Mật khẩu</label>
                 </div>
 
                 <div class="col-12 form-floating">
-                    <input class="form-control" type="password" id="re-pass" name="ConfirmPassword" placeholder=" Nhập lại mật khẩu">
+                    <input class="form-control" type="password" id="re-pass" name="ConfirmPassword" placeholder=" Nhập lại mật khẩu" required>
                     <label for="re-pass" class="form-label"> Nhập lại mật khẩu</label>
                     <span id="confirmPasswordError" style="color: red; display: none;">Mật khẩu nhập lại không khớp</span>
                 </div>
