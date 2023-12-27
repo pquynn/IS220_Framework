@@ -225,7 +225,7 @@ function emptyCart() {
                 var row = {
                     ORDER_DETAIL_ID: i,
                     PRODUCT_NAME: product.productName,
-                    PRICE: Number(product.productPrice.slice(0, -4).replaceAll(",", "")),
+                    PRICE: Number(product.productPrice),
                     QUANTITY: Number(product.numberOfProduct),
                     FIRST_PICTURE: product.productImage.replace(/^data:image\/\w+;base64,/, '')
                 };

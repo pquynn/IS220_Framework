@@ -1,6 +1,6 @@
 /** @format */
 // console.log(user_id);
-var user_id = "KH009";
+var user_id=null;
 
 var myCart = [];
 

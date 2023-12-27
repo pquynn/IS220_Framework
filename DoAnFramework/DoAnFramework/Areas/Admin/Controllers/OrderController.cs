@@ -16,7 +16,7 @@ namespace DoAnFramework.Areas.Admin.Controllers
         //GET: Admin/Order/order list/
         public IActionResult Index(int page = 1) 
         {
-            var models = _orderService.GetOrderList(page, 20);
+            var models = _orderService.GetOrderList(page, 10);
             ViewBag.CurrentPage = page;
             return View(models);
         }

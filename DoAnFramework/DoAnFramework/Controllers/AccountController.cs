@@ -162,7 +162,7 @@ namespace DoAnFramework.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
 
             return View();
         }
