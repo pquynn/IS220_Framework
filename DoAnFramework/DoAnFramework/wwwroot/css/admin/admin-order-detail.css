@@ -115,3 +115,7 @@
     margin-right: 10px;
 }
 /* Update order status: start */
+span.user-info {
+    font-weight: bold;
+    padding-left: 15px;
+}

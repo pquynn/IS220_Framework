@@ -210,5 +210,58 @@ namespace DoAnFramework.Models.Service
 
             else return -1;
         }
+
+
+
+        //--------------------ADMIN
+        //Get order list
+        public PagedList<Order> GetOrderList(int page = 1, int pageSize = 20)
+        {
+            var lsOrders = _context.Orders
+                .AsNoTracking()
+                .Where(ud => ud.Status != "cart")
+                .OrderBy(x => x.OrderId);
+
+            return new PagedList<Order>(lsOrders, page, pageSize);
+        }
+
+        //Get order detail base on orderid
+        public OrderViewModel GetOrderDetails(int? orderId)
+        {
+            if (orderId == null)
+            {
+                return null;
+            }
+
+            var order = _context.Orders
+               .AsNoTracking()
+                .Where(od => od.OrderId == orderId)
+                .Select(od => new OrderViewModel
+                {
+                    Order = od,
+                    OrderDetails = od.OrderDetails.Select(o => new OrderDetailWithImage
+                    {
+                        OrderDetail = o,
+                        FrontCover = o.Book.BookImage.FrontCover
+                    })
+                })
+                .FirstOrDefault();
+            return order;
+        }
+
+
+        //Delete order 
+        public bool deleteOrder(int orderId)
+        {
+            var order = _context.Orders.Find(orderId);
+
+            if (order != null)
+            {
+                _context.Orders.Remove(order);
+                _context.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

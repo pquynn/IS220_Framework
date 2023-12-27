@@ -37,7 +37,7 @@ var sendPrice = 0;
             
              if (paymentMethod == "cod") {
                  alert("Đặt hàng thành công!");
-                 window.location.href = "/Order/Cart";
+                 window.location.href = "/Checkout/Cart";
              }
              
 

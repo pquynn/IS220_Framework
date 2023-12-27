@@ -197,6 +197,14 @@
       "PackagePath": "staticwebassets\\img\\user.png"
     },
     {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\admin-order\\admin-order-detail.js",
+      "PackagePath": "staticwebassets\\js\\admin-order\\admin-order-detail.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\admin-order\\admin-order.js",
+      "PackagePath": "staticwebassets\\js\\admin-order\\admin-order.js"
+    },
+    {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\cart-checkout\\cart.js",
       "PackagePath": "staticwebassets\\js\\cart-checkout\\cart.js"
     },

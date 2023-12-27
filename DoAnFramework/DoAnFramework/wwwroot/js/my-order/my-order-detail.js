@@ -26,8 +26,7 @@
         $("#step2").addClass("active");
         $("#step4").addClass("active");
         $("#step3").css("display", "none");
-        $(".review-order").css("display", "none");
-        $(".cancel-order").css("display", "none");
+       
         $("#step4 span").text("Đã hủy");
     }
 
@@ -43,10 +42,6 @@
             }
         }
     });
-
-    //$('.review-order').on('click', function (event) {
-    //    window.location.href = "/Order/OrderFeedback/" + orderId;
-    //}
 
 });
 
