@@ -197,5 +197,18 @@ namespace DoAnFramework.Models.Service
                 return false;
             }
         }
+
+        //find order
+        public int findLatestMoMoOrder()
+        {
+            var order = _context.Orders
+                .Where(od => od.Pay == "momo-wallet" && od.Status == "pending")
+                .OrderByDescending(od => od.OrderDate)
+                .FirstOrDefault();
+            if (order != null)
+                return order.OrderId;
+
+            else return -1;
+        }
     }
 }

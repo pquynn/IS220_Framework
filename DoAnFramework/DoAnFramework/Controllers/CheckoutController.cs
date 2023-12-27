@@ -66,7 +66,7 @@ namespace DoAnFramework.Controllers
 
 
 		//Checkout/Payment (online payment: momo)
-		public ActionResult Payment()
+		public ActionResult Payment(int id = 1000)
 		{
             //request params need to request to MoMo system
             string endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
@@ -74,10 +74,10 @@ namespace DoAnFramework.Controllers
 			string accessKey = "iPXneGmrJH0G8FOP";
 			string serectkey = "sFcbSGRSJjwGxwhhcEktCHWYUuTuPNDB";
 			string orderInfo = "test";
-			string returnUrl = "https://localhost:7282/Order/Cart";
-			string notifyurl = "https://localhost:7282/Order/Cart"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+			string returnUrl = "https://localhost:7282/Checkout/BuySuccess";
+			string notifyurl = "https://localhost:7282/Checkout/BuySuccesst"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
 
-			string amount = "10000";
+			string amount = id.ToString();
 			string orderid = DateTime.Now.Ticks.ToString(); //mã đơn hàng
 			string requestId = DateTime.Now.Ticks.ToString();
 			string extraData = "";
@@ -116,10 +116,11 @@ namespace DoAnFramework.Controllers
 			};
 
 			string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
-
+			
 			JObject jmessage = JObject.Parse(responseFromMomo);
-
-			return Redirect(jmessage.GetValue("payUrl").ToString());
+			
+            return Redirect(jmessage.GetValue("payUrl").ToString());
+            
 		}
 
 		//Khi thanh toán xong ở cổng thanh toán Momo, Momo sẽ trả về một số thông tin, trong đó có errorCode để check thông tin thanh toán
@@ -128,17 +129,25 @@ namespace DoAnFramework.Controllers
 		public ActionResult BuySuccess(Result result)
 		{
 			//lấy kết quả Momo trả về và hiển thị thông báo cho người dùng (có thể lấy dữ liệu ở đây cập nhật xuống db)
-			string rMessage = result.message;
-			string rOrderId = result.orderId;
-			string rErrorCode = result.errorCode; // = 0: thanh toán thành công
-			return View();
+			//string rMessage = result.message;
+			//string rOrderId = result.orderId;
+			//string rErrorCode = result.errorCode; // = 0: thanh toán thành công
+				return View(result);
+			
 		}
 
-		[HttpPost]
-		public void SavePayment()
+
+        [HttpPost]
+		public IActionResult CancelOrder()
 		{
-			//cập nhật dữ liệu vào db
-			String a = "";
+			int orderid = _orderService.findLatestMoMoOrder();
+
+			if(orderid != -1)
+			{
+				return Json ( _orderService.updateOrderStatus(orderid, "cancelled"));
+			}
+			else 
+				return Json (false);
 		}
 	}
 }

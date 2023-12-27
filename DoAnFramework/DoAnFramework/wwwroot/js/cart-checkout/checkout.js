@@ -1,10 +1,14 @@
 ﻿
     const cart = JSON.parse(localStorage.getItem("myCart"));
     const localCart = getLocalCart(cart);
-
+var sendPrice = 0;
     $(document).ready(function () {
         var user_id = $('#temp-user-id').text();
+
+        
         displayCheckout(user_id);
+        
+
         $("#buy-form").submit(function (e) {
             e.preventDefault();
         // Ten, sdt
@@ -26,8 +30,10 @@
 
              // phuong thuc thanh toan
             const paymentMethod = $(`input[name="payment"]:checked`).val();
-            
-             buy(name, phone, address, user_id, date, paymentMethod, localCart);
+
+            // tong tien
+            console.log(sendPrice);
+             buy(name, phone, address, user_id, date, paymentMethod, localCart, Number(sendPrice));
             
              if (paymentMethod == "cod") {
                  alert("Đặt hàng thành công!");
@@ -83,8 +89,8 @@ function displayData() {
             var total = Number(quantity) * Number(price);
 
             // Update the product-total td with the calculated total
-            $(this).find(".product-total").text(total.toString());
-
+        $(this).find(".product-total").text(total.toString());
+        sendPrice += total;
             totalPrice += total;
         });
 
@@ -131,6 +137,7 @@ function displayData() {
         $('.product-list--body tr').each(function () {
             var price = $(this).find('.product-total').text();
             totalPrice += Number(price);
+            sendPrice = totalPrice;
                     });
 
         $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
@@ -147,7 +154,9 @@ function displayData() {
     user_id,
     date,
     paymentMethod,
-        localCart) {
+        localCart,
+    id) {
+
         $.ajax({
             url: "/Checkout/Buy",
             type: "POST",
@@ -167,7 +176,7 @@ function displayData() {
             success: function (response) {
                 if (response.success) {
                     if (paymentMethod == 'momo-wallet')
-                        window.location.href = "/Checkout/Payment";
+                        window.location.href = "/Checkout/Payment/" + id;
                 }
                 else
                     console.log('failed');
