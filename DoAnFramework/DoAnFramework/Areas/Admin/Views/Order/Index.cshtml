@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewData["Title"] = "Đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<DoAnFramework.Models.Order>
+<!-- search and filter row: start -->
+<div class="section_top-content">
+    <h2 class="section_heading">Đơn hàng</h2>
+    <div class="top-content left">
+        <div class="admin-search-container">
+            <div class="search-bar-box">
+                <input type="text" id="search" placeholder="Tìm kiếm..." class="form-control ">
+                <a href="#" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top-content right">
+        <div class="dropdown">
+            <button class="btn-admin btn-calendar dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="width: 180px;">
+                Trạng thái đơn hàng
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Đang xử lý</a></li>
+                <li><a class="dropdown-item" href="#">Đang giao</a></li>
+                <li><a class="dropdown-item" href="#">Giao hàng thành công</a></li>
+                <li><a class="dropdown-item" href="#">Đã hủy</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- search and filter row: end -->
+<!--Table list orders-->
+<div class="admin-table">
+    <table class="list-orders">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Mã KH</th>
+                <th>Tên KH</th>
+                <th>SĐT</th>
+                <th>Ngày mua</th>
+                <th>Thanh toán</th>
+                <th>Trạng thái</th>
+                <th>Tổng sách</th>
+                <th>Tổng tiền</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null)
+            {
+                foreach(var item in Model)
+                {
+                    <tr>
+                        <td>@item.OrderId</td>
+                        <td>@item.UserId</td>
+                        <td>@item.UserName</td>
+                        <td>@item.UserTelephone</td>
+                        <td>@item.OrderDate</td>
+                        <td>@item.Pay</td>
+                        <td>@item.Status</td>
+                        <td>@item.TotalBooks</td>
+                        <td>@item.TotalPrice</td>
+                        <td class="action">
+                            <a asp-area="Admin" asp-controller="Order" asp-action="OrderDetail" asp-route-id="@item.OrderId"><i class="fa-solid fa-pen"></i></a>
+                            <a class="admin-delete"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+<!--Pagination-->
+<div class="pagination admin" id="pagination-my-orders">
+    @if (Model.HasPreviousPage)
+    {
+        <a href="@Url.Action("Index", new { user_id = "KH009", page = Model.PageNumber - 1 })">&laquo;</a>
+    }
+    @for (int i = 1; i <= Model.PageCount; i++)
+    {
+        <a class="@(i == Model.PageNumber ? "active" : "")" href="@Url.Action("Index", new { user_id = "KH009", page = i })">@i</a>
+    }
+    @if (Model.HasNextPage)
+    {
+        <a href="@Url.Action("Index", new { user_id = "KH009", page = Model.PageNumber + 1 })">&raquo;</a>
+    }
+</div>
+</div>
+<!--MAIN SECTION----END-->
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/js/admin-order/admin-order.js"></script>

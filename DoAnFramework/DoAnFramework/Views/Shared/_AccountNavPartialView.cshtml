@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="~/css/store/my-orders.css" />
 <link rel="stylesheet" href="~/css/store/my-order-detail.css" />
 <link rel="stylesheet" href="~/css/store/my-order-feedback.css" />
+<link rel="stylesheet" href="~/css/style-components/pagination.css" asp-append-version="true">
 <!-- Add particular css link to file: start -->
 <!--MAIN SECTION START-->
 <div class="section">
@@ -34,11 +35,11 @@
                     item.classList.add('active');
                 }
 
-                if (currentLocation.includes("my-order-detail") && href.includes("Order") && href.includes("Index")) {
+                if (currentLocation.includes("Order") && href.includes("Order")) {
                     item.classList.add('active');
                 }
 
-                if (currentLocation.includes("my-order-feedback") && href.includes("Order") && href.includes("Index")) {
+                if (currentLocation.includes("Order") && href.includes("Order")) {
                     item.classList.add('active');
                 }
             });

@@ -1,4 +1,5 @@
 ﻿using DoAnFramework.Models;
+using DoAnFramework.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
@@ -15,29 +16,76 @@ namespace DoAnFramework.Controllers
         }
 
 
+        //public IActionResult Index()
+        //{
+
+        //    var listBook = _context.Books
+        //        .OrderByDescending(item => item.Name)
+        //        .Include(item => item.BookImage)
+        //        .Take(4)
+        //        .ToList();
+
+        //    var listBookNew = _context.Books
+        //        .OrderBy(item => item.Name)
+        //        .Include(item => item.BookImage)
+        //        .Take(4)
+        //        .ToList();
+
+
+
+        //    var listBlog = _context.Blogs
+        //        .OrderBy(item => item.BlogId)
+        //        .Take(3)
+        //        .ToList();
+
+        //    var homepageDate = new HomepageProduct_Blog(listBook, listBlog, listBookNew);
+
+        //    return View(homepageDate);
+        //}
+
         public IActionResult Index()
         {
             var listBook = _context.Books
                 .OrderByDescending(item => item.Name)
-                .Include(item => item.BookImage)
-                .Take(4)
+                .Take(8)
+                .Select(item => new BookThumbnail
+                {
+                    Name = item.Name, // Replace with the actual property name
+                    Price = item.Price,       // Replace with the actual property name
+                    BookId = item.BookId,     // Replace with the actual property name
+                    FrontCover = item.BookImage.FrontCover // Replace with the actual property name
+                })
                 .ToList();
 
             var listBookNew = _context.Books
                 .OrderBy(item => item.Name)
-                .Include(item => item.BookImage)
                 .Take(4)
+                .Select(item => new BookThumbnail
+                {
+                    Name = item.Name, // Replace with the actual property name
+                    Price = item.Price,       // Replace with the actual property name
+                    BookId = item.BookId,     // Replace with the actual property name
+                    FrontCover = item.BookImage.FrontCover // Replace with the actual property name
+                })
                 .ToList();
 
             var listBlog = _context.Blogs
                 .OrderBy(item => item.BlogId)
                 .Take(3)
+                .Select(item=> new Blog 
+                { 
+                    BlogId = item.BlogId ,
+                    BlogImage = item.BlogImage,
+                    BlogTitle = item.BlogTitle,
+                    Content = item.Content
+                })
                 .ToList();
 
-            var homepageDate = new HomepageProduct_Blog(listBook, listBlog, listBookNew);
-            
-            return View(homepageDate);
+            var homepageData = new HomepageProduct_Blog(listBook, listBlog, listBookNew);
+
+            return View(homepageData);
         }
+
 
         public IActionResult AboutUs()
         {

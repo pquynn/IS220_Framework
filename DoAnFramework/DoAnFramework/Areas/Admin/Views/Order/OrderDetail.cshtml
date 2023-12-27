@@ -1,0 +1,123 @@
+﻿@model DoAnFramework.Models.ViewModel.OrderViewModel
+
+@{
+    ViewData["Title"] = "Chi tiết đơn hàng";
+    //ViewData["name-page"] = "Chi tiết đơn hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="~/css/admin/admin-order-detail.css">
+
+<div class="admin-order-detail">
+    <h2 class="section_heading">Mã đơn hàng
+        <span style="color: var(--admin-primary);">#</span>
+        <span id="order-id-head" style ="color: var(--admin-primary);">@Model?.Order.OrderId</span>
+    </h2>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Order" asp-action="Index">Danh sách đơn hàng</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chi tiết đơn hàng #A123</li>
+    </ol>
+
+    <!-- start of tracking order status -->
+    <div class="progress-track">
+        <ul id="progressbar">
+            <li class="step0 active " id="step1">Đã đặt hàng</li>
+            <li class="step0 active text-center" id="step2"><span>Đang chuẩn bị</span></li>
+            <li class="step0 active text-center" id="step3"><span>Đang giao</span></li>
+            <li class="step0 text-end" id="step4"><span>Giao thành công</span></li>
+        </ul>
+    </div>
+    <!-- end of tracking order status -->
+    <!-- start of Order information -->
+    <div class="card m-3">
+        <div class="card-body">
+            <div class="card-title">
+                <h3>Thông tin khách hàng</h3>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Mã khách hàng: <span class="user-info">@Model.Order.UserId</span></p>
+                    <p>Tên khách hàng: <span class="user-info">@Model.Order.UserName</span></p>
+                    <p>Điện thoại:  <span class="user-info">@Model.Order.UserTelephone</span></p>
+                    <p>Địa chỉ:  <span class="user-info">@Model.Order.Address</span></p>
+                </div>
+                <div class="col">
+                    <p>Ngày mua:  <span class="user-info">@Model.Order.OrderDate</span></p>
+                    <p>Phương thức thanh toán:  <span class="user-info">@Model.Order.Pay</span></p>
+                    <p>Trạng thái đơn hàng: <span class="user-info status">@Model.Order.Status</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of Order information -->
+    <!--Information of products in order-->
+    <div class="card m-3">
+        <div class="store-table w-auto">
+            <table>
+                <thead>
+                <th>Mã sách</th>
+                <th>Hình ảnh</th>
+                <th>Tên sách</th>
+                <th>Số lượng</th>
+                <th>Giá bán</th>
+                </thead>
+
+                <tbody>
+                    @if (Model.OrderDetails != null)
+                    {
+                        foreach (var item in Model.OrderDetails)
+                        {
+                            <tr>
+                                <td>@item.OrderDetail.OrderDetailId</td>
+                                <td>
+                                    @if (item.FrontCover != null)
+                                    {
+                                        var base64 = Convert.ToBase64String(item.FrontCover);
+                                        var imgUrl = String.Format("data:image/png;base64,{0}", base64);
+
+                                        <div class="table-img" style="background-image: url('@imgUrl');"></div>
+                                    }
+                                </td>
+                                <td>@item.OrderDetail.BookName</td>
+                                <td>@item.OrderDetail.Quantity</td>
+                                <td>@item.OrderDetail.Price.Value.ToString("#,##0") đ</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="total-money-container m-3">
+            <div class="row p-2 total-book">
+                <div class="col-6"></div>
+                <div class="col-3 text-end">Tổng số sách</div>
+                <div class="col-3 text-end">@Model.Order.TotalBooks</div>
+            </div>
+            <div class="row p-2 public-price">
+                <div class="col-6"></div>
+                <div class="col-3 text-end">Tạm tính</div>
+                <div class="col-3 text-end">@Model.Order.TotalPrice.Value.ToString("#,##0") đ</div>
+            </div>
+            <div class="row p-2 total-money">
+                <div class="col-6"></div>
+                <div class="col-3 text-end fw-bold">Tổng tiền</div>
+                <div class="col-3 text-end fw-bold">@Model.Order.TotalPrice.Value.ToString("#,##0") đ</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- start of update-order-status container -->
+    <div class="container update-order-status">
+
+        <button class="btn-admin btn-add" id="done">Giao hàng thành công</button>
+        <button class="btn-admin btn-add" id="out-for-delivery">Bắt đầu giao hàng</button>
+    </div>
+    <!-- end of update-order-status container -->
+
+</div>
+<!--MAIN SECTION----END-->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/js/admin-order/admin-order-detail.js"></script>

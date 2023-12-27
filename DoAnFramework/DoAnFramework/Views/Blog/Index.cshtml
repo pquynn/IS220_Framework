@@ -4,6 +4,8 @@
 }
 @model IEnumerable<DoAnFramework.Models.Blog>
 
+    <link rel="stylesheet" href="~/css/store/blog.css" asp-append-version="true" />
+
 <div class="container-heading mb-5 mt-3">
 	<div class="row">
 		<h1 class="d-flex justify-content-center align-items-center">Blogs</h1>
@@ -36,15 +38,5 @@
 		}
 	</div>
 	<!-- BLOG: END -->
-	<!-- pagination -->
-	<div class="pagination">
-		<a href="#">&laquo;</a>
-		<a class="active" href="#">1</a>
-		<a href="#">2</a>
-		<a href="#">3</a>
-		<a href="#">4</a>
-		<span class="ellipsis">...</span>
-		<a href="#">10</a>
-		<a href="#">&raquo;</a>
-	</div>
+
 </div>

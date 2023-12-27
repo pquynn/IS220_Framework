@@ -17,9 +17,16 @@ namespace DoAnFramework.Controllers
 
 		public IActionResult Index()
         {
-			var listBlogs = _context.Blogs			// Lấy dữ liệu từ Model Blogs.
-				.OrderBy(x => x.BlogId)
-				.ToList();
+			var listBlogs = _context.Blogs	
+                .Select(item => new Blog
+                {
+                    BlogId = item.BlogId,
+                    BlogImage = item.BlogImage,
+                    BlogTitle = item.BlogTitle,
+                    Content = item.Content
+                })
+                .OrderBy(x => x.BlogId)
+                .ToList();
 
 			return View(listBlogs);					// Trả dữ liệu lấy được về View.
         }
