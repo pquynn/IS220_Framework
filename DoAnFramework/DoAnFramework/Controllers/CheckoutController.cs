@@ -18,7 +18,7 @@ namespace DoAnFramework.Controllers
         }
 
         //GET: Checkout/Index/"KH009"
-        public IActionResult Index(string user_id = "")
+        public IActionResult Index(string user_id = "KH009")
         {
             var cartViewModel = _orderService.GetLoginCart(user_id);
 
