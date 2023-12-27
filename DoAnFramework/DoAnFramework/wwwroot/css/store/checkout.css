@@ -11,7 +11,7 @@
 }
 
 body{
-  background-color: var(--checkout-bg);
+  background-color: var(--checkout-bg) !important;
 }
 
 .checkout {

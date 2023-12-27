@@ -7,7 +7,6 @@
         displayCheckout(user_id);
         $("#buy-form").submit(function (e) {
             e.preventDefault();
-            console.log("buy-form is submitted");
         // Ten, sdt
              const name = $(".customer-name").val();
              const phone = $(".customer-phone").val();
@@ -34,6 +33,7 @@
                  alert("Đặt hàng thành công!");
                  window.location.href = "/Order/Cart";
              }
+             
 
              // xoa localstorage chua gio hàng khi ko đăng nhập
              localStorage.clear();
@@ -166,7 +166,8 @@ function displayData() {
             },
             success: function (response) {
                 if (response.success) {
-                    console.log("success");
+                    if (paymentMethod == 'momo-wallet')
+                        window.location.href = "/Checkout/Payment";
                 }
                 else
                     console.log('failed');

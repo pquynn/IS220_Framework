@@ -16,7 +16,7 @@
     </div>
     <!-- CHECKOUT's HEADER: End -->
     <!-- CHECKOUT BODY: Start -->
-    <form method ="post" id="buy-form">
+    <form method ="post" id="buy-form" asp-action="Payment" asp-controller="Checkout">
         <div class="checkout-body flex">
             <!-- INFOR FORM: Start -->
             <div class="left-col">
@@ -29,7 +29,7 @@
                     <input type="text"
                            placeholder="Họ tên*"
                            id="name"
-                           required
+                          @*  required *@
                            class="input-char customer-name"
                            value="@if (Model != null && Model.Order != null)
                     @Model.Order.UserName
@@ -40,7 +40,7 @@
                            placeholder="SĐT*"
                            name="phone"
                            aria-required="true"
-                           required
+                          @*  required *@
                            class="input-char customer-phone"
                            pattern="^0[0-9]{9}$"
                            value="@if (Model != null && Model.Order != null)
@@ -51,7 +51,7 @@
                     <div class="address width-50-30">
                         <input type="text"
                                placeholder="Tỉnh/Thành phố*"
-                               required
+                              @*  required *@
                                id="city"
                                name="city"
                                class="input-char"
@@ -60,7 +60,7 @@
                                placeholder="Quận/Huyện*"
                                id="district"
                                name="district"
-                               required
+                               @* required *@
                                class="input-char" />
                     </div>
                     <div class="address width-50-50">
@@ -69,10 +69,10 @@
                                id="ward"
                                name="ward"
                                placeholder="Xã/Phường*"
-                               required />
+                              @*  required *@ />
                         <input type="text"
                                placeholder="Ấp, Hẻm, số nhà,...*"
-                               required
+                             @*   required *@
                                id="street"
                                name="street"
                                class="input-char address-text" />
@@ -96,7 +96,7 @@
                                    class="square-radio"
                                    name="payment"
                                    id="cod"
-                                   required />
+                                   @* required *@ />
                         </div>
                     </div>
                     <!-- atm momo -->
@@ -111,7 +111,7 @@
                                    class="square-radio"
                                    name="payment"
                                    id="momo-atm"
-                                   required />
+                                   @* required *@ />
                         </div>
                     </div>
                     <!-- ví momo -->
@@ -126,7 +126,7 @@
                                    class="square-radio"
                                    name="payment"
                                    id="momo-wallet"
-                                   required />
+                                   @* required *@ />
                         </div>
                     </div>
                 </div>
@@ -189,6 +189,7 @@
                     </div>
                     <!-- buy -->
                     <input class="btn buy-btn btn-confirm w-100" type="submit" value="Mua ngay" />
+                    <a  class="btn buy-btn btn-confirm w-100" asp-controller="Checkout" asp-action="Payment">Momo</a>
                     <!-- avaliable pament method -->
                 </div>
                 <!-- BUY SECTION: Start -->
