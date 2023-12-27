@@ -115,6 +115,8 @@ namespace DoAnFramework.Models
                     .WithMany(p => p.Books)
                     .HasForeignKey(d => d.CategoryId)
                     .HasConstraintName("FK__BOOK__CATEGORY_I__5812160E");
+
+                entity.Property(e => e.Quantity).HasColumnName("QUANTITY");
             });
 
             modelBuilder.Entity<BookImage>(entity =>

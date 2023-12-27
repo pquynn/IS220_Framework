@@ -86,39 +86,43 @@ namespace DoAnFramework.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult addToCart(string? userID, [FromBody] JObject productData)
+		public IActionResult addToCart(string? userID, productData productData)
 		{
-			// Truy cập thông tin sản phẩm từ JObject
-			string? productName = productData.GetValue("productName")?.ToString();
-			return Json(productName);
-			//int productID = productData.GetValue("productID")?.ToObject<int>() ?? 0;
-			//int productPrice = productData.GetValue("productPrice")?.ToObject<int>() ?? 0;
-			//int numberOfProduct = productData.GetValue("numberOfProduct")?.ToObject<int>() ?? 0;
+			var orderID = _context.Orders
+				.Where(item => item.UserId == userID && item.Status=="cart")
+				.Select(item => item.OrderId)
+				.FirstOrDefault();
 
-			//var orderID = _context.Orders.Where(item => item.UserId == userID).FirstOrDefault();
+			if (orderID == null)
+			{
+				// Trường hợp chưa có giỏ hàng trước đó.
+				var newOrder = new Order
+				{
+					UserId = userID,
+					Status = "cart"
+				};
+				_context.Orders.Add(newOrder);
+				_context.SaveChanges();
+			}
+			orderID = _context.Orders
+				.Where(item => item.UserId == userID && item.Status == "cart")
+				.Select(item => item.OrderId)
+				.FirstOrDefault();
 
-			//if (orderID == null)
-			//{
-			//	// Trường hợp chưa có giỏ hàng trước đó.
-			//	var newOrder = new Order
-			//	{
-			//		UserId = userID,
-			//		Status = "cart"
-			//	};
-			//	_context.Orders.Add(newOrder);
+			return Json(orderID);
 
-			//	orderID = _context.Orders.Where(item => item.UserId == userID && item.Status == "cart").FirstOrDefault();
-			//}
-			//var newProduct = new OrderDetail { 
-			//	OrderId = orderID.OrderId, 
-			//	BookId = productID, 
-			//	BookName = productName, 
-			//	Quantity = numberOfProduct,
-			//	Price = productPrice
-			//};
-			//_context.OrderDetails.Add(newProduct);
+			var newProduct = new OrderDetail
+			{
+				OrderId = orderID,
+				BookId = productData.productID,
+				BookName = productData.productName,
+				Quantity = productData.numberOfProduct,
+				Price = productData.productPrice
+			};
+			_context.OrderDetails.Add(newProduct);
+			_context.SaveChanges();
 
-			//return Json(true);
+			return Json(true);
 		}
 	}
 }

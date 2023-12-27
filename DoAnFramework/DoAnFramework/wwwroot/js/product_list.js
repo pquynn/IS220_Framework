@@ -1,6 +1,7 @@
 /** @format */
 
-// Fetch data using AJAX
+var optionCategory = "";
+var optionCover = "";
 $(document).ready(function () {
 
     //$("#clearFilter").click(function () {
@@ -35,6 +36,19 @@ $(document).ready(function () {
                 return aValue - bValue;
             }
         });
+
+        // Xóa tất cả các sản phẩm hiện tại
+        productContainer.empty();
+
+        // Thêm lại các sản phẩm đã được sắp xếp
+        products.each(function (index, product) {
+            productContainer.append(product);
+        });
+    }
+
+    function categoryProduct(optionCategory, optionCover) {
+        var productContainer = $(".product-list");
+        var products = productContainer.children(".product-detail");
 
         // Xóa tất cả các sản phẩm hiện tại
         productContainer.empty();

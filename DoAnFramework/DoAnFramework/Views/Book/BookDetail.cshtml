@@ -32,8 +32,8 @@
 
 					<!--Khung giới thiệu thông tin sản phẩm-->
 					<div class="product-info">
-						<div class="product-name" value="@Model.BookId"><h2>@Model.Name</h2></div>
-						<div class="product-price"><h3>@Model.Price.Value.ToString("#0,##0") VND</h3></div>
+						<div class="product-name" data-value="@Model.BookId"><h2>@Model.Name</h2></div>
+						<div class="product-price" data-value="@Model.Quantity"><h3>@Model.Price.Value.ToString("#0,##0") VND</h3></div>
 						<div class="product-rating">
 							<ion-icon name="star"></ion-icon>
 							<ion-icon name="star"></ion-icon>
@@ -278,13 +278,20 @@
 
 <script>
 	// add amount
+	var soLuongTonKho;
+	var numberOfProduct;
+
 	const plus = document.querySelector(".plus"),
 		minus = document.querySelector(".minus"),
 		number = document.querySelector(".number");
 	let a = 1;
 	plus.addEventListener("click", () => {
-		a++;
-		number.innerText = a;
+		numberOfProduct = Number($(".number").text());
+		soLuongTonKho = Number($('.product-price').data('value'));
+		if (soLuongTonKho >= (numberOfProduct + 1)) {
+			a++;
+			number.innerText = a;
+		}
 	});
 	minus.addEventListener("click", () => {
 		if (a > 1) {

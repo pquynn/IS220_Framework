@@ -1,12 +1,14 @@
 /** @format */
 // console.log(user_id);
-var user_id = "KH001";
+var user_id = "KH015";
+
 var myCart = [];
 
 var productName;
 var productPrice;
 var numberOfProduct;
 var productID;
+var soLuongTonKho;
 
 if (window.location.href.includes("BookDetail")) {
     if (localStorage.getItem("myCart") !== null) {
@@ -15,9 +17,11 @@ if (window.location.href.includes("BookDetail")) {
 
     $(".btn-cancel").click(function () {
         productName = $(".product-name").text();
-        productID = $(".product-name").val();
+        productID = Number($(".product-name").data('value'));
         productPrice = convertCurrencyToNumber($(".product-price").text());
-        numberOfProduct = $(".number").text();
+        numberOfProduct = Number($(".number").text());
+        soLuongTonKho = Number($(".product-price").data('value'));
+
 
         if (productName && productPrice && numberOfProduct) {
             let tempProduct = {
@@ -30,10 +34,12 @@ if (window.location.href.includes("BookDetail")) {
             // Trường hợp không đăng nhập
             if (user_id === null) {
                 alert("Chưa đăng nhập");
+
                 // Đưa sản phẩm được chọn vào giỏ hàng.
                 myCart.push(tempProduct);
 
                 localStorage.setItem("myCart", JSON.stringify(myCart));
+                $('.product-price').data('value', soLuongTonKho - numberOfProduct);
                 alert("Sản phẩm đã được thêm vào giỏ hàng");
                 console.log(myCart);
             }
@@ -67,6 +73,10 @@ if (window.location.href.includes("BookDetail")) {
         else {
             alert("Thieu thong tin!");
         }
+    });
+
+    $('.btn-confirm').click(function () {
+        alert("Mua hang");
     });
 }
 //$(".btn-confirm").click(function () {
