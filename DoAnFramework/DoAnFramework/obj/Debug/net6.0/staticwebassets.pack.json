@@ -177,6 +177,18 @@
       "PackagePath": "staticwebassets\\img\\message.jpg"
     },
     {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider1.png",
+      "PackagePath": "staticwebassets\\img\\slider1.png"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider2.jpg",
+      "PackagePath": "staticwebassets\\img\\slider2.jpg"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider3.jpg",
+      "PackagePath": "staticwebassets\\img\\slider3.jpg"
+    },
+    {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\img\\slider_img\\slider1.webp",
       "PackagePath": "staticwebassets\\img\\slider_img\\slider1.webp"
     },
@@ -213,6 +225,14 @@
       "PackagePath": "staticwebassets\\js\\cart-checkout\\checkout.js"
     },
     {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\header.js",
+      "PackagePath": "staticwebassets\\js\\header.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\homepage-slider.js",
+      "PackagePath": "staticwebassets\\js\\homepage-slider.js"
+    },
+    {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\my-order\\my-order-detail.js",
       "PackagePath": "staticwebassets\\js\\my-order\\my-order-detail.js"
     },
@@ -227,6 +247,10 @@
     {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_detail.js",
       "PackagePath": "staticwebassets\\js\\product_detail.js"
+    },
+    {
+      "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\product_list.js",
+      "PackagePath": "staticwebassets\\js\\product_list.js"
     },
     {
       "Id": "E:\\IS220_Framework\\DoAnFramework\\DoAnFramework\\wwwroot\\js\\site.js",
