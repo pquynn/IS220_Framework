@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DoAnFramework.Models
 {
@@ -11,7 +12,6 @@ namespace DoAnFramework.Models
             Comments = new HashSet<Comment>();
             Orders = new HashSet<Order>();
         }
-
         public string UserId { get; set; } = null!;
         public string? UserLogin { get; set; }
         public string? UserName { get; set; }

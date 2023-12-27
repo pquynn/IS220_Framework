@@ -1,4 +1,5 @@
-﻿@{
+﻿@using DoAnFramework.Models.ViewModel;
+@{
     ViewData["Title"] = "Quản lý tài khoản";
     Layout = "../Shared/_Layout.cshtml";
 
@@ -13,24 +14,24 @@
             </ul>
 
             <h2>Quản lý tài khoản</h2>
-
+            
             <div class="account">
                 <br>
                 <ul>
                     <li class="sub-nav--item hover-underline">
-                        <a href="" data-bs-toggle="modal" data-bs-target="#edit-profile">CHỈNH SỬA THÔNG TIN</a>
+                    <a asp-action="EditProfileUser" asp-controller="Account">CHỈNH SỬA THÔNG TIN</a>
                     </li>
                     <br>
                     <li class="sub-nav--item hover-underline">
-                        <a href="" data-bs-toggle="modal" data-bs-target="#edit-pass">ĐỔI MẬT KHẨU</a>
+                    <a asp-action="ChangePassword" asp-controller="Account">ĐỔI MẬT KHẨU</a>
                     </li>
                     <br>
                     <li class="sub-nav--item hover-underline">
-                        <a href="" data-bs-toggle="modal" data-bs-target="#edit-address">ĐỊA CHỈ</a>
+                    <a asp-action="EditAddress" asp-controller="Account">ĐỊA CHỈ</a>
                     </li>
                     <br>
                     <li class="sub-nav--item hover-underline">
-                        <a href="#">ĐĂNG XUẤT</a>
+                    <a asp-action="Index" asp-controller="Home">ĐĂNG XUẤT</a>
                     </li>
                 </ul>
             </div>
@@ -38,152 +39,3 @@
     </div>
 
 
-<!-- Start of edit address modal -->
-<!-- use modal of bootstrap to style edit address. modified 10/27/2023 by Quyen -->
-<!-- Button trigger modal -->
-<!-- Modal -->
-<div class="modal fade" id="edit-address" tabindex="-1" aria-labelledby="modal-address" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="modal-header" style="border-bottom: none;">
-                <h1 class="modal-title fs-5" id="modal-address">ĐỊA CHỈ</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row row-gap-3">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="name" placeholder=" Họ và tên*" required>
-                            <label for="name"> Họ và tên*</label>
-                        </div>
-
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="phonenumber" placeholder=" Số điện thoại*" required>
-                            <label for="phonenumber"> Số điện thoại*</label>
-                        </div>
-
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="province" placeholder=" Tỉnh*" required>
-                            <label for="province"> Tỉnh*</label>
-                        </div>
-
-                        <div class="form-floating">
-                            <input type="text" class="form-control h-50" id="district" placeholder=" Quận/huyện*" required>
-                            <label for="district"> Quận/huyện*</label>
-                        </div>
-
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="specificaddress" placeholder=" Địa chỉ cụ thể*" required>
-                            <label for="specificaddress"> Địa chỉ cụ thể*</label>
-                        </div>
-
-                        <div class="btn-container">
-                            <button class="btn btn-confirm" onclick="savechange()" style="width: 100%;">Lưu thay đổi</button>
-                            <button class="btn btn-cancel" onclick="cancel()" data-bs-dismiss="modal" style="width: 100%;">Hủy</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of edit address modal -->
-<!-- Start of edit address modal -->
-<!-- use modal of bootstrap to style edit address. modified 10/27/2023 by Quyen -->
-<!-- Modal -->
-<div class="modal fade" id="edit-pass" tabindex="-1" aria-labelledby="modal-pass" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="modal-header" style="border-bottom: none;">
-                <h1 class="modal-title fs-5" id="modal-pass">ĐỔI MẬT KHẨU</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row row-gap-3">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="oldpassword" placeholder="Mật khẩu cũ*" required>
-                            <label for="name">Mật khẩu cũ*</label>
-                        </div>
-
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="newpassword" placeholder="Mật khẩu mới*" required>
-                            <label for="phonenumber">Mật khẩu mới*</label>
-                        </div>
-
-                        <div class="btn-container">
-                            <button class="btn btn-confirm" onclick="savechange()" style="width: 100%;">
-                                Lưu thay
-                                đổi
-                            </button>
-                            <button class="btn btn-cancel" onclick="cancel()" data-bs-dismiss="modal"
-                                    style="width: 100%;">
-                                Hủy
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End of edit address modal -->
-<!-- Start of edit address modal -->
-<!-- use modal of bootstrap to style edit profile. modified 10/27/2023 by Quyen -->
-<!-- Button trigger modal -->
-<!-- Modal -->
-<div class="modal fade" id="edit-profile" tabindex="-1" aria-labelledby="modal-profile" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-
-            <div class="modal-header" style="border-bottom: none;">
-                <h1 class="modal-title fs-5" id="modal-profile">SỬA THÔNG TIN</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="row row-gap-3">
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="name" placeholder="Họ và tên*" required>
-                            <label for="name">Họ và tên*</label>
-                        </div>
-
-                        <div class="form-floating">
-                            <input type="date" class="form-control" id="dateofbirth" required>
-                            <label for="phonenumber">Ngày sinh*</label>
-                        </div>
-
-                        <div>
-                            <input type="radio" id="nam" name="gioitinh">
-                            <label for="radio1">Nam</label>
-
-                            <input type="radio" id="nu" name="gioitinh">
-                            <label for="radio2">Nữ</label>
-
-                            <input type="radio" id="khac" name="gioitinh">
-                            <label for="radio3">Khác</label>
-                        </div>
-
-                        <div class="btn-container">
-                            <button class="btn btn-confirm" onclick="savechange()" style="width: 100%;">
-                                Lưu thay
-                                đổi
-                            </button>
-                            <button class="btn btn-cancel" onclick="cancel()" data-bs-dismiss="modal"
-                                    style="width: 100%;">
-                                Hủy
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- End of edit address modal -->
