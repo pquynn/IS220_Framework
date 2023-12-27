@@ -11,12 +11,13 @@
     <div class="list-orders">
         <!--breadscrumb-->
         <ul class="breadcrumb-my-order">
-            <li class="breadcrumb-current-page">Quản lý tài khoản</li> /
+            <li><a asp-controller="Account" asp-action="Index">Quản lý tài khoản</a> / </li>
+            <li class="breadcrumb-current-page">Chỉnh sửa thông tin</li>
         </ul>
 
-        <h2>Chỉnh sửa thông tin</h2>
+        <h2 style="text-align:center;">Chỉnh sửa thông tin</h2>
         <br />
-        <div class="modal-body" style=" width: 50%;">
+        <div class="modal-body" style=" width: 50%; margin: 5px auto;">
             <form method="post" asp-action="EditProfileUser" asp-controller="Account">
                 <div class="row row-gap-3">
                     <div class="form-floating">

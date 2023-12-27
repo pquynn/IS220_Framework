@@ -11,12 +11,13 @@
     <div class="list-orders">
         <!--breadscrumb-->
         <ul class="breadcrumb-my-order">
-            <li class="breadcrumb-current-page">Quản lý tài khoản</li> /
+            <li><a asp-controller="Account" asp-action="Index">Quản lý tài khoản</a> / </li>
+            <li class="breadcrumb-current-page">Chỉnh sửa địa chỉ</li>
         </ul>
 
-        <h2>Chỉnh sửa thông tin</h2>
+        <h2 style="text-align:center;" >Chỉnh sửa địa chỉ</h2>
         <br />
-        <div class="modal-body" style=" width: 50%;">
+        <div class="modal-body" style=" width: 50%; margin: 5px auto;">
             <form method="post" asp-action="EditAddress" asp-controller="Account">
                 <div class="row row-gap-3">
                     <div class="form-floating">
@@ -25,7 +26,7 @@
                     </div>
 
                     <div class="form-floating">
-                        <input type="text" class="form-control" asp-for="PhoneNumber" placeholder=" Số điện thoại*" required>
+                        <input type="text" class="form-control" asp-for="PhoneNumber" placeholder=" Số điện thoại*" required pattern="^0[0-9]{9}$">
                         <label asp-for="PhoneNumber"> Số điện thoại*</label>
                     </div>
 

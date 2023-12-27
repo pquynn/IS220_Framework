@@ -302,7 +302,7 @@ button.btn{
 
 /* start: modal */
 .modal .img-container{
-  width: 100px;
+  width: 150px;
   height: 150px;
   object-fit: contain;
 }
@@ -336,12 +336,12 @@ button.btn{
 }
 
 .left-col {
-  width: 25%; /* Adjust the width as needed */
+  width: 30%; /* Adjust the width as needed */
   float: left; /* Ensure proper positioning */
 }
 
 .right-col {
-  width: 75%; /* Adjust the width as needed */
+  width: 70%; /* Adjust the width as needed */
   float: right; /* Ensure proper positioning */
 }
 
