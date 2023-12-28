@@ -286,5 +286,6 @@ namespace DoAnFramework.Controllers
         {
             return Json(HttpContext.Session.GetString(sessionName));
         }
+
     }
 }

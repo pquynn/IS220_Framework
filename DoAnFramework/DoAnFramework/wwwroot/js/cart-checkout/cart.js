@@ -4,6 +4,7 @@ const localCart = getLocalCart(cart);
 
     // Render cart row: start
 $(document).ready(function () {
+    var user_id = null;
     //lấy session
     $.ajax({
         type: "POST",
@@ -11,42 +12,46 @@ $(document).ready(function () {
         data: { sessionName: "userId" },
         success: function (response) {
             if (response) {
-                console.log(response);
                 user_id = response;
             }
+            else user_id = null;
+
+            if (user_id != null) {
+
+                var rowCount = $('.product-list--body tr').length;
+                if (rowCount === 0 || typeof rowCount === "undefined") {
+                    console.log("empty");
+                    emptyCart();
+                }
+                else {
+                    console.log("vào total");
+                    var totalPrice = 0;
+                    $(".product").each(function () {
+                        // Get the quantity and price values
+                        var quantity = parseInt($(this).find(".amount-feld").val());
+                        var price = parseInt($(this).find("#book-price-" + $(this).attr("id").split("-")[1]).text());
+                        var total = quantity * price;
+
+                        // Update the product-total td with the calculated total
+                        $(this).find(".product-total").text(total);
+
+                        totalPrice += total;
+                    });
+
+                    $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
+                    $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
+
+                }
+            }
+            else
+                displayCart();
         },
         error: function (error) {
             console.error("Đã xảy ra lỗi:", error);
         },
     });
-        
-    if (user_id != null) {
 
-        var rowCount = $('.product-list--body tr').length;
-        if (rowCount === 0 || typeof rowCount === "undefined") {
-            emptyCart();
-        }
-        else {
-            var totalPrice = 0;
-            $(".product").each(function () {
-                // Get the quantity and price values
-                var quantity = parseInt($(this).find(".amount-feld").val());
-                var price = parseInt($(this).find("#book-price-" + $(this).attr("id").split("-")[1]).text());
-                var total = quantity * price;
-
-                // Update the product-total td with the calculated total
-                $(this).find(".product-total").text(total);
-
-                totalPrice += total;
-            });
-
-            $(".sub-total--amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
-            $(".total-amount").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " đ");
-
-        }    
-    }
-    else
-        displayCart();
+ 
         
 
         // CHANGE PRODUCT'S AMOUNT-BTN: START------------------

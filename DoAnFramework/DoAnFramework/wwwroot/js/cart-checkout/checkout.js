@@ -52,7 +52,7 @@ $(document).ready(function () {
             
             if (paymentMethod == "cod") {
                 alert("Đặt hàng thành công!");
-                window.location.href = "/Checkout/Cart";
+                window.location.href = "/Order/Cart";
             }
              
 
